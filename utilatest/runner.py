@@ -95,7 +95,7 @@ def run_command(
         context.setattr(sys, 'argv', [process] + cmd)
         with pytest.raises(SystemExit) as result:
             main()
-    code = utilatest.returncode(result)
+    code = utila.returncode(result)
     assert (code == utila.SUCCESS) == success, str(result)
     return code
 

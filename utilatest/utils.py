@@ -28,10 +28,3 @@ def open_webbrowser(path: str):
     assert os.path.exists(path), str(str)
     if utilatest.single_execution():
         webbrowser.open(path)
-
-
-def returncode(exeception: Exception) -> int:
-    """Determine return code raised from exit()"""
-    msg = 'process return `None` as returnvalue instead of returncode'
-    assert exeception.value is not None, msg
-    return int(str(exeception.value))
