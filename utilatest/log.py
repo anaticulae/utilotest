@@ -7,6 +7,8 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
+import warnings
+
 import utila
 
 
@@ -29,5 +31,7 @@ def log_raw(content: str):
     Example:
         asssert len(abc) > 100, utila.log_raw(abc)
     """
+    warnings.warn('use utila.log_raw, will removed with utilatest 1.0.0')
+
     content = utila.string.fix_encoding(content)
     print(content, flush=True)
