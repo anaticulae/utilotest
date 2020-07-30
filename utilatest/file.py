@@ -82,5 +82,5 @@ def increased_filecount(
     maxdiff = utila.INF if maxdiff is None else maxdiff
     current = len(after) - len(before)
     assert mindiff <= current <= maxdiff, (
-        f'mindiff: {mindiff} maxdiff: {maxdiff}\n'
+        f'mindiff: {mindiff} <= {len(after)-len(before)} <= maxdiff: {maxdiff}\n'
         f'{before}\n\n{after}')
