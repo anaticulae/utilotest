@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.1.4
+
+### Fix
+
+* clarify error message (81de8fdaa795)
+
 ## v0.1.3
 
 ## v0.1.2
