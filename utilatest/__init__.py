@@ -32,10 +32,14 @@ from utilatest.select import LONGRUN
 from utilatest.select import NIGHTLY
 from utilatest.select import NONVIRTUAL
 from utilatest.select import VIRTUAL
+from utilatest.select import longrun
+from utilatest.select import nightly
+from utilatest.select import nonvirtual
 from utilatest.select import skip_longrun
 from utilatest.select import skip_nightly
 from utilatest.select import skip_nonvirtual
 from utilatest.select import skip_virtual
+from utilatest.select import virtual
 # utils
 from utilatest.utils import open_webbrowser
 
