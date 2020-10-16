@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.1.6
+
+### Feature
+
+* introduce more intuitive selection decorator (490d4e732a44)
+
 ## v0.1.5
 
 ## v0.1.4
