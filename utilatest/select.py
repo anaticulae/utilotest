@@ -34,3 +34,7 @@ longrun = skip_longrun
 nightly = skip_nightly
 nonvirtual = skip_nonvirtual
 virtual = skip_virtual
+
+# mark tests to optimize holy value parameters
+holyvalue = pytest.mark.holyvalue
+# TODO: SUPPORT holyvalue('rawmaker.features.text.MAX_WIDTH')
