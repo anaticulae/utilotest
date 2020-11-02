@@ -11,7 +11,6 @@ import pytest
 import utila
 
 import utilatest
-import utilatest.utils
 
 
 def test_test_log_raw(capsys):
