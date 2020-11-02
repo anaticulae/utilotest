@@ -17,6 +17,8 @@ from utilatest.install import clean_install
 from utilatest.install import install_and_run
 # log
 from utilatest.log import log_raw
+from utilatest.log import stderr
+from utilatest.log import stdout
 from utilatest.log import write_capsys
 # run
 from utilatest.runner import assert_failure

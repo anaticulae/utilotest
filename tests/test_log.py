@@ -8,6 +8,7 @@
 # =============================================================================
 
 import pytest
+import utila
 
 import utilatest
 import utilatest.utils
@@ -19,4 +20,12 @@ def test_test_log_raw(capsys):
     with pytest.raises(AssertionError):
         assert len(content) > 1000, utilatest.log_raw(content)
 
-    assert content in capsys.readouterr().out
+    assert content in utilatest.stdout(capsys)
+
+
+def test_stdout_stderr(capsys):
+    utila.error('abc')
+    assert 'abc' in utilatest.stderr(capsys)
+
+    utila.log('www')
+    assert 'www' in utilatest.stdout(capsys)

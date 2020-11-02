@@ -14,11 +14,11 @@ import utila
 
 def write_capsys(capsys, path: str = None):
     """Save logged capsys to filespace."""
-    stdout, stderr = capsys.readouterr()
+    stdout_, stderr_ = stdout(capsys), stderr(capsys)
     change = utila.chdir if path else utila.nothing
     with change(path):
-        utila.file_create('logging.txt', stdout)
-        utila.file_create('error.txt', stderr)
+        utila.file_create('logging.txt', stdout_)
+        utila.file_create('error.txt', stderr_)
 
 
 def log_raw(content: str):
@@ -35,3 +35,11 @@ def log_raw(content: str):
 
     content = utila.string.fix_encoding(content)
     print(content, flush=True)
+
+
+def stderr(capsys) -> str:
+    return capsys.readouterr().err
+
+
+def stdout(capsys) -> str:
+    return capsys.readouterr().out
