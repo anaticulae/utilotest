@@ -14,6 +14,8 @@ import os
 
 import utila
 
+API_PREFIX = 'UTILATEST_API_PREFIX'
+
 
 def decode(response, expected=None) -> dict:
     """Read binary data from response and convert them to str"""
@@ -133,4 +135,8 @@ def apiput(
 
 
 def default():
-    return os.environ.get('UTILATEST_API_PREFIX', '')
+    return os.environ.get(API_PREFIX, '')
+
+
+def setup(prefix):
+    os.environ[API_PREFIX] = prefix
