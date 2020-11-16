@@ -2,6 +2,14 @@
 
 Every noteable change is logged here.
 
+## v0.2.0
+
+### Feature
+
+* add calls to test CRUD APIs (8299dd52ad08)
+* add methods to analyze pytest stdout/stderr (76f72b2547cf)
+* add holyvalue test selector (26a6b471caff)
+
 ## v0.1.6
 
 ### Feature
