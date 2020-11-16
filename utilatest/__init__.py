@@ -9,6 +9,16 @@
 
 import os
 
+# api calls
+from utilatest.call import apicall
+from utilatest.call import apidelete
+from utilatest.call import apipost
+from utilatest.call import apiput
+from utilatest.call import apiupload
+from utilatest.call import decode
+from utilatest.call import get
+from utilatest.call import post
+from utilatest.call import upload
 # file
 from utilatest.file import increased_filecount
 from utilatest.file import simplify_testfile_names
