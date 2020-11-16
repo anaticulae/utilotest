@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.2.1
+
+### Feature
+
+* add method to setup prefix (1c1c708400e3)
+
 ## v0.2.0
 
 ### Feature
