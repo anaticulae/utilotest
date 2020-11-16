@@ -10,7 +10,7 @@
 import contextlib
 import inspect
 import os
-import subprocess
+import subprocess  # nosec
 import sys
 
 import pytest
@@ -51,7 +51,7 @@ def run(
         utila.log(f'cd {cwd}')
         utila.log(cmd)
 
-    completed = subprocess.run(
+    completed = subprocess.run(  # nosec
         cmd,
         cwd=cwd,
         env=env,
