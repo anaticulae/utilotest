@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.3.0
+
+### Fix
+
+* bypass marker check of new pytest version (cc7ced949ee4)
+
 ## v0.2.2
 
 ## v0.2.1
