@@ -2,6 +2,16 @@
 
 Every noteable change is logged here.
 
+## v0.3.1
+
+### Feature
+
+* add method to register marker (edcae5f5a496)
+
+### Documentation
+
+* Happy New Year! (48de95e15ba4)
+
 ## v0.3.0
 
 ### Fix
