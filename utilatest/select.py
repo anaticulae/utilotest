@@ -35,10 +35,17 @@ nightly = skip_nightly
 nonvirtual = skip_nonvirtual
 virtual = skip_virtual
 
+
+def register_marker(name: str):
+    """After upgrading pytest, markers must be registered in pytest
+    config. To avoid putting holyvalue markers in every pytest.ini we
+    bypass them by directly acessing the pytest API. This may fail in
+    the future."""
+    marker = pytest.mark._markers.add(name)  # pylint:disable=W0212
+    return marker
+
+
 # mark tests to optimize holy value parameters
-"""After upgrading pytest, markers must be registered in pytest config.
-To avoid putting holyvalue markers in every pytest.ini we bypass them by
-directly acessing the pytest API. This may fail in the future. old:
-holyvalue = pytest.mark.holyvalue"""
-holyvalue = pytest.mark._markers.add('holyvalue')  # pylint:disable=W0212
+# old: holyvalue = pytest.mark.holyvalue
+holyvalue = register_marker('holyvalue')
 # TODO: SUPPORT holyvalue('rawmaker.features.text.MAX_WIDTH')
