@@ -41,8 +41,8 @@ def register_marker(name: str):
     config. To avoid putting holyvalue markers in every pytest.ini we
     bypass them by directly acessing the pytest API. This may fail in
     the future."""
-    marker = pytest.mark._markers.add(name)  # pylint:disable=W0212
-    return marker
+    pytest.mark._markers.add(name)  # pylint:disable=W0212
+    return getattr(pytest.mark, name)
 
 
 # mark tests to optimize holy value parameters
