@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.3.2
+
+### Fix
+
+* return correct registered marker (d087a43442f5)
+
 ## v0.3.1
 
 ### Feature
