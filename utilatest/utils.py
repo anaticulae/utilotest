@@ -42,4 +42,6 @@ def simple(item: str, maxlength: int = 25) -> str:
     'Nospaces133'
     """
     item = utila.fix_encoding(item)
-    return item.translate(SIMPLIFY)
+    item = item.translate(SIMPLIFY)
+    item = item[-maxlength:]
+    return item
