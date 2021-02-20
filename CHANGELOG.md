@@ -2,6 +2,13 @@
 
 Every noteable change is logged here.
 
+## v0.4.0
+
+### Feature
+
+* use parameter to shrink simplified name (a22c9835f179)
+* add method to ease and secure generated test names (8b48e3a8d085)
+
 ## v0.3.2
 
 ### Fix
