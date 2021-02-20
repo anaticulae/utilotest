@@ -58,6 +58,7 @@ from utilatest.select import skip_virtual
 from utilatest.select import virtual
 # utils
 from utilatest.utils import open_webbrowser
+from utilatest.utils import simple
 
 __version__ = '0.3.2'
 

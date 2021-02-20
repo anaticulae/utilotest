@@ -11,6 +11,8 @@ import contextlib
 import os
 import webbrowser
 
+import utila
+
 import utilatest
 
 
@@ -28,3 +30,16 @@ def open_webbrowser(path: str):
     assert os.path.exists(path), str(str)
     if utilatest.single_execution():
         webbrowser.open(path)
+
+
+SIMPLIFY = str.maketrans({item: '' for item in ' _-=+,.;\'/"()!@#$%^&&*'})
+
+
+def simple(item: str, maxlength: int = 25) -> str:
+    """Simplify test name to ease selecting generated tests by test name.
+
+    >>> simple('No spaces _+; 133')
+    'Nospaces133'
+    """
+    item = utila.fix_encoding(item)
+    return item.translate(SIMPLIFY)
