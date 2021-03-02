@@ -18,10 +18,9 @@ API_PREFIX = 'UTILATEST_API_PREFIX'
 
 
 def decode(response, expected=None) -> dict:
-    """Read binary data from response and convert them to str"""
+    """Read binary data from response and convert them to str."""
+    assert expected is None or response.status_code == expected
     result = response.data.decode('utf8')
-    if expected is not None:
-        assert response.status_code == expected
     with contextlib.suppress(json.decoder.JSONDecodeError):
         # json format
         return json.loads(result)
