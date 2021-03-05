@@ -35,7 +35,7 @@ def get(
         raw: bool = False,
 ):
     response = client.get(request, follow_redirects=True)
-    assert response.status_code == expected, request + str(response)
+    assert response.status_code == expected, f'{request}:{response.status_code}\n{response}'
     if raw:
         return response
     return decode(response)
@@ -48,7 +48,7 @@ def post(
         expected=http.HTTPStatus.OK,
 ):
     response = client.post(page, data=data, follow_redirects=True)
-    assert response.status_code == expected, page
+    assert response.status_code == expected, f'{page}:{response.status_code}\n{response}'
     return decode(response, expected=expected)
 
 
@@ -78,7 +78,7 @@ def apicall(
     prefix = prefix if prefix else default()
     cmd = prefix + request
     response = client.get(cmd, follow_redirects=True)
-    assert response.status_code == expected, request + str(response)
+    assert response.status_code == expected, f'{request}:{response.status_code}\n{response}'
     return decode(response, expected=expected)
 
 
@@ -91,7 +91,7 @@ def apidelete(
     prefix = prefix if prefix else default()
     cmd = prefix + request
     response = client.delete(cmd, follow_redirects=True)
-    assert response.status_code == expected, request + str(response)
+    assert response.status_code == expected, f'{request}:{response.status_code}\n{response}'
     return decode(response, expected=expected)
 
 
@@ -115,7 +115,7 @@ def apiupload(
         utila.error('install werkzeug')
         raise error
     response = client.post(request, data=fields, follow_redirects=True)
-    assert response.status_code == expected, request + str(response)
+    assert response.status_code == expected, f'{page}:{response.status_code}\n{response}'
     return decode(response, expected=expected)
 
 
@@ -129,7 +129,7 @@ def apiput(
     prefix = prefix if prefix else default()
     request = prefix + page
     response = client.put(request, data=data, follow_redirects=True)
-    assert response.status_code == expected, request + str(response)
+    assert response.status_code == expected, f'{page}:{response.status_code}\n{response}'
     return decode(response, expected=expected)
 
 
