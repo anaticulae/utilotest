@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.4.1
+
+### Fix
+
+* improve call assertion (84744d389905)
+
 ## v0.4.0
 
 ### Feature
