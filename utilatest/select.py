@@ -48,4 +48,5 @@ def register_marker(name: str):
 # mark tests to optimize holy value parameters
 # old: holyvalue = pytest.mark.holyvalue
 holyvalue = register_marker('holyvalue')
+displayed = register_marker('displayed')
 # TODO: SUPPORT holyvalue('rawmaker.features.text.MAX_WIDTH')

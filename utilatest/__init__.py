@@ -46,6 +46,7 @@ from utilatest.select import LONGRUN
 from utilatest.select import NIGHTLY
 from utilatest.select import NONVIRTUAL
 from utilatest.select import VIRTUAL
+from utilatest.select import displayed
 from utilatest.select import holyvalue
 from utilatest.select import longrun
 from utilatest.select import nightly
