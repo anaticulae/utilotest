@@ -2,6 +2,14 @@
 
 Every noteable change is logged here.
 
+## v0.5.0
+
+### Feature
+
+* add decorator to mark selenium tests (ce93a09d0c4c)
+* add driver to fixture to run selenium (e36ee84513b0)
+* add firefox driver (07e01820d747)
+
 ## v0.4.1
 
 ### Fix
