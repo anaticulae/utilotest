@@ -10,6 +10,7 @@
 import os
 
 import utilatest
+from viewvisitor.fixture import selenium_driver  # pylint:disable=W0611
 
 ROOT = os.path.join(utilatest.ROOT, 'viewvisitor')
 
