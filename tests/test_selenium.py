@@ -1,12 +1,20 @@
 # =============================================================================
 # C O P Y R I G H T
 # -----------------------------------------------------------------------------
-# Copyright (c) 2020-2021 by Helmut Konrad Fahrendholz. All rights reserved.
+# Copyright (c) 2021 by Helmut Konrad Fahrendholz. All rights reserved.
 # This file is property of Helmut Konrad Fahrendholz. Any unauthorized copy,
 # use or distribution is an offensive act against international law and may
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-from viewvisitor.fixture import selenium_driver  # pylint:disable=W0611
+import utilatest
 
-pytest_plugins = ['pytester', 'xdist', 'localserver']  # pylint: disable=invalid-name
+
+@utilatest.longrun
+@utilatest.displayed
+def test_selenium_driver(selenium_driver, httpserver):
+    httpserver.serve_content('<div id="helmut">Helmut is talking</div>')
+    # visit faked page
+    selenium_driver.get(httpserver.url)
+    text = selenium_driver.find_element_by_id('helmut').text
+    assert text == 'Helmut is talking'
