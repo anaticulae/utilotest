@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.5.1
+
+### Fix
+
+* add missing data delivery flag (5d68cf50a430)
+
 ## v0.5.0
 
 ### Feature
