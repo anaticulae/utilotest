@@ -109,7 +109,7 @@ def apiupload(
     assert os.path.exists(path), path
     request = prefix + page
     try:
-        import werkzeug
+        import werkzeug  # pylint:disable=import-outside-toplevel
         fields = werkzeug.datastructures.MultiDict([(field, open(path, 'rb'))])
     except ImportError as error:
         utila.error('install werkzeug')

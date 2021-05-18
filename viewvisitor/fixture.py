@@ -8,6 +8,7 @@
 # =============================================================================
 
 import os
+import sys
 
 import configo
 import pytest
@@ -21,7 +22,7 @@ import viewvisitor
 def selenium_driver():
     if viewvisitor.FIREFOX_BINARY is None:
         utila.error('DEFINE `FIREFOX_BINARY`')
-        exit(utila.FAILURE)
+        sys.exit(utila.FAILURE)
     base = os.path.split(viewvisitor.FIREFOX_BINARY)[0]
     # TODO: ADD ENV_PATH_APPEND METHOD
     path = f'{configo.env("PATH")};{base}'

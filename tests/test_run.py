@@ -7,6 +7,8 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
+import sys
+
 import pytest
 import utila
 
@@ -28,7 +30,7 @@ def test_test_run_command(monkeypatch):
 
     def main():
         # example runnable
-        exit(utila.SUCCESS)
+        sys.exit(utila.SUCCESS)
 
     utilatest.run_command('--number 10', 'main', main, True, monkeypatch)
 

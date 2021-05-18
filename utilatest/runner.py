@@ -51,7 +51,7 @@ def run(
         utila.log(f'cd {cwd}')
         utila.log(cmd)
 
-    completed = subprocess.run(  # nosec
+    completed = subprocess.run(  # nosec, pylint:disable=subprocess-run-check
         cmd,
         cwd=cwd,
         env=env,
@@ -124,7 +124,7 @@ def single_execution() -> bool:
     """
     frame = inspect.currentframe()
     caller = [item.function for item in inspect.getouterframes(frame)[0:5]]
-    return any([item in sys.argv for item in caller])
+    return any(item in sys.argv for item in caller)
 
 
 def assert_success(process: subprocess.CompletedProcess):
