@@ -51,10 +51,10 @@ def simplify_testfile_names(files, ext='pdf', sort: bool = True) -> tuple:
 
 @contextlib.contextmanager
 def increased_filecount(
-        path: str = None,
-        ext: str = None,
-        mindiff: int = None,
-        maxdiff: int = None,
+    path: str = None,
+    ext: str = None,
+    mindiff: int = None,
+    maxdiff: int = None,
 ):
     """Ensure that some files were created while yielded operation.
 

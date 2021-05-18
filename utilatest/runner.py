@@ -20,11 +20,11 @@ import utilatest
 
 
 def run(
-        cmd: str,
-        cwd: str = None,
-        env: dict = None,
-        expect: bool = True,
-        verbose: bool = False,
+    cmd: str,
+    cwd: str = None,
+    env: dict = None,
+    expect: bool = True,
+    verbose: bool = False,
 ) -> subprocess.CompletedProcess:
     """Run external process
 
@@ -69,11 +69,11 @@ def run(
 
 
 def run_command(
-        cmd: str,
-        process: str,
-        main: callable,
-        success: bool,
-        monkeypatch,
+    cmd: str,
+    process: str,
+    main: callable,
+    success: bool,
+    monkeypatch,
 ) -> int:
     """Run `main` with `command`
 

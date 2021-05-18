@@ -29,10 +29,10 @@ def decode(response, expected=None) -> dict:
 
 
 def get(
-        client,
-        request: str,
-        expected=http.HTTPStatus.OK,
-        raw: bool = False,
+    client,
+    request: str,
+    expected=http.HTTPStatus.OK,
+    raw: bool = False,
 ):
     response = client.get(request, follow_redirects=True)
     assert response.status_code == expected, f'{request}:{response.status_code}\n{response}'
@@ -42,10 +42,10 @@ def get(
 
 
 def post(
-        client,
-        page: str,
-        data: dict,
-        expected=http.HTTPStatus.OK,
+    client,
+    page: str,
+    data: dict,
+    expected=http.HTTPStatus.OK,
 ):
     response = client.post(page, data=data, follow_redirects=True)
     assert response.status_code == expected, f'{page}:{response.status_code}\n{response}'
@@ -58,11 +58,11 @@ def upload(client, page: str, file):
 
 
 def apipost(
-        client,
-        page: str,
-        data: dict,
-        prefix='',
-        expected=http.HTTPStatus.OK,
+    client,
+    page: str,
+    data: dict,
+    prefix='',
+    expected=http.HTTPStatus.OK,
 ):
     prefix = prefix if prefix else default()
     request = prefix + page
@@ -70,10 +70,10 @@ def apipost(
 
 
 def apicall(
-        client,
-        request: str,
-        prefix='',
-        expected=http.HTTPStatus.OK,
+    client,
+    request: str,
+    prefix='',
+    expected=http.HTTPStatus.OK,
 ):
     prefix = prefix if prefix else default()
     cmd = prefix + request
@@ -83,10 +83,10 @@ def apicall(
 
 
 def apidelete(
-        client,
-        request: str,
-        prefix='',
-        expected=http.HTTPStatus.OK,
+    client,
+    request: str,
+    prefix='',
+    expected=http.HTTPStatus.OK,
 ):
     prefix = prefix if prefix else default()
     cmd = prefix + request
@@ -96,12 +96,12 @@ def apidelete(
 
 
 def apiupload(
-        client,
-        page: str,
-        field: str,
-        path: str,
-        prefix='',
-        expected=http.HTTPStatus.OK,
+    client,
+    page: str,
+    field: str,
+    path: str,
+    prefix='',
+    expected=http.HTTPStatus.OK,
 ):
     """Upload file via http post command"""
     prefix = prefix if prefix else default()
@@ -120,11 +120,11 @@ def apiupload(
 
 
 def apiput(
-        client,
-        page: str,
-        data: dict,
-        prefix='',
-        expected=http.HTTPStatus.OK,
+    client,
+    page: str,
+    data: dict,
+    prefix='',
+    expected=http.HTTPStatus.OK,
 ):
     prefix = prefix if prefix else default()
     request = prefix + page
