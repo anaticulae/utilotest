@@ -117,7 +117,11 @@ def assert_run_fail(command: str, cwd: str = None):
 def single_execution() -> bool:
     """Check that test method is executed as single test. You can use
     this method to open the result in a web browser if test is executed
-    with a human in front of the machine eg. as a single test."""
+    with a human in front of the machine eg. as a single test.
+
+    >>> single_execution()
+    False
+    """
     frame = inspect.currentframe()
     caller = [item.function for item in inspect.getouterframes(frame)[0:5]]
     return any([item in sys.argv for item in caller])
