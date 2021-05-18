@@ -61,7 +61,7 @@ from utilatest.select import virtual
 from utilatest.utils import open_webbrowser
 from utilatest.utils import simple
 
-__version__ = '0.5.2'
+__version__ = '0.5.3'
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 PACKAGE = 'utilatest'
