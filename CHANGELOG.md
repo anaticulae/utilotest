@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.6.0
+
+### Feature
+
+* add delete method (8916f2d85182)
+
 ## v0.5.3
 
 ## v0.5.2
