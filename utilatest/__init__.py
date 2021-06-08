@@ -17,6 +17,7 @@ from utilatest.call import apipost
 from utilatest.call import apiput
 from utilatest.call import apiupload
 from utilatest.call import decode
+from utilatest.call import delete
 from utilatest.call import get
 from utilatest.call import post
 from utilatest.call import setup

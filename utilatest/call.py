@@ -52,6 +52,16 @@ def post(
     return decode(response, expected=expected)
 
 
+def delete(
+    client,
+    request: str,
+    expected=http.HTTPStatus.OK,
+):
+    response = client.delete(request, follow_redirects=True)
+    assert response.status_code == expected, f'{request}:{response.status_code}\n{response}'
+    return decode(response, expected=expected)
+
+
 def upload(client, page: str, file):
     result = apiupload(client, page, 'file', file)
     return result
@@ -90,9 +100,7 @@ def apidelete(
 ):
     prefix = prefix if prefix else default()
     cmd = prefix + request
-    response = client.delete(cmd, follow_redirects=True)
-    assert response.status_code == expected, f'{request}:{response.status_code}\n{response}'
-    return decode(response, expected=expected)
+    return delete(client, cmd, expected=expected)
 
 
 def apiupload(
