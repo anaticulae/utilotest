@@ -7,6 +7,7 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
+import subprocess  # nosec
 import warnings
 
 import utila
@@ -38,8 +39,12 @@ def log_raw(content: str):
 
 
 def stderr(capsys) -> str:
+    if isinstance(capsys, subprocess.CompletedProcess):
+        return capsys.stderr
     return capsys.readouterr().err
 
 
 def stdout(capsys) -> str:
+    if isinstance(capsys, subprocess.CompletedProcess):
+        return capsys.stdout
     return capsys.readouterr().out
