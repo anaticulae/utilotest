@@ -9,22 +9,24 @@
 
 import utila
 
+import utilatest
+
+UNINSTALL = 'pip uninstall %s -y'
+INSTALL = 'python setup.py install'
+
 
 def clean_install(root, package):
-    uninstall = 'pip uninstall %s -y' % package
-    install = 'python setup.py install'
-
-    clean_and_run = uninstall + ' && ' + install
+    clean_and_run = UNINSTALL % package + ' && ' + INSTALL
     completed = utila.run(clean_and_run, cwd=root)
-    assert completed.returncode == utila.SUCCESS, completed.stdout + completed.stderr
+    error = utilatest.stdout(completed) + utilatest.stderr(completed)
+    assert completed.returncode == utila.SUCCESS, error
 
 
 def install_and_run(root, package, executable=None):
     """Install and run --help to ensure basic function"""
     executable = executable if executable else package
-    uninstall = 'pip uninstall %s -y' % package
     install = 'python setup.py install && %s --help' % executable
-
-    clean_and_run = uninstall + ' && ' + install
+    clean_and_run = UNINSTALL % package + ' && ' + install
     completed = utila.run(clean_and_run, cwd=root)
-    assert completed.returncode == utila.SUCCESS, completed.stdout + completed.stderr
+    error = utilatest.stdout(completed) + utilatest.stderr(completed)
+    assert completed.returncode == utila.SUCCESS, error
