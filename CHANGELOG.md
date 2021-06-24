@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.7.1
+
+### Feature
+
+* add method to skip not as a decorator (fd5d11271462)
+
 ## v0.7.0
 
 ### Feature
