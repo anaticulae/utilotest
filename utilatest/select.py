@@ -52,7 +52,9 @@ displayed = register_marker('displayed')
 # TODO: SUPPORT holyvalue('rawmaker.features.text.MAX_WIDTH')
 
 
-def requires(resource):
+def requires(resource, folder=None):
     import power  # pylint:disable=import-outside-toplevel
-    exists = os.path.exists(power.link(resource))
-    return pytest.mark.skipif(not exists, reason=f'require {resource}')
+    exists = os.path.exists(power.link(resource, folder=folder))
+    # non generated resources
+    exists |= os.path.exists(resource) and resource not in power.RESOURCES
+    return pytest.mark.skipif(not exists, reason=f'require: {resource}')
