@@ -10,6 +10,7 @@
 import os
 
 import pytest
+import utila
 
 VIRTUAL_ENVKEY = 'VIRTUAL'
 VIRTUAL = VIRTUAL_ENVKEY in os.environ
@@ -53,8 +54,25 @@ displayed = register_marker('displayed')
 
 
 def requires(resource, folder=None):
+    exists = _exists(resource, folder)
+    resource = utila.forward_slash(resource)
+    marker = pytest.mark.skipif(
+        not exists,
+        reason=f'require/generated: {resource}; folder: {folder}',
+    )
+    return marker
+
+
+def fixture_requires(resource, folder=None):
+    if _exists(resource, folder):
+        return
+    resource = utila.forward_slash(resource)
+    pytest.skip(f'require/generated: {resource}; folder: {folder}')
+
+
+def _exists(resource, folder=None):
     import power  # pylint:disable=import-outside-toplevel
     exists = os.path.exists(power.link(resource, folder=folder))
     # non generated resources
     exists |= os.path.exists(resource) and resource not in power.RESOURCES
-    return pytest.mark.skipif(not exists, reason=f'require: {resource}')
+    return exists
