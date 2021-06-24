@@ -2,6 +2,14 @@
 
 Every noteable change is logged here.
 
+## v0.7.0
+
+### Feature
+
+* add option to verify non power-generated path (777ac70da499)
+* add method to skip test if resource does not exists (96390e939f72)
+* support CompletedProcess to stdout/stderr (295eb2b6b0d2)
+
 ## v0.6.0
 
 ### Feature
