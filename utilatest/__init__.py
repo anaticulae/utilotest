@@ -53,6 +53,7 @@ from utilatest.select import longrun
 from utilatest.select import nightly
 from utilatest.select import nonvirtual
 from utilatest.select import register_marker
+from utilatest.select import requires
 from utilatest.select import skip_longrun
 from utilatest.select import skip_nightly
 from utilatest.select import skip_nonvirtual

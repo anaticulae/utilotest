@@ -50,3 +50,9 @@ def register_marker(name: str):
 holyvalue = register_marker('holyvalue')
 displayed = register_marker('displayed')
 # TODO: SUPPORT holyvalue('rawmaker.features.text.MAX_WIDTH')
+
+
+def requires(resource):
+    import power  # pylint:disable=import-outside-toplevel
+    exists = os.path.exists(power.link(resource))
+    return pytest.mark.skipif(not exists, reason=f'require {resource}')
