@@ -55,7 +55,10 @@ displayed = register_marker('displayed')
 
 def requires(resource, folder=None):
     exists = _exists(resource, folder)
-    resource = utila.forward_slash(resource)
+    if isinstance(resource, (list, tuple)):
+        resource = [utila.forward_slash(item) for item in resource]
+    else:
+        resource = utila.forward_slash(resource)
     marker = pytest.mark.skipif(
         not exists,
         reason=f'require/generated: {resource}; folder: {folder}',
@@ -66,11 +69,16 @@ def requires(resource, folder=None):
 def fixture_requires(resource, folder=None):
     if _exists(resource, folder):
         return
-    resource = utila.forward_slash(resource)
+    if isinstance(resource, (list, tuple)):
+        resource = [utila.forward_slash(item) for item in resource]
+    else:
+        resource = utila.forward_slash(resource)
     pytest.skip(f'require/generated: {resource}; folder: {folder}')
 
 
 def _exists(resource, folder=None):
+    if isinstance(resource, (list, tuple)):
+        return all(_exists(item, folder=folder) for item in resource)
     import power  # pylint:disable=import-outside-toplevel
     exists = os.path.exists(power.link(resource, folder=folder))
     # non generated resources
