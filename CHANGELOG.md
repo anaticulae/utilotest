@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.8.1
+
+### Fix
+
+* support testdir.tmpath as input (04d2bf8b7297)
+
 ## v0.8.0
 
 ### Feature
