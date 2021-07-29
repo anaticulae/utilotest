@@ -2,6 +2,16 @@
 
 Every noteable change is logged here.
 
+## v0.8.0
+
+### Feature
+
+* support multiple resources (6baebe7b42c8)
+
+### Fix
+
+* make filecount cwd independent (0322b57e5ac7)
+
 ## v0.7.1
 
 ### Feature
