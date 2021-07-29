@@ -74,10 +74,11 @@ def increased_filecount(
     assert mindiff is None or mindiff >= 0, str(mindiff)
     assert maxdiff is None or maxdiff >= 0, str(maxdiff)
     pattern = '**/*.*' if ext is None else f'**/*.{ext}'
-    with utila.chdir(path):
-        before = list(glob.glob(pattern, recursive=True))
-        yield
-        after = list(glob.glob(pattern, recursive=True))
+    path = utila.forward_slash(path, newline=False)
+    pattern = f'{path}{pattern}'
+    before = list(glob.glob(pattern, recursive=True))
+    yield
+    after = list(glob.glob(pattern, recursive=True))
     mindiff = 1 if mindiff is None else mindiff
     maxdiff = utila.INF if maxdiff is None else maxdiff
     current = len(after) - len(before)
