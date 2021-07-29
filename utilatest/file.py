@@ -74,7 +74,7 @@ def increased_filecount(
     assert mindiff is None or mindiff >= 0, str(mindiff)
     assert maxdiff is None or maxdiff >= 0, str(maxdiff)
     pattern = '**/*.*' if ext is None else f'**/*.{ext}'
-    path = utila.forward_slash(path, newline=False)
+    path = utila.forward_slash(str(path), newline=False)
     pattern = f'{path}{pattern}'
     before = list(glob.glob(pattern, recursive=True))
     yield
