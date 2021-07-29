@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.8.2
+
+### Fix
+
+* enable recursive mode (dca30f899696)
+
 ## v0.8.1
 
 ### Fix
