@@ -70,7 +70,7 @@ def increased_filecount(
     """
     if path is None:
         path = os.getcwd()
-    assert os.path.exists(path), str(path)
+    utila.exists_assert(path)
     assert mindiff is None or mindiff >= 0, str(mindiff)
     assert maxdiff is None or maxdiff >= 0, str(maxdiff)
     pattern = '**/*.*' if ext is None else f'**/*.{ext}'
@@ -83,5 +83,5 @@ def increased_filecount(
     maxdiff = utila.INF if maxdiff is None else maxdiff
     current = len(after) - len(before)
     assert mindiff <= current <= maxdiff, (
-        f'mindiff: {mindiff} <= {len(after)-len(before)} <= maxdiff: {maxdiff}\n'
+        f'mindiff: {mindiff} <= {current} <= maxdiff: {maxdiff}\n'
         f'{before}\n\n{after}')
