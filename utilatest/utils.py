@@ -58,4 +58,5 @@ def binhash(data: bytes) -> int:
 
 
 def assert_bin(data: bytes, expected: int):
-    assert binhash(data) == expected
+    current = binhash(data)
+    assert current == expected, f'{current}=={expected}'
