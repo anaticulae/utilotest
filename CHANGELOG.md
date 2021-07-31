@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.8.3
+
+### Feature
+
+* add method to verify binary data (72cb9c2bbdd6)
+
 ## v0.8.2
 
 ### Fix
