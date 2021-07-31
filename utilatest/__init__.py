@@ -61,6 +61,8 @@ from utilatest.select import skip_nonvirtual
 from utilatest.select import skip_virtual
 from utilatest.select import virtual
 # utils
+from utilatest.utils import assert_bin
+from utilatest.utils import binhash
 from utilatest.utils import open_webbrowser
 from utilatest.utils import simple
 

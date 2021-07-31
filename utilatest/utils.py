@@ -7,6 +7,7 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
+import binascii
 import contextlib
 import os
 import webbrowser
@@ -45,3 +46,16 @@ def simple(item: str, maxlength: int = 25) -> str:
     item = item.translate(SIMPLIFY)
     item = item[-maxlength:]
     return item
+
+
+def binhash(data: bytes) -> int:
+    """\
+    >>> binhash(b'hello')
+    907060870
+    """
+    result = binascii.crc32(data)
+    return result
+
+
+def assert_bin(data: bytes, expected: int):
+    assert binhash(data) == expected
