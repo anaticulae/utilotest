@@ -123,7 +123,7 @@ def single_execution() -> bool:
     False
     """
     frame = inspect.currentframe()
-    caller = [item.function for item in inspect.getouterframes(frame)[0:5]]
+    caller = [item.function for item in inspect.getouterframes(frame)[0:9]]
     return any(item in sys.argv for item in caller)
 
 
