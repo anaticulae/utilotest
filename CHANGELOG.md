@@ -2,6 +2,13 @@
 
 Every noteable change is logged here.
 
+## v0.8.4
+
+### Fix
+
+* increase ast depth to use in more inherited environments (60f19e3bbf75)
+* improve developer feedback (0da7d6d2641e)
+
 ## v0.8.3
 
 ### Feature
