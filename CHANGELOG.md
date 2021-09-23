@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.9.0
+
+### Feature
+
+* move tracer from train project (9344fc095a1c)
+
 ## v0.8.4
 
 ### Fix
