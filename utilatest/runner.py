@@ -63,7 +63,7 @@ def run(
     )
     if expect is True:
         utilatest.assert_success(completed)
-    if expect is False:
+    if expect is False:  # pylint:disable=C2001
         utilatest.assert_failure(completed)
     return completed
 
