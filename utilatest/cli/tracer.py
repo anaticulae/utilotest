@@ -1,0 +1,55 @@
+# =============================================================================
+# C O P Y R I G H T
+# -----------------------------------------------------------------------------
+# Copyright (c) 2021 by Helmut Konrad Fahrendholz. All rights reserved.
+# This file is property of Helmut Konrad Fahrendholz. Any unauthorized copy,
+# use or distribution is an offensive act against international law and may
+# be prosecuted under federal law. Its content is company confidential.
+# =============================================================================
+
+import os
+
+import utila
+
+LOG_FILES = utila.splitlines("""
+done
+failed
+generated.log
+inprogress
+""")
+OUTPUTDIR = '__traceback__'
+
+
+@utila.saveme
+def main():
+    cwd = os.getcwd()
+    utila.log(f'collect: {cwd}')
+    files = utila.file_list(
+        path=cwd,
+        absolute=True,
+    )
+    files = [item for item in files if valid(item)]
+    outdir = os.path.join(cwd, OUTPUTDIR)
+    utila.log(f'write to: {outdir}')
+    os.makedirs(outdir, exist_ok=True)
+    for index, item in enumerate(files):
+        utila.log(item)
+        index = str(index).zfill(2)
+        outpath = os.path.join(outdir, index)
+        utila.file_copy(item, outpath, timestamp=True)
+    return utila.SUCCESS
+
+
+TRACEBACK = 'Traceback (most recent call last):'
+
+
+def valid(path) -> bool:
+    filename = utila.file_name(path).lower()
+    if OUTPUTDIR in path:
+        return False
+    if filename not in LOG_FILES:
+        return False
+    content = utila.file_read(path)
+    if TRACEBACK not in content:
+        return False
+    return True

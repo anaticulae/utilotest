@@ -47,6 +47,12 @@ if __name__ == "__main__":
         ],
         packages=[
             'utilatest',
+            'utilatest.cli',
             'viewvisitor',
         ],
+        entry_points={
+            'console_scripts': [
+                'collect_trace = utilatest.cli.tracer:main',
+            ],
+        },
     )
