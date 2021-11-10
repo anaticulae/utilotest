@@ -44,7 +44,8 @@ TRACEBACK = 'Traceback (most recent call last):'
 
 
 def valid(path) -> bool:
-    filename = utila.file_name(path).lower()
+    # file name with extension
+    filename = os.path.split(path)[1].lower()
     if OUTPUTDIR in path:
         return False
     if filename not in LOG_FILES:
