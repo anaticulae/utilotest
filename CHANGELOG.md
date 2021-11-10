@@ -2,6 +2,16 @@
 
 Every noteable change is logged here.
 
+## v0.10.0
+
+### Feature
+
+* add baseline runner to ease verification step (a2043ce08eb8)
+
+### Fix
+
+* ensure that extension use correctly (62e7293af94e)
+
 ## v0.9.0
 
 ### Feature
