@@ -9,6 +9,9 @@
 
 import os
 
+# baseline
+from utilatest.baseline import BaseLineMixin
+from utilatest.baseline import BaseLiner
 # api calls
 from utilatest.call import API_PREFIX
 from utilatest.call import apicall
