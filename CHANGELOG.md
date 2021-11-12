@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.10.1
+
+### Feature
+
+* add option to use pdf path as source (127e642b749a)
+
 ## v0.10.0
 
 ### Feature
