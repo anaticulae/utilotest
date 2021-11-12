@@ -77,9 +77,11 @@ class BaseLiner(BaseLineMixin):
         archive,
         loader,
         index=None,
+        convert_source: bool = True,
     ):
         super().__init__(
-            cmd=self.tocmd(program, step, pages, source, workdir),
+            cmd=self.tocmd(program, step, pages, source, workdir,
+                           convert_source),
             workdir=workdir,
             index=index if index else utila.file_name(source),
             archive=archive,
@@ -87,9 +89,10 @@ class BaseLiner(BaseLineMixin):
         self.loader = loader
 
     @staticmethod
-    def tocmd(program, step, pages, source, workdir):
+    def tocmd(program, step, pages, source, workdir, convert_source=True):
         import power
-        source = power.link(source) if source else ''  # pylint:disable=E0602
+        if convert_source:
+            source = power.link(source) if source else ''  # pylint:disable=E0602
         pages = f'--pages={pages}' if pages else ''
         source = f'-i={source}' if source else ''
         workdir = f'-o={workdir}' if workdir else ''
