@@ -51,8 +51,6 @@ if __name__ == "__main__":
             'viewvisitor',
         ],
         entry_points={
-            'console_scripts': [
-                'collect_trace = utilatest.cli.tracer:main',
-            ],
+            'console_scripts': ['collect_trace = utilatest.cli.tracer:main',],
         },
     )
