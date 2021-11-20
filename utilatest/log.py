@@ -48,3 +48,13 @@ def stdout(capsys) -> str:
     if isinstance(capsys, subprocess.CompletedProcess):
         return capsys.stdout
     return capsys.readouterr().out
+
+
+def print_return(user_function):
+
+    def decorator(*args, **kwds):
+        result = user_function(*args, **kwds)
+        utila.debug(result)
+        return result
+
+    return decorator
