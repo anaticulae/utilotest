@@ -93,6 +93,7 @@ class BaseLiner(BaseLineMixin):
         import power
         if convert_source:
             source = power.link(source) if source else ''  # pylint:disable=E0602
+        assert not source or utila.exists(source), str(source)
         pages = f'--pages={pages}' if pages else ''
         source = f'-i={source}' if source else ''
         workdir = f'-o={workdir}' if workdir else ''
