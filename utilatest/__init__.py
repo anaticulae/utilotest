@@ -63,6 +63,7 @@ from utilatest.select import skip_longrun
 from utilatest.select import skip_nightly
 from utilatest.select import skip_nonvirtual
 from utilatest.select import skip_virtual
+from utilatest.select import step
 from utilatest.select import virtual
 # utils
 from utilatest.utils import assert_bin

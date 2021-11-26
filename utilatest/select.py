@@ -84,3 +84,19 @@ def _exists(resource, folder=None):
     # non generated resources
     exists |= os.path.exists(resource) and resource not in power.RESOURCES
     return exists
+
+
+def step(source, pages: tuple = None, reason=None, marks=None, ids=None):
+    if ids is None:
+        ids = utila.file_name(source)
+    if reason:
+        if marks:
+            # fail = pytest.mark.xfail(reason=reason)
+            assert 0, 'not implemented yet'
+        else:
+            marks = pytest.mark.xfail(reason=reason)
+    if marks:
+        result = pytest.param(source, pages, marks=marks, id=ids)
+    else:
+        result = pytest.param(source, pages, id=ids)
+    return result
