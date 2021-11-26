@@ -71,7 +71,7 @@ from utilatest.utils import binhash
 from utilatest.utils import open_webbrowser
 from utilatest.utils import simple
 
-__version__ = '0.10.1'
+__version__ = '0.11.0'
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 PACKAGE = 'utilatest'

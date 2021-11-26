@@ -2,6 +2,14 @@
 
 Every noteable change is logged here.
 
+## v0.11.0
+
+### Feature
+
+* add parameter to compress lines of code (ab213a773192)
+* check resource existence (4e1889ea72e3)
+* add print_return decorator to print result (c53c0cefbff4)
+
 ## v0.10.1
 
 ### Feature
