@@ -12,6 +12,8 @@ import os
 import utilatest
 from viewvisitor.fixture import selenium_driver  # pylint:disable=W0611
 
+sdriver = selenium_driver
+
 ROOT = os.path.join(utilatest.ROOT, 'viewvisitor')
 
 FIREFOX_DRIVER = os.path.join(ROOT, 'fuchs/geckodriver.exe')
