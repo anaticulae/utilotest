@@ -21,7 +21,7 @@ NIGHTLY = 'NIGHTLY' in os.environ.keys()
 LONGRUN = 'LONGRUN' in os.environ.keys() or NIGHTLY
 FASTRUN = not LONGRUN or FAST
 
-LONGRUN_REASON = 'test requires too much time'
+LONGRUN_REASON = 'requires too much time'
 VIRTUAL_REASON = 'require virtual environment'
 NONVIRTUAL_REASON = 'require non virtual environment'
 
