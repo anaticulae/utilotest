@@ -7,7 +7,7 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-utila>=2.62.0<3.0.0
-configo>=0.16.3<1.0.0
+utila>=2.63.0<3.0.0
+configo>=0.18.0<1.0.0
 
 pytest>=6.2.4<7.0.0
