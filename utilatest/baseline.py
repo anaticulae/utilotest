@@ -10,6 +10,7 @@
 import contextlib
 import functools
 import os
+import sys
 
 import utila
 
@@ -90,9 +91,7 @@ class BaseLiner(BaseLineMixin):
 
     @staticmethod
     def tocmd(program, step, pages, source, workdir, convert_source=True):
-        import power
-        if convert_source:
-            source = power.link(source) if source else ''  # pylint:disable=E0602
+        source = convert_ifpossible(source, convert=convert_source)
         assert not source or utila.exists(source), str(source)
         pages = f'--pages={pages}' if pages else ''
         source = f'-i={source}' if source else ''
@@ -108,3 +107,17 @@ class BaseLiner(BaseLineMixin):
     def load(self) -> str:
         loaded = self.loader(self.workdir)
         return loaded
+
+
+def convert_ifpossible(source, convert: bool = False):
+    if not source:
+        return ''
+    if not convert:
+        return source
+    try:
+        import power
+    except ModuleNotFoundError:  # pragma: no cover
+        utila.error('require power')
+        sys.exit(utila.FAILURE)
+    source = power.link(source)
+    return source
