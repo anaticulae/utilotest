@@ -2,6 +2,19 @@
 
 Every noteable change is logged here.
 
+## v0.12.0
+
+### Feature
+
+* add option to overwrite source to ease debugging (26b3442dbc5b)
+* verify that power is installed (795e4f3c9d80)
+* add selenium driver shortcut (c0654b7f8be6)
+
+### Documentation
+
+* Happy New Year! (d888cc76974f)
+* fix modules path (6d9cd1df1329)
+
 ## v0.11.0
 
 ### Feature
