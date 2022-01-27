@@ -14,6 +14,8 @@ import sys
 
 import utila
 
+GIT_REPLACE = os.environ.get('DEV_GIT_REPLACE', None)
+
 
 class BaseLineMixin:
 
@@ -27,20 +29,25 @@ class BaseLineMixin:
         self.generate()
         loaded = self.load()
         rawvalue = self.raw(loaded)
-        if rawvalue != self.expected:
+        expected, path = self.expected
+        if rawvalue != expected:
             outpath = os.path.join(self.workdir, 'baseline')
             utila.error('write baseline')
             utila.file_create(outpath, rawvalue)
+            if GIT_REPLACE:
+                # ease debugging due git --diff
+                withnewline = rawvalue.rstrip() + utila.NEWLINE
+                utila.file_replace(path, withnewline)
         if self.expected is None:
             with contextlib.suppress(AttributeError):
                 self.backup(loaded)
                 return
-        elif rawvalue != self.expected:
+        elif rawvalue != expected:
             utila.log('EXPECTED:')
-            utila.log(self.expected)
+            utila.log(expected)
             utila.log('GIVEN:')
             utila.log(rawvalue)
-        assert rawvalue == self.expected
+        assert rawvalue == expected
 
     def generate(self):
         if isinstance(self.cmd, str):
@@ -60,10 +67,10 @@ class BaseLineMixin:
         inpath = os.path.join(self.archive, str(self.index))
         if not os.path.exists(inpath):
             utila.error('empty archive data')
-            return None
+            return None, inpath
         loaded = utila.file_read(inpath)
         result = loaded.strip()
-        return result
+        return result, inpath
 
 
 class BaseLiner(BaseLineMixin):
