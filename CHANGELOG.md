@@ -2,6 +2,13 @@
 
 Every noteable change is logged here.
 
+## v0.12.1
+
+### Fix
+
+* rstrip to support spaces at start of expected document (27acc8ba1013)
+* fix state converter (02019db06338)
+
 ## v0.12.0
 
 ### Feature
