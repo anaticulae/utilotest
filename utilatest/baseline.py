@@ -14,7 +14,7 @@ import sys
 
 import utila
 
-GIT_REPLACE = os.environ.get('DEV_GIT_REPLACE', None)
+GIT_REPLACE = utila.parse_state(os.environ.get('DEV_GIT_REPLACE', None))
 
 
 class BaseLineMixin:
