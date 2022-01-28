@@ -69,7 +69,9 @@ class BaseLineMixin:
             utila.error('empty archive data')
             return None, inpath
         loaded = utila.file_read(inpath)
-        result = loaded.strip()
+        # rstrip to enable spaces as empty content of a expected tabel for
+        # example.
+        result = loaded.rstrip()
         return result, inpath
 
 
