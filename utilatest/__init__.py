@@ -59,10 +59,6 @@ from utilatest.select import nightly
 from utilatest.select import nonvirtual
 from utilatest.select import register_marker
 from utilatest.select import requires
-from utilatest.select import skip_longrun
-from utilatest.select import skip_nightly
-from utilatest.select import skip_nonvirtual
-from utilatest.select import skip_virtual
 from utilatest.select import step
 from utilatest.select import virtual
 # utils
@@ -75,3 +71,8 @@ __version__ = '0.12.1'
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 PACKAGE = 'utilatest'
+
+skip_longrun = longrun
+skip_nightly = nightly
+skip_nonvirtual = nonvirtual
+skip_virtual = virtual

@@ -26,15 +26,10 @@ VIRTUAL_REASON = 'require virtual environment'
 NONVIRTUAL_REASON = 'require non virtual environment'
 
 # pylint: disable=invalid-name
-skip_longrun = pytest.mark.skipif(FASTRUN, reason=LONGRUN_REASON)
-skip_nightly = pytest.mark.skipif(FASTRUN or not NIGHTLY, reason=LONGRUN_REASON)
-skip_nonvirtual = pytest.mark.skipif(NONVIRTUAL, reason=VIRTUAL_REASON)
-skip_virtual = pytest.mark.skipif(VIRTUAL, reason=NONVIRTUAL_REASON)
-
-longrun = skip_longrun
-nightly = skip_nightly
-nonvirtual = skip_nonvirtual
-virtual = skip_virtual
+longrun = pytest.mark.skipif(FASTRUN, reason=LONGRUN_REASON)
+nightly = pytest.mark.skipif(FASTRUN or not NIGHTLY, reason=LONGRUN_REASON)
+nonvirtual = pytest.mark.skipif(NONVIRTUAL, reason=VIRTUAL_REASON)
+virtual = pytest.mark.skipif(VIRTUAL, reason=NONVIRTUAL_REASON)
 
 
 def register_marker(name: str):

@@ -21,7 +21,7 @@ setuptools.setup(
 
 
 @utilatest.skip_nonvirtual
-@utilatest.skip_longrun
+@utilatest.longrun
 def test_clean_install(testdir):
     package = 'dorimifasa'
     testdir.mkdir(package)
@@ -37,7 +37,7 @@ def test_clean_install(testdir):
 
 
 @utilatest.skip_nonvirtual
-@utilatest.skip_longrun
+@utilatest.longrun
 def test_install_and_run(testdir):
     package = 'dorimifasamore'
     testdir.mkdir(package)
