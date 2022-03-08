@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.12.3
+
+### Feature
+
+* add template to create basic test runner (6c3e4bb85a84)
+
 ## v0.12.2
 
 ### Feature
