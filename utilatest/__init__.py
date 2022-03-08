@@ -42,6 +42,7 @@ from utilatest.runner import assert_failure
 from utilatest.runner import assert_run
 from utilatest.runner import assert_run_fail
 from utilatest.runner import assert_success
+from utilatest.runner import create_cli_runner
 from utilatest.runner import run
 from utilatest.runner import run_command
 from utilatest.runner import single_execution

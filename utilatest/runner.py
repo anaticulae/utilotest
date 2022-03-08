@@ -8,6 +8,8 @@
 # =============================================================================
 
 import contextlib
+import functools
+import importlib
 import inspect
 import os
 import subprocess  # nosec
@@ -139,3 +141,24 @@ def assert_failure(process: subprocess.CompletedProcess):
     formated information is logged."""
     assert process, str(process)
     assert process.returncode != utila.SUCCESS, utila.format_completed(process)
+
+
+def create_cli_runner(package) -> '[typing.Callable, typing.Callable]':
+    importlib.import_module(f'{package.__name__}.cli')
+    main: callable = package.cli.main
+    process: str = package.PROCESS
+    # success
+    success = functools.partial(
+        run_command,
+        main=main,
+        process=process,
+        success=True,
+    )
+    # failure
+    failure = functools.partial(
+        run_command,
+        main=main,
+        process=process,
+        success=False,
+    )
+    return success, failure
