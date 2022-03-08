@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.12.2
+
+### Feature
+
+* improve decorator naming (a10c7a69f4e6)
+
 ## v0.12.1
 
 ### Fix
