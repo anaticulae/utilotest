@@ -28,7 +28,7 @@ def run(
     expect: bool = True,
     verbose: bool = False,
 ) -> subprocess.CompletedProcess:
-    """Run external process
+    """Run external process.
 
     Args:
         cmd(str): command to run
@@ -77,7 +77,7 @@ def run_command(
     success: bool,
     monkeypatch,
 ) -> int:
-    """Run `main` with `command`
+    """Run `main` with `cmd`.
 
     Args:
         cmd(str): command to run
@@ -117,9 +117,11 @@ def assert_run_fail(command: str, cwd: str = None):
 
 
 def single_execution() -> bool:
-    """Check that test method is executed as single test. You can use
-    this method to open the result in a web browser if test is executed
-    with a human in front of the machine eg. as a single test.
+    """Check that test method is executed as single test.
+
+    You can use this method to open the result in a web browser if test
+    is executed with a human in front of the machine eg. as a single
+    test.
 
     >>> single_execution()
     False
@@ -130,15 +132,19 @@ def single_execution() -> bool:
 
 
 def assert_success(process: subprocess.CompletedProcess):
-    """Ensure that `process` completed correctly, if not a formated
-    information is logged"""
+    """Ensure that `process` completed correctly.
+
+    If not a formated information is logged
+    """
     assert process, str(process)
     assert process.returncode == utila.SUCCESS, utila.format_completed(process)
 
 
 def assert_failure(process: subprocess.CompletedProcess):
-    """Ensure that `process` fails. If process completed correctly, a
-    formated information is logged."""
+    """Ensure that `process` fails.
+
+    If process completed correctly, a formated information is logged.
+    """
     assert process, str(process)
     assert process.returncode != utila.SUCCESS, utila.format_completed(process)
 
