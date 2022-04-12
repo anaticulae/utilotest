@@ -97,6 +97,7 @@ class BaseLiner(BaseLineMixin):
             archive=archive,
         )
         self.loader = loader
+        self.source = source
 
     @staticmethod
     def tocmd(program, step, pages, source, workdir, convert_source=True):
