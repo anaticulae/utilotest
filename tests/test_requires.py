@@ -30,7 +30,7 @@ def test_requires_single(testdir):
     testcode = TESTCODE % root
     utila.file_create(os.path.join(root, 'test_master.py'), testcode)
     completed = utila.run(f'pytest {root}')
-    assert '1 skipped in' in completed.stdout
+    assert '==== 1 skipped' in completed.stdout
 
 
 def test_requires_noskip(testdir):
