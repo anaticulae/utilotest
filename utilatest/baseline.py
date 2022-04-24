@@ -19,11 +19,19 @@ GIT_REPLACE = utila.parse_state(os.environ.get('DEV_GIT_REPLACE', None))
 
 class BaseLineMixin:
 
-    def __init__(self, cmd, workdir, index, archive):
+    def __init__(
+        self,
+        cmd,
+        workdir,
+        index,
+        archive,
+        onfailure: callable = None,
+    ):
         self.cmd = cmd
         self.workdir = workdir
         self.index = index
         self.archive = archive
+        self.onfailure = onfailure
 
     def evaluate(self):
         self.generate()
@@ -38,6 +46,8 @@ class BaseLineMixin:
                 # ease debugging due git --diff
                 withnewline = rawvalue.rstrip() + utila.NEWLINE
                 utila.file_replace(path, withnewline)
+            if self.onfailure:
+                self.onfailure(loaded)
         if self.expected is None:
             with contextlib.suppress(AttributeError):
                 self.backup(loaded)
@@ -77,7 +87,7 @@ class BaseLineMixin:
 
 class BaseLiner(BaseLineMixin):
 
-    def __init__(
+    def __init__(  # pylint:disable=R0913
         self,
         program,
         step,
@@ -88,13 +98,19 @@ class BaseLiner(BaseLineMixin):
         loader,
         index=None,
         convert_source: bool = True,
+        onfailure: callable = None,
     ):
+        """\
+        onfailure(callable): run with given data if data differes from
+                             expected
+        """
         super().__init__(
             cmd=self.tocmd(program, step, pages, source, workdir,
                            convert_source),
             workdir=workdir,
             index=index if index else utila.file_name(source),
             archive=archive,
+            onfailure=onfailure,
         )
         self.loader = loader
         self.source = source
