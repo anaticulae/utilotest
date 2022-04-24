@@ -2,6 +2,13 @@
 
 Every noteable change is logged here.
 
+## v0.12.4
+
+### Feature
+
+* add callable to run on failure (ef34f4ad2396)
+* store source for later processing (c38a7840f60c)
+
 ## v0.12.3
 
 ### Feature
