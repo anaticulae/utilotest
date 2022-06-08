@@ -10,6 +10,7 @@
 import binascii
 import contextlib
 import os
+import re
 import webbrowser
 
 import utila
@@ -60,3 +61,17 @@ def binhash(data: bytes) -> int:
 def assert_bin(data: bytes, expected: int):
     current = binhash(data)
     assert current == expected, f'{current}=={expected}'
+
+
+def testid() -> str:
+    """\
+    >>> testid()
+    'utilatest.utils.testid'
+    """
+    # TODO: DIRTY
+    test = os.environ['PYTEST_CURRENT_TEST']
+    try:
+        result = re.search(r'\[(.+)\]', test)[1]
+    except TypeError:
+        result = re.search(r'\:\:(.+)[ ]', test)[1]
+    return result

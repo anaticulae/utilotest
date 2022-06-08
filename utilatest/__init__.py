@@ -67,6 +67,7 @@ from utilatest.utils import assert_bin
 from utilatest.utils import binhash
 from utilatest.utils import open_webbrowser
 from utilatest.utils import simple
+from utilatest.utils import testid
 
 __version__ = '0.12.4'
 
