@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.13.0
+
+### Feature
+
+* add method to determine current test id (778584c285db)
+
 ## v0.12.4
 
 ### Feature
