@@ -33,8 +33,7 @@ def log_raw(content: str):
         asssert len(abc) > 100, utila.log_raw(abc)
     """
     warnings.warn('use utila.log_raw, will removed with utilatest 1.0.0')
-    content = utila.string.fix_encoding(content)
-    print(content, flush=True)
+    utila.log_raw(content)
 
 
 def stderr(capsys) -> str:
