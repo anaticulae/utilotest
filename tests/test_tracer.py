@@ -12,10 +12,20 @@ import utila
 
 import utilatest.cli.tracer
 
+TRACEBACK = """
+[ERROR] Traceback (most recent call last):
+  File "C:/tmp/baw/venv/queuemo/lib/site-packages/utila/feature/processor.py", line 238, in run_hook_safely
+    result = utila.pass_required(caller=hook.work, pages=pages, **argv)
+  File "C:/tmp/baw/venv/queuemo/lib/site-packages/utila/typechecker.py", line 309, in pass_required
+    result = caller(**data)
+  File "C:/tmp/baw/venv/queuemo/lib/site-packages/groupme/feature/footer.py", line 61, in work
+    result = extract_footerheader(
+"""
+
 
 def test_tracer(testdir):
     # add file with traceback message
-    utila.file_create('generated.log', utilatest.cli.tracer.TRACEBACK)
+    utila.file_create('generated.log', TRACEBACK)
     # run tracer
     with pytest.raises(SystemExit):
         utilatest.cli.tracer.main()

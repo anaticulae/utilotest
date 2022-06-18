@@ -28,7 +28,7 @@ def main():
         path=cwd,
         absolute=True,
     )
-    files = [item for item in files if valid(item)]
+    files = [item for item in files if with_error(item)]
     outdir = os.path.join(cwd, OUTPUTDIR)
     utila.log(f'write to: {outdir}')
     os.makedirs(outdir, exist_ok=True)
@@ -40,10 +40,15 @@ def main():
     return utila.SUCCESS
 
 
-TRACEBACK = 'Traceback (most recent call last):'
+TRACEBACK = utila.compiles(r"""
+    (
+        Traceback[ ]\(most[ ]recent[ ]call[ ]last\)\:|
+        error\:[ ]unrecognized[ ]arguments\:
+    )
+""")
 
 
-def valid(path) -> bool:
+def with_error(path) -> bool:
     # file name with extension
     filename = os.path.split(path)[1].lower()
     if OUTPUTDIR in path:
@@ -51,6 +56,7 @@ def valid(path) -> bool:
     if filename not in LOG_FILES:
         return False
     content = utila.file_read(path)
-    if TRACEBACK not in content:
-        return False
-    return True
+    if TRACEBACK.search(content):
+        # detect error inside log file
+        return True
+    return False
