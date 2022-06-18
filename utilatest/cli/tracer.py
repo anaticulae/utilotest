@@ -50,7 +50,7 @@ TRACEBACK = utila.compiles(r"""
 
 def with_error(path) -> bool:
     # file name with extension
-    filename = os.path.split(path)[1].lower()
+    filename = utila.file_name(path, ext=True).lower()
     if OUTPUTDIR in path:
         return False
     if filename not in LOG_FILES:
