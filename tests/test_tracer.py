@@ -23,9 +23,10 @@ TRACEBACK = """
 """
 
 
-def test_tracer(testdir):
+@pytest.mark.parametrize('error', (pytest.param(TRACEBACK, id='python error'),))
+def test_tracer(error, testdir):
     # add file with traceback message
-    utila.file_create('generated.log', TRACEBACK)
+    utila.file_create('generated.log', error)
     # run tracer
     with pytest.raises(SystemExit):
         utilatest.cli.tracer.main()
