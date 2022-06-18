@@ -22,8 +22,16 @@ TRACEBACK = """
     result = extract_footerheader(
 """
 
+INVALID_CLI = """
+usage: bibliography [-h] [-i INPUT] [-o OUTPUT] [-j JOB] [-V]
+bibliography: error: unrecognized arguments: --bibs
+"""
 
-@pytest.mark.parametrize('error', (pytest.param(TRACEBACK, id='python error'),))
+
+@pytest.mark.parametrize('error', (
+    pytest.param(TRACEBACK, id='python error'),
+    pytest.param(INVALID_CLI, id='invalid cli'),
+))
 def test_tracer(error, testdir):
     # add file with traceback message
     utila.file_create('generated.log', error)
