@@ -13,6 +13,7 @@ import os
 import re
 import webbrowser
 
+import pytest
 import utila
 
 import utilatest
@@ -74,4 +75,14 @@ def testid() -> str:
         result = re.search(r'\[(.+)\]', test)[1]
     except TypeError:
         result = re.search(r'\:\:(.+)[ ]', test)[1]
+    return result
+
+
+def test_resources(files):
+    """Remove `pages` from resource definition."""
+    result = []
+    for item in files:
+        if isinstance(item, tuple):
+            item = item[0]
+        result.append(pytest.param(item, id=utila.file_name(item)))
     return result
