@@ -2,6 +2,14 @@
 
 Every noteable change is logged here.
 
+## v0.14.0
+
+### Feature
+
+* skip resource if not generated (39bd01ce7f63)
+* add method to select test resources (ce86e76df165)
+* detect invalid cli invocation (1a88f6276309)
+
 ## v0.13.0
 
 ### Feature
