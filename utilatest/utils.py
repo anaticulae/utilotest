@@ -78,11 +78,25 @@ def testid() -> str:
     return result
 
 
-def test_resources(files):
-    """Remove `pages` from resource definition."""
+def test_resources(resources):
+    """Remove `pages` from resource definition.
+
+    >>> import power;import utilatest;power.setup(utilatest.ROOT);
+    >>> test_resources([power.BACHELOR090_PDF, (power.MASTER116_PDF, ':')])
+    [ParameterSet(values=(...bachelor090.pdf',), marks=(...missing:...master116.pdf',),...id='master116')]
+    """
+    import power
+    unique = [item if isinstance(item, str) else item[0] for item in resources]
+    assert len(unique) == len(set(unique)), 'duplicated resources'
     result = []
-    for item in files:
-        if isinstance(item, tuple):
-            item = item[0]
-        result.append(pytest.param(item, id=utila.file_name(item)))
+    for item in unique:
+        generated = power.link(item)
+        skip = not utila.exists(generated)
+        testname = utila.file_name(item)
+        result.append(
+            pytest.param(
+                item,
+                id=testname,
+                marks=pytest.mark.skipif(skip, reason=f'missing: {generated}'),
+            ))
     return result
