@@ -25,17 +25,17 @@ def test_master():
 """
 
 
-def test_requires_single(testdir):
-    root = utila.forward_slash(str(testdir.tmpdir))
+def test_requires_singletd(td):
+    root = utila.forward_slash(str(td.tmpdir))
     testcode = TESTCODE % root
     utila.file_create(os.path.join(root, 'test_master.py'), testcode)
     completed = utila.run(f'pytest {root}')
     assert '==== 1 skipped' in completed.stdout
 
 
-def test_requires_noskip(testdir):
-    root = utila.forward_slash(str(testdir.tmpdir.join(utila.tmpname())))
-    testdir.mkdir(root)
+def test_requires_noskip(td):
+    root = utila.forward_slash(str(td.tmpdir.join(utila.tmpname())))
+    td.mkdir(root)
     testcode = TESTCODE % root
     os.makedirs(power.link(power.DOCU007_PDF, project=root))
     utila.file_create(os.path.join(root, 'test_master.py'), testcode)
@@ -51,10 +51,10 @@ def test_stacked():
 """
 
 
-def test_requires_stacked_resource(testdir):
+def test_requires_stacked_resource(td):
     """Require more than one generated path to run test."""
-    root = utila.forward_slash(str(testdir.tmpdir.join(utila.tmpname())))
-    testdir.mkdir(root)
+    root = utila.forward_slash(str(td.tmpdir.join(utila.tmpname())))
+    td.mkdir(root)
     testcode = TESTCODE % root + STACK
     utila.file_create(os.path.join(root, 'test_master.py'), testcode)
     os.makedirs(power.link(power.DOCU007_PDF, project=root))

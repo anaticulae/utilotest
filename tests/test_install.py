@@ -22,32 +22,32 @@ setuptools.setup(
 
 @utilatest.nonvirtual
 @utilatest.longrun
-def test_clean_install(testdir):
+def test_clean_install(td):
     package = 'dorimifasa'
-    testdir.mkdir(package)
+    td.mkdir(package)
     utila.file_create(
-        testdir.tmpdir.join('setup.py'),
+        td.tmpdir.join('setup.py'),
         PACKAGE % (package, package),
     )
     utila.run('python setup.py build')
     utilatest.clean_install(
-        testdir.tmpdir,
+        td.tmpdir,
         'dorimifasa',
     )
 
 
 @utilatest.nonvirtual
 @utilatest.longrun
-def test_install_and_run(testdir):
+def test_install_and_run(td):
     package = 'dorimifasamore'
-    testdir.mkdir(package)
+    td.mkdir(package)
     utila.file_create(
-        testdir.tmpdir.join('setup.py'),
+        td.tmpdir.join('setup.py'),
         PACKAGE % (package, package),
     )
     utila.run('python setup.py build')
     utilatest.install_and_run(
-        root=testdir.tmpdir,
+        root=td.tmpdir,
         package=package,
         executable='power',  # not the installed one
     )

@@ -28,14 +28,14 @@ class Simple(utilatest.BaseLiner):
         )
 
 
-def test_baseline_mixin_valid(testdir):
-    testdir.mkdir('archive')
+def test_baseline_mixin_valid(td):
+    td.mkdir('archive')
     utila.run('power -h >> archive/message')
     Simple().evaluate()
 
 
-def test_baseline_mixin_invalid(testdir):
-    testdir.mkdir('archive')
+def test_baseline_mixin_invalid(td):
+    td.mkdir('archive')
     utila.run('echo "invalid comparison" >> archive/message')
     with pytest.raises(AssertionError):
         Simple().evaluate()

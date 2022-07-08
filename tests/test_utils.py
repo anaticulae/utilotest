@@ -7,7 +7,6 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import os
 import webbrowser
 
 import utila
@@ -15,10 +14,9 @@ import utila
 import utilatest
 
 
-def test_open_webbrowser(testdir, monkeypatch):
+def test_open_webbrowser(td, mp):
     # NOTE: don't know if that is a good test
-    root = str(testdir)
-    path = os.path.join(root, 'index.html')
+    path = utila.join(td.tmpdir, 'index.html')
     utila.file_create(path, 'Hello World')
 
     called = False
@@ -27,7 +25,7 @@ def test_open_webbrowser(testdir, monkeypatch):
         nonlocal called
         called = True
 
-    with monkeypatch.context() as context:
+    with mp.context() as context:
         context.setattr(utilatest, 'single_execution', lambda: True)
         context.setattr(webbrowser, 'open', open_url)
         with utilatest.open_webbrowser(path):
