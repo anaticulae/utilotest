@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.15.0
+
+### Feature
+
+* add monkeypatch and testdir shortcuts (b8ad37a3ef78)
+
 ## v0.14.0
 
 ### Feature
