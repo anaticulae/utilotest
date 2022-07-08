@@ -62,6 +62,9 @@ from utilatest.select import register_marker
 from utilatest.select import requires
 from utilatest.select import step
 from utilatest.select import virtual
+# shortcuts
+from utilatest.shortcuts import mp
+from utilatest.shortcuts import td
 # utils
 from utilatest.utils import assert_bin
 from utilatest.utils import binhash

@@ -1,15 +1,20 @@
 # =============================================================================
 # C O P Y R I G H T
 # -----------------------------------------------------------------------------
-# Copyright (c) 2020-2022 by Helmut Konrad Fahrendholz. All rights reserved.
+# Copyright (c) 2022 by Helmut Konrad Fahrendholz. All rights reserved.
 # This file is property of Helmut Konrad Fahrendholz. Any unauthorized copy,
 # use or distribution is an offensive act against international law and may
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-# TODO: AUTOMATE THIS
-from utilatest import mp  # pylint:disable=W0611
-from utilatest import td  # pylint:disable=W0611
-from viewvisitor.fixture import selenium_driver  # pylint:disable=W0611
+import pytest
 
-pytest_plugins = ['pytester', 'xdist', 'localserver']  # pylint: disable=invalid-name
+
+@pytest.fixture
+def mp(monkeypatch):
+    return monkeypatch
+
+
+@pytest.fixture
+def td(testdir):
+    return testdir
