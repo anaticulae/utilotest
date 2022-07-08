@@ -7,6 +7,8 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
+import threading
+
 import utila
 
 import utilatest
@@ -20,34 +22,38 @@ setuptools.setup(
 """
 
 
-@utilatest.nonvirtual
-@utilatest.longrun
-def test_clean_install(td):
-    package = 'dorimifasa'
-    td.mkdir(package)
-    utila.file_create(
-        td.tmpdir.join('setup.py'),
-        PACKAGE % (package, package),
-    )
-    utila.run('python setup.py build')
-    utilatest.clean_install(
-        td.tmpdir,
-        'dorimifasa',
-    )
+class TestClass:
 
+    LOCK = threading.Lock()
 
-@utilatest.nonvirtual
-@utilatest.longrun
-def test_install_and_run(td):
-    package = 'dorimifasamore'
-    td.mkdir(package)
-    utila.file_create(
-        td.tmpdir.join('setup.py'),
-        PACKAGE % (package, package),
-    )
-    utila.run('python setup.py build')
-    utilatest.install_and_run(
-        root=td.tmpdir,
-        package=package,
-        executable='power',  # not the installed one
-    )
+    @utilatest.nonvirtual
+    @utilatest.longrun
+    def test_clean_install(self, td):  # pylint:disable=R0201
+        with TestClass.LOCK:
+            package = 'dorimifasa'
+            td.mkdir(package)
+            utila.file_create(
+                td.tmpdir.join('setup.py'),
+                PACKAGE % (package, package),
+            )
+            utila.run('python setup.py build')
+            utilatest.clean_install(
+                td.tmpdir,
+                'dorimifasa',
+            )
+        # @utilatest.nonvirtual
+        # @utilatest.longrun
+        # def test_install_and_run(self, td):  # pylint:disable=R0201
+        with TestClass.LOCK:
+            package = 'dorimifasamore'
+            # td.mkdir(package)
+            # utila.file_create(
+            #     td.tmpdir.join('setup.py'),
+            #     PACKAGE % (package, package),
+            # )
+            utila.run('python setup.py build')
+            utilatest.install_and_run(
+                root=td.tmpdir,
+                package=package,
+                executable='power',  # not the installed one
+            )
