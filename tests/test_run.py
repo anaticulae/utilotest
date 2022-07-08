@@ -26,7 +26,7 @@ def test_run(tmpdir):
         assert result.returncode == utila.FAILURE
 
 
-def test_test_run_command(monkeypatch):
+def test_run_command(monkeypatch):
 
     def main():
         # example runnable
@@ -35,23 +35,23 @@ def test_test_run_command(monkeypatch):
     utilatest.run_command('--number 10', 'main', main, True, monkeypatch)
 
 
-def test_test_assert_success():
+def test_assert_success():
     completed = utilatest.run('python --help')
     utilatest.assert_success(completed)
 
 
-def test_test_assert_success_failed():
+def test_assert_success_failed():
     completed = utilatest.run('python --helpsambadamba', expect=None)
     with pytest.raises(AssertionError):
         utilatest.assert_success(completed)
 
 
-def test_test_assert_failure():
+def test_assert_failure():
     completed = utilatest.run('python --helpsambadamba', expect=None)
     utilatest.assert_failure(completed)
 
 
-def test_test_assert_failure_failed():
+def test_assert_failure_failed():
     completed = utilatest.run('python --help')
     with pytest.raises(AssertionError):
         utilatest.assert_failure(completed)

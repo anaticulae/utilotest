@@ -13,7 +13,7 @@ import utila
 import utilatest
 
 
-def test_test_log_raw(capsys):
+def test_log_raw(capsys):
     content = 'Hello\nHello\nHello'
 
     with pytest.raises(AssertionError):

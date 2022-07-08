@@ -13,23 +13,23 @@ import utila
 import utilatest
 
 
-def test_test_increased_filecount(td):
+def test_increased_filecount(td):
     with utilatest.increased_filecount(td.tmpdir):
         utila.file_create('test.txt')
 
 
-def test_test_increased_filecount_with_number(td):
+def test_increased_filecount_with_number(td):
     with utilatest.increased_filecount(td.tmpdir, mindiff=1, maxdiff=1):
         utila.file_create('test.txt')
 
 
-def test_test_increased_filecount_with_ext(td):
+def test_increased_filecount_with_ext(td):
     with pytest.raises(AssertionError):
         with utilatest.increased_filecount(td.tmpdir, ext='*.pdf'):
             utila.file_create('test_abc.txt')
 
 
-def test_test_increased_filecount_to_few_created(td):
+def test_increased_filecount_to_few_created(td):
     with pytest.raises(AssertionError):
         with utilatest.increased_filecount(td.tmpdir):
             pass
