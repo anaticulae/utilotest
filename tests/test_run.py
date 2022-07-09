@@ -26,13 +26,13 @@ def test_run(tmpdir):
         assert result.returncode == utila.FAILURE
 
 
-def test_run_command(mp):
+def test_run_cov(mp):
 
     def main():
         # example runnable
         sys.exit(utila.SUCCESS)
 
-    utilatest.run_command('--number 10', 'main', main, True, mp)
+    utilatest.run_cov('--number 10', 'main', main, True, mp)
 
 
 def test_assert_success():

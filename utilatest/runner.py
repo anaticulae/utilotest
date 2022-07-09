@@ -70,7 +70,7 @@ def run(
     return completed
 
 
-def run_command(
+def run_cov(
     cmd: str,
     process: str,
     main: callable,
@@ -155,14 +155,14 @@ def create_cli_runner(package) -> '[typing.Callable, typing.Callable]':
     process: str = package.PROCESS
     # success
     success = functools.partial(
-        run_command,
+        run_cov,
         main=main,
         process=process,
         success=True,
     )
     # failure
     failure = functools.partial(
-        run_command,
+        run_cov,
         main=main,
         process=process,
         success=False,

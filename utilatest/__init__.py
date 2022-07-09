@@ -44,7 +44,7 @@ from utilatest.runner import assert_run_fail
 from utilatest.runner import assert_success
 from utilatest.runner import create_cli_runner
 from utilatest.runner import run
-from utilatest.runner import run_command
+from utilatest.runner import run_cov
 from utilatest.runner import single_execution
 # select
 from utilatest.select import FASTRUN
@@ -82,4 +82,5 @@ skip_longrun = longrun
 skip_nightly = nightly
 skip_nonvirtual = nonvirtual
 skip_virtual = virtual
+run_command = run_cov
 # TODO: REMOVE log_raw with next increment
