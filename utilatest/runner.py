@@ -70,12 +70,13 @@ def run(
     return completed
 
 
+@utila.rename(monkeypatch='mp')
 def run_cov(
     cmd: str,
     process: str,
     main: callable,
     success: bool,
-    monkeypatch,
+    mp,
 ) -> int:
     """Run `main` with `cmd`.
 
@@ -84,15 +85,14 @@ def run_cov(
         process(str): name of executed tool
         main(callable): method to run
         success(bool): expectation that process succeeds or fails
-        monkeypatch(fixture): pytest patch feature
+        mp(fixture): pytest patch/monkeypatch feature
     Returns:
         Return code of completed process.
     """
     with contextlib.suppress(AttributeError):
         cmd = cmd.split()
     assert callable(main), str(main)
-
-    with monkeypatch.context() as context:
+    with mp.context() as context:
         # process is removed as first argument
         context.setattr(sys, 'argv', [process] + cmd)
         with pytest.raises(SystemExit) as result:
