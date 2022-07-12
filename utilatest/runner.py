@@ -46,13 +46,11 @@ def run(
     assert os.path.exists(cwd)
     msg = f'cwd {cwd} is not a valid directory'
     assert os.path.isdir(cwd), msg
-
     env = os.environ if env is None else env
-
     if verbose:
         utila.log(f'cd {cwd}')
         utila.log(cmd)
-
+    # run process
     completed = subprocess.run(  # nosec, pylint:disable=subprocess-run-check
         cmd,
         cwd=cwd,
