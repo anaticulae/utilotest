@@ -7,7 +7,6 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import os
 import sys
 
 import configo
@@ -23,10 +22,7 @@ def selenium_driver():
     if viewvisitor.FIREFOX_BINARY is None:
         utila.error('DEFINE `FIREFOX_BINARY`')
         sys.exit(utila.FAILURE)
-    base = os.path.split(viewvisitor.FIREFOX_BINARY)[0]
-    # TODO: ADD ENV_PATH_APPEND METHOD
-    path = f'{configo.env("PATH")};{base}'
-    configo.env_set('PATH', path)
+    add_firefox_path()
     driver = selenium.webdriver.Firefox(
         firefox_binary=viewvisitor.FIREFOX_BINARY,
         executable_path=viewvisitor.FIREFOX_DRIVER,
@@ -34,3 +30,9 @@ def selenium_driver():
     yield driver
     # Teardown
     driver.quit()
+
+
+def add_firefox_path():
+    utila.exists_assert(viewvisitor.FIREFOX_BINARY)
+    base = utila.path_parent(viewvisitor.FIREFOX_BINARY)
+    configo.env_path_append(base)
