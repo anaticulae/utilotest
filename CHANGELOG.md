@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.15.3
+
+### Feature
+
+* add None option to skip check (b06fa1842980)
+
 ## v0.15.2
 
 ## v0.15.1
