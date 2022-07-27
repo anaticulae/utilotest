@@ -10,4 +10,4 @@
 selenium==3.141.0
 
 pytest_localserver==0.5.0
-power==2.10.1
+power==2.11.0
