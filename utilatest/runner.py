@@ -82,7 +82,8 @@ def run_cov(
         cmd(str): command to run
         process(str): name of executed tool
         main(callable): method to run
-        success(bool): expectation that process succeeds or fails
+        success(bool): expectation that process succeeds or fails,
+                       use None to skip check
         mp(fixture): pytest patch/monkeypatch feature
     Returns:
         Return code of completed process.
@@ -96,7 +97,7 @@ def run_cov(
         with pytest.raises(SystemExit) as result:
             main()
     code = utila.returncode(result)
-    assert (code == utila.SUCCESS) == success, str(result)
+    assert (code == utila.SUCCESS) == success or success is None, str(result)
     return code
 
 
