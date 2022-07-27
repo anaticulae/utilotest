@@ -32,7 +32,13 @@ def test_run_cov(mp):
         # example runnable
         sys.exit(utila.SUCCESS)
 
-    utilatest.run_cov('--number 10', 'main', main, True, mp)
+    utilatest.run_cov(
+        '--number 10',
+        'main',
+        main,
+        expect=True,
+        mp=mp,
+    )
 
 
 def test_assert_success():

@@ -68,12 +68,12 @@ def run(
     return completed
 
 
-@utila.rename(monkeypatch='mp')
+@utila.rename(monkeypatch='mp', success='expect')
 def run_cov(
     cmd: str,
     process: str,
     main: callable,
-    success: bool,
+    expect: bool,
     mp,
 ) -> int:
     """Run `main` with `cmd`.
@@ -82,7 +82,7 @@ def run_cov(
         cmd(str): command to run
         process(str): name of executed tool
         main(callable): method to run
-        success(bool): expectation that process succeeds or fails,
+        expect(bool): expectation that process succeeds or fails,
                        use None to skip check
         mp(fixture): pytest patch/monkeypatch feature
     Returns:
@@ -97,7 +97,7 @@ def run_cov(
         with pytest.raises(SystemExit) as result:
             main()
     code = utila.returncode(result)
-    assert (code == utila.SUCCESS) == success or success is None, str(result)
+    assert (code == utila.SUCCESS) == expect or expect is None, str(result)
     return code
 
 
