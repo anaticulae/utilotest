@@ -157,13 +157,13 @@ def create_cli_runner(package) -> '[typing.Callable, typing.Callable]':
         run_cov,
         main=main,
         process=process,
-        success=True,
+        expect=True,
     )
     # failure
     failure = functools.partial(
         run_cov,
         main=main,
         process=process,
-        success=False,
+        expect=False,
     )
     return success, failure
