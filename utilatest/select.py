@@ -30,6 +30,10 @@ longrun = pytest.mark.skipif(FASTRUN, reason=LONGRUN_REASON)
 nightly = pytest.mark.skipif(FASTRUN or not NIGHTLY, reason=LONGRUN_REASON)
 nonvirtual = pytest.mark.skipif(NONVIRTUAL, reason=VIRTUAL_REASON)
 virtual = pytest.mark.skipif(VIRTUAL, reason=NONVIRTUAL_REASON)
+hasgit = pytest.mark.skipif(
+    utila.run('git help', expect=None).returncode,
+    reason='require git',
+)
 
 
 def register_marker(name: str):
