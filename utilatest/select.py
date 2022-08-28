@@ -34,6 +34,10 @@ hasgit = pytest.mark.skipif(
     utila.run('git help', expect=None).returncode,
     reason='require git',
 )
+hasbaw = pytest.mark.skipif(
+    utila.run('baw --help', expect=None).returncode,
+    reason='require baw',
+)
 
 
 def register_marker(name: str):

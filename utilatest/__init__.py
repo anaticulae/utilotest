@@ -54,6 +54,7 @@ from utilatest.select import NONVIRTUAL
 from utilatest.select import VIRTUAL
 from utilatest.select import displayed
 from utilatest.select import fixture_requires
+from utilatest.select import hasbaw
 from utilatest.select import hasgit
 from utilatest.select import holyvalue
 from utilatest.select import longrun
