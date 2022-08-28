@@ -2,6 +2,13 @@
 
 Every noteable change is logged here.
 
+## v0.16.0
+
+### Feature
+
+* add marker to skip test if baw is not installed (ea6fe0e42040)
+* add selector to skip tests if git is not installed (9953f708390a)
+
 ## v0.15.4
 
 ## v0.15.3
