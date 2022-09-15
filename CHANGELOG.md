@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.17.0
+
+### Fix
+
+* skip view test on linux (14b3bd1971c1)
+
 ## v0.16.0
 
 ### Feature

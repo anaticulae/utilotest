@@ -75,7 +75,7 @@ from utilatest.utils import simple
 from utilatest.utils import test_resources
 from utilatest.utils import testid
 
-__version__ = '0.16.0'
+__version__ = '0.17.0'
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 PACKAGE = 'utilatest'
