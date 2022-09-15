@@ -16,14 +16,14 @@ import utilatest
 
 
 def test_run(tmpdir):
-    completed = utilatest.run('dir', tmpdir)
+    completed = utilatest.run('ls', tmpdir)
     assert completed.returncode == utila.SUCCESS
 
-    with utilatest.assert_run('dir', tmpdir) as result:
+    with utilatest.assert_run('ls', tmpdir) as result:
         assert result.returncode == utila.SUCCESS
 
     with utilatest.assert_run_fail('this is not a command', tmpdir) as result:
-        assert result.returncode == utila.FAILURE
+        assert result.returncode >= utila.FAILURE
 
 
 def test_run_cov(mp):
