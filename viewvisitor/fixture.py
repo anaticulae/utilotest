@@ -16,9 +16,13 @@ import utila
 
 import viewvisitor
 
+linux = not sys.platform.startswith("win")
+
 
 @pytest.fixture(scope='session')
 def selenium_driver():
+    if linux:
+        pytest.skip('install selenium on linux.')
     if viewvisitor.FIREFOX_BINARY is None:
         utila.error('DEFINE `FIREFOX_BINARY`')
         sys.exit(utila.FAILURE)
