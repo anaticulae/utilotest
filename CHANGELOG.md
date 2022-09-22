@@ -2,6 +2,13 @@
 
 Every noteable change is logged here.
 
+## 0.18.0 auto generated release
+
+### Feature
+
+* ensure that geckodriver is in path (cfa4b2ef010a)
+* add selector to select different platforms (f314fa24c05c)
+
 ## v0.17.0
 
 ### Fix
@@ -267,4 +274,3 @@ Every noteable change is logged here.
 * move test features from utila package (f94c51defd72)
 
 ## v0.0.0 Initial release
-
