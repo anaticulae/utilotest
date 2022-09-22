@@ -10,6 +10,7 @@
 import utilatest
 
 
+@utilatest.win
 @utilatest.longrun
 @utilatest.displayed
 def test_selenium_driver(selenium_driver, httpserver):
