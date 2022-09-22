@@ -8,6 +8,7 @@
 #==============================================================================
 
 import os
+import sys
 
 import pytest
 import utila
@@ -25,6 +26,9 @@ LONGRUN_REASON = 'requires too much time'
 VIRTUAL_REASON = 'require virtual environment'
 NONVIRTUAL_REASON = 'require non virtual environment'
 
+WIN = 'win' in sys.platform
+LIN = not WIN
+
 # pylint: disable=invalid-name
 longrun = pytest.mark.skipif(FASTRUN, reason=LONGRUN_REASON)
 nightly = pytest.mark.skipif(FASTRUN or not NIGHTLY, reason=LONGRUN_REASON)
@@ -38,6 +42,11 @@ hasbaw = pytest.mark.skipif(
     utila.run('baw --help', expect=None).returncode,
     reason='require baw',
 )
+
+linux = pytest.mark.skipif(not LIN, reason='linux only')
+win = pytest.mark.skipif(not WIN, reason='windows only')
+no_win = pytest.mark.skipif(WIN, reason='no windows')
+no_linux = pytest.mark.skipif(LIN, reason='no linux')
 
 
 def register_marker(name: str):

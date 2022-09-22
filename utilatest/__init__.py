@@ -57,13 +57,17 @@ from utilatest.select import fixture_requires
 from utilatest.select import hasbaw
 from utilatest.select import hasgit
 from utilatest.select import holyvalue
+from utilatest.select import linux
 from utilatest.select import longrun
 from utilatest.select import nightly
+from utilatest.select import no_linux
+from utilatest.select import no_win
 from utilatest.select import nonvirtual
 from utilatest.select import register_marker
 from utilatest.select import requires
 from utilatest.select import step
 from utilatest.select import virtual
+from utilatest.select import win
 # shortcuts
 from utilatest.shortcuts import mp
 from utilatest.shortcuts import td
