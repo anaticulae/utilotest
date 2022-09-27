@@ -2,6 +2,16 @@
 
 Every noteable change is logged here.
 
+## v0.19.0 (2022-09-28)
+
+### Feature
+
+* add method to determine worker count depending on platform (360ecc52520d)
+
+### Chore
+
+* upgrade requirements.txt (e689d490826f)
+
 ## 0.18.0 auto generated release
 
 ### Feature
