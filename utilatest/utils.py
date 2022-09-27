@@ -100,3 +100,10 @@ def test_resources(resources):
                 marks=pytest.mark.skipif(skip, reason=f'missing: {generated}'),
             ))
     return result
+
+
+def worker_count(number: int, onci: int) -> int:
+    """Determine worker depending running on ci or not."""
+    if os.environ.get('CI', False):
+        return number
+    return onci

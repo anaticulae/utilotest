@@ -78,6 +78,7 @@ from utilatest.utils import open_webbrowser
 from utilatest.utils import simple
 from utilatest.utils import test_resources
 from utilatest.utils import testid
+from utilatest.utils import worker_count
 
 __version__ = '0.18.0'
 
