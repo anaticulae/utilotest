@@ -102,14 +102,20 @@ def test_resources(resources):
     return result
 
 
-def worker_count(number: int, onci: int) -> int:
+def worker_count(
+    number: int,
+    onci: int,
+    worker_max: int = None,
+) -> int:
     """Determine worker depending running on ci or not.
 
     >>> str(worker_count(5, onci=10))
     '...'
     """
     if is_ci():
-        return onci
+        if worker_max is None:
+            worker_max = os.cpu_count()
+        return min([onci, worker_max])
     return number
 
 
