@@ -2,6 +2,16 @@
 
 Every noteable change is logged here.
 
+## v0.20.0 (2022-09-28)
+
+### Feature
+
+* add method to verify that test is running on CI (5cdd399f73a1)
+
+### Fix
+
+* detect CI on jenkins (f100cf4aadf0)
+
 ## v0.19.0 (2022-09-28)
 
 ### Feature
