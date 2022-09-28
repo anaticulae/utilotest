@@ -107,3 +107,13 @@ def worker_count(number: int, onci: int) -> int:
     if os.environ.get('CI', False):
         return number
     return onci
+
+
+def is_ci() -> bool:
+    """\
+    >>> str(is_ci())
+    '...'
+    """
+    if os.environ.get('JENKINS_HOME', False):
+        return True
+    return False
