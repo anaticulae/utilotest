@@ -103,10 +103,14 @@ def test_resources(resources):
 
 
 def worker_count(number: int, onci: int) -> int:
-    """Determine worker depending running on ci or not."""
-    if os.environ.get('CI', False):
-        return number
-    return onci
+    """Determine worker depending running on ci or not.
+
+    >>> str(worker_count(5, onci=10))
+    '...'
+    """
+    if is_ci():
+        return onci
+    return number
 
 
 def is_ci() -> bool:
