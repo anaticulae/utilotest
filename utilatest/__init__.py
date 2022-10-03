@@ -59,6 +59,7 @@ from utilatest.select import hasgit
 from utilatest.select import holyvalue
 from utilatest.select import linux
 from utilatest.select import longrun
+from utilatest.select import monday
 from utilatest.select import nightly
 from utilatest.select import no_linux
 from utilatest.select import no_win

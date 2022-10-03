@@ -20,11 +20,13 @@ NONVIRTUAL = not VIRTUAL
 FAST = 'FAST' in os.environ.keys()
 NIGHTLY = 'NIGHTLY' in os.environ.keys()
 LONGRUN = 'LONGRUN' in os.environ.keys() or NIGHTLY
-FASTRUN = not LONGRUN or FAST
+MONDAY = 'MONDAY' in os.environ.keys()
+FASTRUN = FAST and not NIGHTLY and not MONDAY
 
 LONGRUN_REASON = 'requires too much time'
 VIRTUAL_REASON = 'require virtual environment'
 NONVIRTUAL_REASON = 'require non virtual environment'
+MONDAY_REASON = 'its not monday'
 
 WIN = 'win' in sys.platform
 LIN = not WIN
@@ -32,6 +34,7 @@ LIN = not WIN
 # pylint: disable=invalid-name
 longrun = pytest.mark.skipif(FASTRUN, reason=LONGRUN_REASON)
 nightly = pytest.mark.skipif(FASTRUN or not NIGHTLY, reason=LONGRUN_REASON)
+monday = pytest.mark.skipif(not MONDAY, reason=MONDAY_REASON)
 nonvirtual = pytest.mark.skipif(NONVIRTUAL, reason=VIRTUAL_REASON)
 virtual = pytest.mark.skipif(VIRTUAL, reason=NONVIRTUAL_REASON)
 hasgit = pytest.mark.skipif(
