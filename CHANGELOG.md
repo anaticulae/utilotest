@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.21.0 (2022-10-03)
+
+### Feature
+
+* add monday selector to run very very large tests (f588365a8b1a)
+
 ## v0.20.1 (2022-09-28)
 
 ### Feature
