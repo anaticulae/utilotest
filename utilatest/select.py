@@ -24,8 +24,8 @@ MONDAY = 'MONDAY' in os.environ.keys()
 FASTRUN = FAST and not NIGHTLY and not MONDAY
 
 LONGRUN_REASON = 'requires too much time'
-VIRTUAL_REASON = 'require virtual environment'
-NONVIRTUAL_REASON = 'require non virtual environment'
+VIRTUAL_REASON = 'require venv'
+NONVIRTUAL_REASON = 'require non-venv'
 MONDAY_REASON = 'its not monday'
 
 WIN = 'win' in sys.platform
