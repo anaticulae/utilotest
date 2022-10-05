@@ -2,6 +2,18 @@
 
 Every noteable change is logged here.
 
+## v0.22.0 (2022-10-05)
+
+### Feature
+
+* use marker to select unit tests (0aed2f85fdfa)
+
+### Chore
+
+* upgrade baw (fbcdd01e42e6)
+* root user is not required (4b62ec495f3e)
+* upgrade requirements.txt (134ccb372809)
+
 ## v0.21.0 (2022-10-03)
 
 ### Feature
