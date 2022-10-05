@@ -61,6 +61,9 @@ def register_marker(name: str):
     return getattr(pytest.mark, name)
 
 
+longrun = register_marker('longrun')
+nightly = register_marker('nightly')
+
 # mark tests to optimize holy value parameters
 # old: holyvalue = pytest.mark.holyvalue
 holyvalue = register_marker('holyvalue')
