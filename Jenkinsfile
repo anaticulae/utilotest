@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image '169.254.149.20:6001/arch_python_baw:0.8.0'
+            image '169.254.149.20:6001/arch_python_baw:0.10.5'
             args '-v $WORKSPACE:/var/workdir'
         }
     }
@@ -36,13 +36,6 @@ pipeline {
         stage('lint'){
             steps{
                 sh 'baw lint'
-            }
-        }
-        stage('nightly'){
-            steps{
-                // TODO: ADD JUNIT OPTION TO BAW
-                sh 'baw test nightly -n16 --cov --junit_xml=report.xml'
-                junit '**/report.xml'
             }
         }
         stage('release'){
