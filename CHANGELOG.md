@@ -2,6 +2,18 @@
 
 Every noteable change is logged here.
 
+## v0.23.0 (2022-10-09)
+
+### Feature
+
+* add separate marker selector (277f11e3af0d)
+
+### Chore
+
+* publish test report (99f5f1ef349e)
+* convert longrun to all (460014c27c8f)
+* upgrade requirements.txt (9dad0ffae883)
+
 ## v0.22.0 (2022-10-05)
 
 ### Feature
