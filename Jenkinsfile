@@ -30,7 +30,8 @@ pipeline {
         }
         stage('all'){
             steps{
-                sh 'baw test all -n8'
+                sh 'baw test all -n8  --cov --junit_xml=report.xml'
+                junit '**/report.xml'
             }
         }
         stage('lint'){
