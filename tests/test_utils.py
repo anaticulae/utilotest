@@ -9,6 +9,7 @@
 
 import webbrowser
 
+import power
 import utila
 
 import utilatest
@@ -31,3 +32,21 @@ def test_open_webbrowser(td, mp):
         with utilatest.open_webbrowser(path):
             pass
     assert called
+
+
+def test_test_resources():
+
+    def markme(item):
+        if item == power.BACHELOR028_PDF:
+            return utilatest.longrun
+        return None
+
+    resources = utilatest.test_resources(
+        [
+            power.BACHELOR028_PDF,
+            power.MASTER116_PDF,
+        ],
+        marker=markme,
+    )
+    raw = str(resources)
+    assert 'longrun' in raw

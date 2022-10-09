@@ -7,9 +7,14 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
+import power
+
+import utilatest
 # TODO: AUTOMATE THIS
 from utilatest import mp  # pylint:disable=W0611
 from utilatest import td  # pylint:disable=W0611
 from viewvisitor.fixture import selenium_driver  # pylint:disable=W0611
 
 pytest_plugins = ['pytester', 'xdist', 'localserver']  # pylint: disable=invalid-name
+
+power.setup(utilatest.ROOT)
