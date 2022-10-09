@@ -28,9 +28,9 @@ pipeline {
                 sh 'baw test fast -n5'
             }
         }
-        stage('long'){
+        stage('all'){
             steps{
-                sh 'baw test long -n8'
+                sh 'baw test all -n8'
             }
         }
         stage('lint'){
