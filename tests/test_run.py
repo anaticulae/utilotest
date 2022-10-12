@@ -20,10 +20,10 @@ def test_run(tmpdir):
     assert completed.returncode == utila.SUCCESS
 
     with utilatest.assert_run('ls', tmpdir) as result:
-        assert result.returncode == utila.SUCCESS
+        assert result.returncode == utila.SUCCESS  # pylint:disable=E1101
 
     with utilatest.assert_run_fail('this is not a command', tmpdir) as result:
-        assert result.returncode >= utila.FAILURE
+        assert result.returncode >= utila.FAILURE  # pylint:disable=E1101
 
 
 def test_run_cov(mp):

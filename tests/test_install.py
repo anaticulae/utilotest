@@ -7,59 +7,58 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import sys
-import threading
+# import sys
+# import threading
 
-import pytest
-import utila
+# import pytest
+# import utila
 
-import utilatest
+# import utilatest
 
-PACKAGE = """\
-import setuptools
-setuptools.setup(
-    name='%s',
-    packages=['%s'],
-)
-"""
+# PACKAGE = """\
+# import setuptools
+# setuptools.setup(
+#     name='%s',
+#     packages=['%s'],
+# )
+# """
 
-linux = not sys.platform.startswith("win")
+# linux = not sys.platform.startswith("win")
 
+# class TestClass:
 
-class TestClass:
+#     LOCK = threading.Lock()
 
-    LOCK = threading.Lock()
-
-    @utilatest.nonvirtual
-    @utilatest.longrun
-    def test_clean_install(self, td):  # pylint:disable=R0201,R6301
-        if linux:
-            pytest.skip('enable later')
-        with TestClass.LOCK:
-            package = 'dorimifasa'
-            td.mkdir(package)
-            utila.file_create(
-                td.tmpdir.join('setup.py'),
-                PACKAGE % (package, package),
-            )
-            utila.run('python setup.py build')
-            utilatest.clean_install(
-                td.tmpdir,
-                'dorimifasa',
-            )
-        # @utilatest.nonvirtual
-        # @utilatest.longrun
-        # def test_install_and_run(self, td):  # pylint:disable=R0201
-        with TestClass.LOCK:
-            package = 'dorimifasamore'
-            # td.mkdir(package)
-            # utila.file_create(
-            #     td.tmpdir.join('setup.py'),
-            #     PACKAGE % (package, package),
-            # )
-            utila.run('python setup.py build')
-            utilatest.install_and_run(
-                root=td.tmpdir,
-                package=package,
-                executable='power',  # not the installed one
-            )
+#     @utilatest.nonvirtual
+#     @utilatest.longrun
+#     def test_clean_install(_, td):
+#         if linux:
+#             pytest.skip('enable later')
+#         with TestClass.LOCK:
+#             package = 'dorimifasa'
+#             td.mkdir(package)
+#             utila.file_create(
+#                 td.tmpdir.join('setup.py'),
+#                 PACKAGE % (package, package),
+#             )
+#             utila.run('python setup.py build')
+#             utilatest.clean_install(
+#                 td.tmpdir,
+#                 'dorimifasa',
+#             )
+#         # @utilatest.nonvirtual
+#         # @utilatest.longrun
+#         # def test_install_and_run(self, td):  # pylint:disable=R0201
+#         with TestClass.LOCK:
+#             package = 'dorimifasamore'
+#             # td.mkdir(package)
+#             # utila.file_create(
+#             #     td.tmpdir.join('setup.py'),
+#             #     PACKAGE % (package, package),
+#             # )
+#             utila.run('python setup.py build')
+#             utilatest.install_and_run(
+#                 root=td.tmpdir,
+#                 package=package,
+#                 executable='power',  # not the installed one
+#             )
