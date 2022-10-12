@@ -60,8 +60,16 @@ def binhash(data: bytes) -> int:
 
 
 def assert_bin(data: bytes, expected: int):
+    """\
+    >>> HELLO, TELLO = binhash(b'hello'), binhash(b'tello')
+    >>> assert_bin(b'hello', HELLO)
+    >>> assert_bin(b'tello', (HELLO, TELLO))
+    """
     current = binhash(data)
-    assert current == expected, f'{current}=={expected}'
+    if isinstance(expected, int):
+        assert current == expected, f'{current}=={expected}'
+    else:
+        assert current in expected, f'{current}=={expected}'
 
 
 def testid() -> str:
