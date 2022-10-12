@@ -17,10 +17,10 @@ VIRTUAL_ENVKEY = 'VIRTUAL'
 VIRTUAL = VIRTUAL_ENVKEY in os.environ
 NONVIRTUAL = not VIRTUAL
 
-FAST = 'FAST' in os.environ.keys()
-NIGHTLY = 'NIGHTLY' in os.environ.keys()
-LONGRUN = 'LONGRUN' in os.environ.keys() or NIGHTLY
-MONDAY = 'MONDAY' in os.environ.keys()
+FAST = 'FAST' in os.environ
+NIGHTLY = 'NIGHTLY' in os.environ
+LONGRUN = 'LONGRUN' in os.environ or NIGHTLY
+MONDAY = 'MONDAY' in os.environ
 FASTRUN = FAST and not NIGHTLY and not MONDAY
 
 LONGRUN_REASON = 'requires too much time'
@@ -73,7 +73,7 @@ displayed = register_marker('displayed')
 
 def requires(resource, folder=None):
     exists = _exists(resource, folder)
-    if isinstance(resource, (list, tuple)):
+    if utila.iterable(resource):  # pylint:disable=W0160
         resource = [utila.forward_slash(item) for item in resource]
     else:
         resource = utila.forward_slash(resource)
@@ -87,7 +87,7 @@ def requires(resource, folder=None):
 def fixture_requires(resource, folder=None):
     if _exists(resource, folder):
         return
-    if isinstance(resource, (list, tuple)):
+    if utila.iterable(resource):  # pylint:disable=W0160
         resource = [utila.forward_slash(item) for item in resource]
     else:
         resource = utila.forward_slash(resource)
@@ -95,7 +95,7 @@ def fixture_requires(resource, folder=None):
 
 
 def _exists(resource, folder=None):
-    if isinstance(resource, (list, tuple)):
+    if utila.iterable(resource):
         return all(_exists(item, folder=folder) for item in resource)
     import power  # pylint:disable=import-outside-toplevel
     exists = os.path.exists(power.link(resource, folder=folder))
@@ -113,7 +113,7 @@ def step(source, pages: tuple = None, reason=None, marks=None, ids=None):
             assert 0, 'not implemented yet'
         else:
             marks = pytest.mark.xfail(reason=reason)
-    if marks:
+    if marks:  # pylint:disable=W0160
         result = pytest.param(source, pages, marks=marks, id=ids)
     else:
         result = pytest.param(source, pages, id=ids)

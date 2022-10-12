@@ -25,7 +25,7 @@ def clean_install(root, package):
 def install_and_run(root, package, executable=None):
     """Install and run --help to ensure basic function"""
     executable = executable if executable else package
-    install = 'python setup.py install && %s --help' % executable
+    install = f'python setup.py install && {executable} --help'
     clean_and_run = UNINSTALL % package + ' && ' + install
     completed = utila.run(clean_and_run, cwd=root)
     error = utilatest.stdout(completed) + utilatest.stderr(completed)

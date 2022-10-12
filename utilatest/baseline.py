@@ -124,7 +124,7 @@ class BaseLiner(BaseLineMixin):
         workdir = f'-o={workdir}' if workdir else ''
         step = f'--{step}' if step else ''
         todo = f'{step} {pages} {source} {workdir}'
-        if isinstance(program, str):
+        if isinstance(program, str):  # pylint:disable=W0160
             result = f'{program} {todo}'
         else:
             result = functools.partial(program, todo)

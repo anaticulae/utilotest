@@ -32,7 +32,7 @@ class TestClass:
 
     @utilatest.nonvirtual
     @utilatest.longrun
-    def test_clean_install(self, td):  # pylint:disable=R0201
+    def test_clean_install(self, td):  # pylint:disable=R0201,R6301
         if linux:
             pytest.skip('enable later')
         with TestClass.LOCK:
