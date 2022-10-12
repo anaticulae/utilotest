@@ -7,8 +7,6 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import sys
-
 import pytest
 import utila
 
@@ -30,10 +28,6 @@ class Simple(utilatest.BaseLiner):
         )
 
 
-@pytest.mark.skipif(
-    not sys.platform.startswith("win"),
-    reason='pdfcat does not work on linux',
-)
 def test_baseline_mixin_valid(td):
     td.mkdir('archive')
     utila.run('power -h >> archive/message')
