@@ -2,6 +2,16 @@
 
 Every noteable change is logged here.
 
+## v0.24.0 (2022-10-15)
+
+### Feature
+
+* enable more than one expected bin (4bbb68c9ab1c)
+
+### Chore
+
+* upgrade baw (4399fe7a46ab)
+
 ## v0.23.0 (2022-10-09)
 
 ### Feature
