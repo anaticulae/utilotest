@@ -2,6 +2,17 @@
 
 Every noteable change is logged here.
 
+## v0.24.1 (2022-10-28)
+
+### Fix
+
+* ensure to setup API as str (0dc3a33bebc3)
+
+### Chore
+
+* upgrade environment (e75b34bbaf11)
+* upgrade requirements.txt (f830a4910db8)
+
 ## v0.24.0 (2022-10-15)
 
 ### Feature
