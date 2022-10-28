@@ -145,5 +145,7 @@ def default():
     return os.environ.get(API_PREFIX, '')
 
 
-def setup(prefix):
+def setup(prefix: str):
+    # ensure that prefix is str, linux requires str as os.environ-var.
+    prefix = str(prefix)
     os.environ[API_PREFIX] = prefix

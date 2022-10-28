@@ -1,0 +1,18 @@
+# =============================================================================
+# C O P Y R I G H T
+# -----------------------------------------------------------------------------
+# Copyright (c) 2022 by Helmut Konrad Fahrendholz. All rights reserved.
+# This file is property of Helmut Konrad Fahrendholz. Any unauthorized copy,
+# use or distribution is an offensive act against international law and may
+# be prosecuted under federal law. Its content is company confidential.
+# =============================================================================
+
+import configo
+
+import utilatest
+
+
+def test_setup(monkeypatch):
+    api = configo.HV_API('/api/v0')
+    with monkeypatch.context():
+        utilatest.setup(api)
