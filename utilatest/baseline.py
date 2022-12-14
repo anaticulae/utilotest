@@ -10,8 +10,8 @@
 import contextlib
 import functools
 import os
-import sys
 
+import resinf
 import utila
 
 GIT_REPLACE = utila.parse_state(os.environ.get('DEV_GIT_REPLACE', None))
@@ -140,10 +140,5 @@ def convert_ifpossible(source, convert: bool = False):
         return ''
     if not convert:
         return source
-    try:
-        import resinf
-    except ModuleNotFoundError:  # pragma: no cover
-        utila.error('require resinf')
-        sys.exit(utila.FAILURE)
     source = resinf.link(source)
     return source
