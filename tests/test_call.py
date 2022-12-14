@@ -12,7 +12,7 @@ import configo
 import utilatest
 
 
-def test_setup(monkeypatch):
+def test_setup(mp):
     api = configo.HV_API('/api/v0')
-    with monkeypatch.context():
+    with mp.context():
         utilatest.setup(api)

@@ -84,7 +84,7 @@ def run_cov(
         main(callable): method to run
         expect(bool): expectation that process succeeds or fails,
                        use None to skip check
-        mp(fixture): pytest patch/monkeypatch feature
+        mp(fixture): pytest patch/mp feature
     Returns:
         Return code of completed process.
     """

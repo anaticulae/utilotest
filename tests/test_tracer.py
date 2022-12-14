@@ -32,7 +32,7 @@ bibliography: error: unrecognized arguments: --bibs
     pytest.param(TRACEBACK, id='python error'),
     pytest.param(INVALID_CLI, id='invalid cli'),
 ))
-def test_tracer(error, testdir):
+def test_tracer(error, td):  # pylint:disable=W0613
     # add file with traceback message
     utila.file_create('generated.log', error)
     # run tracer
