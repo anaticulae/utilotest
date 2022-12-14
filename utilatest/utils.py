@@ -14,6 +14,7 @@ import re
 import webbrowser
 
 import pytest
+import resinf
 import utila
 
 import utilatest
@@ -89,16 +90,15 @@ def testid() -> str:
 def test_resources(resources, marker: callable = None):
     """Remove `pages` from resource definition.
 
-    >>> import power;import utilatest;power.setup(utilatest.ROOT);
+    >>> import power;import resinf;import utilatest;resinf.setup(utilatest.ROOT);
     >>> test_resources([power.BACHELOR090_PDF, (power.MASTER116_PDF, ':')])
     [ParameterSet(values=(...bachelor090.pdf',),...missing:...master116.pdf'...id='master116')]
     """
-    import power
     unique = [item if isinstance(item, str) else item[0] for item in resources]
     assert len(unique) == len(set(unique)), 'duplicated resources'
     result = []
     for item in unique:
-        generated = power.link(item)
+        generated = resinf.link(item)
         skip = not utila.exists(generated)
         marks = [pytest.mark.skipif(skip, reason=f'missing: {generated}')]
         testname = utila.file_name(item)

@@ -10,7 +10,9 @@
 import os
 import sys
 
+import power
 import pytest
+import resinf
 import utila
 
 VIRTUAL_ENVKEY = 'VIRTUAL'
@@ -94,8 +96,7 @@ def fixture_requires(resource, folder=None):
 def _exists(resource, folder=None):
     if utila.iterable(resource):
         return all(_exists(item, folder=folder) for item in resource)
-    import power  # pylint:disable=import-outside-toplevel
-    exists = os.path.exists(power.link(resource, folder=folder))
+    exists = os.path.exists(resinf.link(resource, folder=folder))
     # non generated resources
     exists |= os.path.exists(resource) and resource not in power.RESOURCES
     return exists

@@ -10,14 +10,16 @@
 import os
 
 import power
+import resinf
 import utila
 
 TESTCODE = """\
 import power
+import resinf
 
 import utilatest
 
-power.setup(root='%s', validate=False)
+resinf.setup(root='%s', validate=False)
 
 @utilatest.requires(power.DOCU007_PDF)
 def test_master():
@@ -37,7 +39,7 @@ def test_requires_noskip(td):
     root = utila.forward_slash(str(td.tmpdir.join(utila.tmpname())))
     td.mkdir(root)
     testcode = TESTCODE % root
-    os.makedirs(power.link(power.DOCU007_PDF, project=root))
+    os.makedirs(resinf.link(power.DOCU007_PDF, project=root))
     utila.file_create(os.path.join(root, 'test_master.py'), testcode)
     completed = utila.run(f'pytest {root}')
     assert '1 skipped in' not in completed.stdout
@@ -57,6 +59,6 @@ def test_requires_stacked_resource(td):
     td.mkdir(root)
     testcode = TESTCODE % root + STACK
     utila.file_create(os.path.join(root, 'test_master.py'), testcode)
-    os.makedirs(power.link(power.DOCU007_PDF, project=root))
+    os.makedirs(resinf.link(power.DOCU007_PDF, project=root))
     completed = utila.run(f'pytest {root}')
     assert '1 passed, 1 skipped' in completed.stdout

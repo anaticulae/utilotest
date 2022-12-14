@@ -141,9 +141,9 @@ def convert_ifpossible(source, convert: bool = False):
     if not convert:
         return source
     try:
-        import power
+        import resinf
     except ModuleNotFoundError:  # pragma: no cover
-        utila.error('require power')
+        utila.error('require resinf')
         sys.exit(utila.FAILURE)
-    source = power.link(source)
+    source = resinf.link(source)
     return source
