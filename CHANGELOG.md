@@ -2,6 +2,16 @@
 
 Every noteable change is logged here.
 
+## v0.24.2 (2022-12-14)
+
+### Chore
+
+* use quick installer (5381fc9c9b07)
+* add resinf (af73030e168b)
+* upgrade requirements.txt (108836bf164f)
+* upgrade Pipeline (274dd0e98a34)
+* use defaults (2c8a43fe144e)
+
 ## v0.24.1 (2022-10-28)
 
 ### Fix
