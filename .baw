@@ -1,12 +1,8 @@
 [project]
 short = utilatest
 name = some useful test operation
-python = python39
 
 source = viewvisitor
-
-[release]
-fail_on_finding = true
 
 [test]
 plugins = localserver
