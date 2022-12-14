@@ -82,7 +82,7 @@ from utilatest.utils import test_resources
 from utilatest.utils import testid
 from utilatest.utils import worker_count
 
-__version__ = '0.24.2'
+__version__ = '0.24.3'
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 PACKAGE = 'utilatest'

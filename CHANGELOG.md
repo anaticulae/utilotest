@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.24.3 (2022-12-14)
+
+### Fix
+
+* fix regression (2a41798a12c6)
+
 ## v0.24.2 (2022-12-14)
 
 ### Chore
