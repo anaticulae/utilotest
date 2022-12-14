@@ -14,7 +14,7 @@ import os
 import resinf
 import utila
 
-GIT_REPLACE = utila.parse_state(os.environ.get('DEV_GIT_REPLACE', None))
+import utilatest.config
 
 
 class BaseLineMixin:
@@ -42,7 +42,7 @@ class BaseLineMixin:
             outpath = os.path.join(self.workdir, 'baseline')
             utila.error('write baseline')
             utila.file_create(outpath, rawvalue)
-            if GIT_REPLACE:
+            if utilatest.config.GIT_REPLACE:
                 # ease debugging due git --diff
                 withnewline = rawvalue.rstrip() + utila.NEWLINE
                 utila.file_replace(path, withnewline)
