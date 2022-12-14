@@ -17,7 +17,7 @@ import power
 
 import utilatest
 
-power.setup(root='%s')
+power.setup(root='%s', validate=False)
 
 @utilatest.requires(power.DOCU007_PDF)
 def test_master():
