@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.25.0 (2022-12-19)
+
+### Feature
+
+* add method to skip test if prog is not installed (b709009e8800)
+
 ## v0.24.4 (2022-12-18)
 
 ### Chore
