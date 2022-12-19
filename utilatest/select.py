@@ -47,14 +47,8 @@ def hasprog(prog, msg=''):
     return has
 
 
-hasgit = pytest.mark.skipif(
-    utila.run('git help', expect=None).returncode,
-    reason='require git',
-)
-hasbaw = pytest.mark.skipif(
-    utila.run('baw --help', expect=None).returncode,
-    reason='require baw',
-)
+hasgit = hasprog('git')
+hasbaw = hasprog('baw')
 
 linux = pytest.mark.skipif(not LIN, reason='linux only')
 win = pytest.mark.skipif(not WIN, reason='windows only')
