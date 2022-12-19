@@ -35,6 +35,18 @@ LIN = not WIN
 monday = pytest.mark.skipif(not MONDAY, reason=MONDAY_REASON)
 nonvirtual = pytest.mark.skipif(NONVIRTUAL, reason=VIRTUAL_REASON)
 virtual = pytest.mark.skipif(VIRTUAL, reason=NONVIRTUAL_REASON)
+
+
+def hasprog(prog, msg=''):
+    if not msg:
+        msg = f'install {prog}'
+    has = pytest.mark.skipif(
+        not utila.hasprog(prog),
+        reason=msg,
+    )
+    return has
+
+
 hasgit = pytest.mark.skipif(
     utila.run('git help', expect=None).returncode,
     reason='require git',
