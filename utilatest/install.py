@@ -15,11 +15,22 @@ UNINSTALL = 'pip uninstall %s -y'
 INSTALL = 'python setup.py install'
 
 
-def clean_install(root, package):
-    clean_and_run = UNINSTALL % package + ' && ' + INSTALL
-    completed = utila.run(clean_and_run, cwd=root)
+def install_package(root, package):
+    utila.exists_assert(root)
+    completed = utila.run(INSTALL, cwd=root)
     error = utilatest.stdout(completed) + utilatest.stderr(completed)
     assert completed.returncode == utila.SUCCESS, error
+
+
+def clean(package):
+    completed = utila.run(UNINSTALL % package)
+    error = utilatest.stdout(completed) + utilatest.stderr(completed)
+    assert completed.returncode == utila.SUCCESS, error
+
+
+def clean_install(root, package):
+    clean(package)
+    install_package(root, package)
 
 
 def install_and_run(root, package, executable=None):
