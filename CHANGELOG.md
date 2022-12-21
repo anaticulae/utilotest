@@ -2,6 +2,17 @@
 
 Every noteable change is logged here.
 
+## v0.26.0 (2022-12-21)
+
+### Feature
+
+* add option to disable clean before install (32f014aad2b8)
+* add install method (fe59770f6ef6)
+
+### Chore
+
+* upgrade pipe library (c4b48e163c68)
+
 ## v0.25.0 (2022-12-19)
 
 ### Feature
