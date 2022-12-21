@@ -15,7 +15,7 @@ UNINSTALL = 'pip uninstall %s -y'
 INSTALL = 'python setup.py install'
 
 
-def install_package(root, package):
+def install_package(root):
     utila.exists_assert(root)
     completed = utila.run(INSTALL, cwd=root)
     error = utilatest.stdout(completed) + utilatest.stderr(completed)
@@ -30,14 +30,20 @@ def clean(package):
 
 def clean_install(root, package):
     clean(package)
-    install_package(root, package)
+    install_package(root)
 
 
-def install_and_run(root, package, executable=None):
+def install_and_run(
+    root,
+    package,
+    executable=None,
+    cleanx: bool = True,
+):
     """Install and run --help to ensure basic function"""
     executable = executable if executable else package
     install = f'python setup.py install && {executable} --help'
-    clean_and_run = UNINSTALL % package + ' && ' + install
-    completed = utila.run(clean_and_run, cwd=root)
+    if cleanx:
+        clean(package)
+    completed = utila.run(install, cwd=root)
     error = utilatest.stdout(completed) + utilatest.stderr(completed)
     assert completed.returncode == utila.SUCCESS, error
