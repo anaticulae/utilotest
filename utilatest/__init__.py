@@ -31,6 +31,7 @@ from utilatest.file import simplify_testfile_names
 # install
 from utilatest.install import clean_install
 from utilatest.install import install_and_run
+from utilatest.install import install_package
 # log
 from utilatest.log import log_raw
 from utilatest.log import print_return
