@@ -2,6 +2,17 @@
 
 Every noteable change is logged here.
 
+## v0.26.1 (2023-01-04)
+
+### Documentation
+
+* happy New Year! (587589f15c73)
+
+### Chore
+
+* upgrade Jenkinsfile (d3c5034b6e04)
+* upgrade pipe library (62f49f8755d5)
+
 ## v0.26.0 (2022-12-21)
 
 ### Feature
