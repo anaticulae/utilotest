@@ -93,9 +93,13 @@ def test_resources(resources, marker: callable = None):
     >>> import power;import resinf;import utilatest;resinf.setup(utilatest.ROOT);
     >>> test_resources([power.BACHELOR090_PDF, (power.MASTER116_PDF, ':')])
     [ParameterSet(values=(...bachelor090.pdf',),...missing:...master116.pdf'...id='master116')]
+    >>> test_resources(['first', 'second', 'first'])
+    Traceback (most recent call last):
+    ...
+    ValueError: duplicate value: ['first']
     """
     unique = [item if isinstance(item, str) else item[0] for item in resources]
-    assert len(unique) == len(set(unique)), 'duplicated resources'
+    utila.assert_unique(unique)
     result = []
     for item in unique:
         generated = resinf.link(item)
