@@ -2,6 +2,19 @@
 
 Every noteable change is logged here.
 
+## v0.28.0 (2023-01-15)
+
+### Feature
+
+* add decorator to skip test on cov run (c1f97b26f6a2)
+
+### Chore
+
+* do not upgrade selenium (fe1987208f5c)
+* upgrade requirements.txt (8f65923f2153)
+* upgrade Jenkinsfile (102fd30b9777)
+* upgrade pipe library (cc2a0f983bdc)
+
 ## v0.27.0 (2023-01-12)
 
 ### Feature
