@@ -7,7 +7,7 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-selenium==3.141.0
+selenium==3.141.0 # noauto
 
 pytest_localserver==0.7.0
 power==2.22.0
