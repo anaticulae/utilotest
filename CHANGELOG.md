@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.28.1 (2023-01-15)
+
+### Chore
+
+* upgrade Jenkinsfile (44efcc519dfa)
+
 ## v0.28.0 (2023-01-15)
 
 ### Feature
