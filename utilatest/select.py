@@ -30,6 +30,7 @@ MONDAY_REASON = 'its not monday'
 
 WIN = 'win' in sys.platform
 LIN = not WIN
+COV = 'coverage' in sys.modules
 
 # pylint: disable=invalid-name
 monday = pytest.mark.skipif(not MONDAY, reason=MONDAY_REASON)
@@ -54,6 +55,7 @@ linux = pytest.mark.skipif(not LIN, reason='linux only')
 win = pytest.mark.skipif(not WIN, reason='windows only')
 no_win = pytest.mark.skipif(WIN, reason='no windows')
 no_linux = pytest.mark.skipif(LIN, reason='no linux')
+no_cov = pytest.mark.skipif(COV, reason='skip on cov run')
 
 
 def register_marker(name: str):
