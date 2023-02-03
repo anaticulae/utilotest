@@ -76,7 +76,7 @@ class BaseLineMixin:
     def expected(self) -> str:
         inpath = os.path.join(self.archive, str(self.index))
         if not os.path.exists(inpath):
-            utila.error('empty archive data')
+            utila.error(f'empty archive data: {inpath}')
             return None, inpath
         loaded = utila.file_read(inpath)
         # rstrip to enable spaces as empty content of a expected tabel for
