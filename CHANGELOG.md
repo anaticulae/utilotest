@@ -2,6 +2,17 @@
 
 Every noteable change is logged here.
 
+## v0.29.0 (2023-02-03)
+
+### Feature
+
+* add debugging information (fce1e1329f73)
+
+### Chore
+
+* upgrade requirements.txt (82fa966a5442)
+* upgrade Jenkinsfile (0fcccb780596)
+
 ## v0.28.2 (2023-01-31)
 
 ### Chore
