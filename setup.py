@@ -8,15 +8,15 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import utila
+import utilo
 
 PACKAGES = [
-    'utilatest',
-    'utilatest.cli',
+    'utilotest',
+    'utilotest.cli',
     'viewvisitor',
 ]
 ENTRY_POINTS = dict(console_scripts=[
-    'collect_trace=utilatest.cli.tracer:main',
+    'collect_trace=utilotest.cli.tracer:main',
 ])
 if __name__ == "__main__":
-    utila.install(__file__)
+    utilo.install(__file__)

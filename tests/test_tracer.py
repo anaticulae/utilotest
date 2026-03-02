@@ -8,15 +8,14 @@
 # =============================================================================
 
 import pytest
-import utila
-
-import utilatest.cli.tracer
+import utilo
+import utilotest.cli.tracer
 
 TRACEBACK = """
 [ERROR] Traceback (most recent call last):
-  File "C:/tmp/baw/venv/queuemo/lib/site-packages/utila/feature/processor.py", line 238, in run_hook_safely
-    result = utila.pass_required(caller=hook.work, pages=pages, **argv)
-  File "C:/tmp/baw/venv/queuemo/lib/site-packages/utila/typechecker.py", line 309, in pass_required
+  File "C:/tmp/baw/venv/queuemo/lib/site-packages/utilo/feature/processor.py", line 238, in run_hook_safely
+    result = utilo.pass_required(caller=hook.work, pages=pages, **argv)
+  File "C:/tmp/baw/venv/queuemo/lib/site-packages/utilo/typechecker.py", line 309, in pass_required
     result = caller(**data)
   File "C:/tmp/baw/venv/queuemo/lib/site-packages/groupme/feature/footer.py", line 61, in work
     result = extract_footerheader(
@@ -34,10 +33,10 @@ bibliography: error: unrecognized arguments: --bibs
 ))
 def test_tracer(error, td):  # pylint:disable=W0613
     # add file with traceback message
-    utila.file_create('generated.log', error)
+    utilo.file_create('generated.log', error)
     # run tracer
     with pytest.raises(SystemExit):
-        utilatest.cli.tracer.main()
+        utilotest.cli.tracer.main()
     # collect result
-    traced = utila.file_list(utilatest.cli.tracer.OUTPUTDIR)
+    traced = utilo.file_list(utilotest.cli.tracer.OUTPUTDIR)
     assert len(traced) == 1

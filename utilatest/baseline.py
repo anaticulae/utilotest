@@ -12,9 +12,8 @@ import functools
 import os
 
 import resinf
-import utila
-
-import utilatest.config
+import utilo
+import utilotest.config
 
 
 class BaseLineMixin:
@@ -40,12 +39,12 @@ class BaseLineMixin:
         expected, path = self.expected
         if rawvalue != expected:
             outpath = os.path.join(self.workdir, 'baseline')
-            utila.error('write baseline')
-            utila.file_create(outpath, rawvalue)
-            if utilatest.config.GIT_REPLACE:
+            utilo.error('write baseline')
+            utilo.file_create(outpath, rawvalue)
+            if utilotest.config.GIT_REPLACE:
                 # ease debugging due git --diff
-                withnewline = rawvalue.rstrip() + utila.NEWLINE
-                utila.file_replace(path, withnewline)
+                withnewline = rawvalue.rstrip() + utilo.NEWLINE
+                utilo.file_replace(path, withnewline)
             if self.onfailure:
                 self.onfailure(loaded)
         if self.expected is None:
@@ -53,15 +52,15 @@ class BaseLineMixin:
                 self.backup(loaded)
                 return
         elif rawvalue != expected:
-            utila.log('EXPECTED:')
-            utila.log(expected)
-            utila.log('GIVEN:')
-            utila.log(rawvalue)
+            utilo.log('EXPECTED:')
+            utilo.log(expected)
+            utilo.log('GIVEN:')
+            utilo.log(rawvalue)
         assert rawvalue == expected
 
     def generate(self):
         if isinstance(self.cmd, str):
-            utila.run(cmd=self.cmd, cwd=self.workdir)
+            utilo.run(cmd=self.cmd, cwd=self.workdir)
             return
         # run partial function
         self.cmd()
@@ -76,9 +75,9 @@ class BaseLineMixin:
     def expected(self) -> str:
         inpath = os.path.join(self.archive, str(self.index))
         if not os.path.exists(inpath):
-            utila.error(f'empty archive data: {inpath}')
+            utilo.error(f'empty archive data: {inpath}')
             return None, inpath
-        loaded = utila.file_read(inpath)
+        loaded = utilo.file_read(inpath)
         # rstrip to enable spaces as empty content of a expected tabel for
         # example.
         result = loaded.rstrip()
@@ -108,7 +107,7 @@ class BaseLiner(BaseLineMixin):
             cmd=self.tocmd(program, step, pages, source, workdir,
                            convert_source),
             workdir=workdir,
-            index=index if index else utila.file_name(source),
+            index=index if index else utilo.file_name(source),
             archive=archive,
             onfailure=onfailure,
         )
@@ -118,7 +117,7 @@ class BaseLiner(BaseLineMixin):
     @staticmethod
     def tocmd(program, step, pages, source, workdir, convert_source=True):
         source = convert_ifpossible(source, convert=convert_source)
-        assert not source or utila.exists(source), str(source)
+        assert not source or utilo.exists(source), str(source)
         pages = f'--pages={pages}' if pages else ''
         source = f'-i={source}' if source else ''
         workdir = f'-o={workdir}' if workdir else ''

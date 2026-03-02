@@ -9,10 +9,10 @@
 
 import configo
 
-import utilatest
+import utilotest
 
 
 def test_setup(mp):
     api = configo.HV_API('/api/v0')
     with mp.context():
-        utilatest.setup(api)
+        utilotest.setup(api)

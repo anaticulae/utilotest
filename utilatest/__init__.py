@@ -10,85 +10,85 @@
 import os
 
 # baseline
-from utilatest.baseline import BaseLineMixin
-from utilatest.baseline import BaseLiner
+from utilotest.baseline import BaseLineMixin
+from utilotest.baseline import BaseLiner
 # api calls
-from utilatest.call import API_PREFIX
-from utilatest.call import apicall
-from utilatest.call import apidelete
-from utilatest.call import apipost
-from utilatest.call import apiput
-from utilatest.call import apiupload
-from utilatest.call import decode
-from utilatest.call import delete
-from utilatest.call import get
-from utilatest.call import post
-from utilatest.call import setup
-from utilatest.call import upload
+from utilotest.call import API_PREFIX
+from utilotest.call import apicall
+from utilotest.call import apidelete
+from utilotest.call import apipost
+from utilotest.call import apiput
+from utilotest.call import apiupload
+from utilotest.call import decode
+from utilotest.call import delete
+from utilotest.call import get
+from utilotest.call import post
+from utilotest.call import setup
+from utilotest.call import upload
 # file
-from utilatest.file import increased_filecount
-from utilatest.file import simplify_testfile_names
+from utilotest.file import increased_filecount
+from utilotest.file import simplify_testfile_names
 # install
-from utilatest.install import clean_install
-from utilatest.install import install_and_run
-from utilatest.install import install_package
+from utilotest.install import clean_install
+from utilotest.install import install_and_run
+from utilotest.install import install_package
 # log
-from utilatest.log import log_raw
-from utilatest.log import print_return
-from utilatest.log import stderr
-from utilatest.log import stdout
-from utilatest.log import write_capsys
+from utilotest.log import log_raw
+from utilotest.log import print_return
+from utilotest.log import stderr
+from utilotest.log import stdout
+from utilotest.log import write_capsys
 # run
-from utilatest.runner import assert_failure
-from utilatest.runner import assert_run
-from utilatest.runner import assert_run_fail
-from utilatest.runner import assert_success
-from utilatest.runner import create_cli_runner
-from utilatest.runner import run
-from utilatest.runner import run_cov
-from utilatest.runner import single_execution
+from utilotest.runner import assert_failure
+from utilotest.runner import assert_run
+from utilotest.runner import assert_run_fail
+from utilotest.runner import assert_success
+from utilotest.runner import create_cli_runner
+from utilotest.runner import run
+from utilotest.runner import run_cov
+from utilotest.runner import single_execution
 # select
-from utilatest.select import FASTRUN
-from utilatest.select import LONGRUN
-from utilatest.select import NIGHTLY
-from utilatest.select import NONVIRTUAL
-from utilatest.select import VIRTUAL
-from utilatest.select import displayed
-from utilatest.select import fixture_requires
-from utilatest.select import hasbaw
-from utilatest.select import hasgit
-from utilatest.select import hasprog
-from utilatest.select import holyvalue
-from utilatest.select import linux
-from utilatest.select import longrun
-from utilatest.select import monday
-from utilatest.select import nightly
-from utilatest.select import no_cov
-from utilatest.select import no_linux
-from utilatest.select import no_win
-from utilatest.select import nonvirtual
-from utilatest.select import register_marker
-from utilatest.select import requires
-from utilatest.select import step
-from utilatest.select import virtual
-from utilatest.select import win
+from utilotest.select import FASTRUN
+from utilotest.select import LONGRUN
+from utilotest.select import NIGHTLY
+from utilotest.select import NONVIRTUAL
+from utilotest.select import VIRTUAL
+from utilotest.select import displayed
+from utilotest.select import fixture_requires
+from utilotest.select import hasbaw
+from utilotest.select import hasgit
+from utilotest.select import hasprog
+from utilotest.select import holyvalue
+from utilotest.select import linux
+from utilotest.select import longrun
+from utilotest.select import monday
+from utilotest.select import nightly
+from utilotest.select import no_cov
+from utilotest.select import no_linux
+from utilotest.select import no_win
+from utilotest.select import nonvirtual
+from utilotest.select import register_marker
+from utilotest.select import requires
+from utilotest.select import step
+from utilotest.select import virtual
+from utilotest.select import win
 # shortcuts
-from utilatest.shortcuts import mp
-from utilatest.shortcuts import td
+from utilotest.shortcuts import mp
+from utilotest.shortcuts import td
 # utils
-from utilatest.utils import assert_bin
-from utilatest.utils import binhash
-from utilatest.utils import is_ci
-from utilatest.utils import open_webbrowser
-from utilatest.utils import simple
-from utilatest.utils import test_resources
-from utilatest.utils import testid
-from utilatest.utils import worker_count
+from utilotest.utils import assert_bin
+from utilotest.utils import binhash
+from utilotest.utils import is_ci
+from utilotest.utils import open_webbrowser
+from utilotest.utils import simple
+from utilotest.utils import test_resources
+from utilotest.utils import testid
+from utilotest.utils import worker_count
 
 __version__ = '0.29.0'
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-PACKAGE = 'utilatest'
+PACKAGE = 'utilotest'
 
 skip_longrun = longrun
 skip_nightly = nightly

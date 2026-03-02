@@ -9,8 +9,8 @@
 
 import os
 
-import utila
+import utilo
 
-GIT_REPLACE = utila.parse_state(os.environ.get('BASELINE_REPLACE', None))
+GIT_REPLACE = utilo.parse_state(os.environ.get('BASELINE_REPLACE', None))
 # TODO: REMOVE LATER
-GIT_REPLACE |= utila.parse_state(os.environ.get('DEV_GIT_REPLACE', None))
+GIT_REPLACE |= utilo.parse_state(os.environ.get('DEV_GIT_REPLACE', None))

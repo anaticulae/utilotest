@@ -10,29 +10,29 @@
 import sys
 
 import pytest
-import utila
+import utilo
 
-import utilatest
+import utilotest
 
 
 def test_run(tmpdir):
-    completed = utilatest.run('ls', tmpdir)
-    assert completed.returncode == utila.SUCCESS
+    completed = utilotest.run('ls', tmpdir)
+    assert completed.returncode == utilo.SUCCESS
 
-    with utilatest.assert_run('ls', tmpdir) as result:
-        assert result.returncode == utila.SUCCESS  # pylint:disable=E1101
+    with utilotest.assert_run('ls', tmpdir) as result:
+        assert result.returncode == utilo.SUCCESS  # pylint:disable=E1101
 
-    with utilatest.assert_run_fail('this is not a command', tmpdir) as result:
-        assert result.returncode >= utila.FAILURE  # pylint:disable=E1101
+    with utilotest.assert_run_fail('this is not a command', tmpdir) as result:
+        assert result.returncode >= utilo.FAILURE  # pylint:disable=E1101
 
 
 def test_run_cov(mp):
 
     def main():
         # example runnable
-        sys.exit(utila.SUCCESS)
+        sys.exit(utilo.SUCCESS)
 
-    utilatest.run_cov(
+    utilotest.run_cov(
         '--number 10',
         'main',
         main,
@@ -42,22 +42,22 @@ def test_run_cov(mp):
 
 
 def test_assert_success():
-    completed = utilatest.run('python --help')
-    utilatest.assert_success(completed)
+    completed = utilotest.run('python --help')
+    utilotest.assert_success(completed)
 
 
 def test_assert_success_failed():
-    completed = utilatest.run('python --helpsambadamba', expect=None)
+    completed = utilotest.run('python --helpsambadamba', expect=None)
     with pytest.raises(AssertionError):
-        utilatest.assert_success(completed)
+        utilotest.assert_success(completed)
 
 
 def test_assert_failure():
-    completed = utilatest.run('python --helpsambadamba', expect=None)
-    utilatest.assert_failure(completed)
+    completed = utilotest.run('python --helpsambadamba', expect=None)
+    utilotest.assert_failure(completed)
 
 
 def test_assert_failure_failed():
-    completed = utilatest.run('python --help')
+    completed = utilotest.run('python --help')
     with pytest.raises(AssertionError):
-        utilatest.assert_failure(completed)
+        utilotest.assert_failure(completed)

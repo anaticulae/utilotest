@@ -1,5 +1,5 @@
 [project]
-short = utilatest
+short = utilotest
 name = some useful test operation
 
 source = viewvisitor

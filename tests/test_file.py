@@ -8,31 +8,31 @@
 # =============================================================================
 
 import pytest
-import utila
+import utilo
 
-import utilatest
+import utilotest
 
 
 def test_increased_filecount(td):
-    with utilatest.increased_filecount(td.tmpdir):
-        utila.file_create('test.txt')
+    with utilotest.increased_filecount(td.tmpdir):
+        utilo.file_create('test.txt')
 
 
 def test_increased_filecount_with_number(td):
-    with utilatest.increased_filecount(td.tmpdir, mindiff=1, maxdiff=1):
-        utila.file_create('test.txt')
+    with utilotest.increased_filecount(td.tmpdir, mindiff=1, maxdiff=1):
+        utilo.file_create('test.txt')
 
 
 def test_increased_filecount_with_ext(td):
     with pytest.raises(AssertionError):
-        with utilatest.increased_filecount(td.tmpdir, ext='*.pdf'):
-            utila.file_create('test_abc.txt')
+        with utilotest.increased_filecount(td.tmpdir, ext='*.pdf'):
+            utilo.file_create('test_abc.txt')
 
 
 def test_increased_filecount_to_few_created(td):
     with pytest.raises(AssertionError):
-        with utilatest.increased_filecount(td.tmpdir):
+        with utilotest.increased_filecount(td.tmpdir):
             pass
     with pytest.raises(AssertionError):
-        with utilatest.increased_filecount(td.tmpdir, mindiff=2):
-            utila.file_create('test.txt')
+        with utilotest.increased_filecount(td.tmpdir, mindiff=2):
+            utilo.file_create('test.txt')

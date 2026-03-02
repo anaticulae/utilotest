@@ -7,12 +7,12 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import utilatest
+import utilotest
 
 
-@utilatest.win
-@utilatest.longrun
-@utilatest.displayed
+@utilotest.win
+@utilotest.longrun
+@utilotest.displayed
 def test_selenium_driver(selenium_driver, httpserver):
     httpserver.serve_content('<div id="helmut">Helmut is talking</div>')
     # visit faked page

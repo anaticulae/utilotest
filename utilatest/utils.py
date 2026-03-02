@@ -15,9 +15,9 @@ import webbrowser
 
 import pytest
 import resinf
-import utila
+import utilo
 
-import utilatest
+import utilotest
 
 
 @contextlib.contextmanager
@@ -32,7 +32,7 @@ def open_webbrowser(path: str):
     """
     yield
     assert os.path.exists(path), str(str)
-    if utilatest.single_execution():
+    if utilotest.single_execution():
         webbrowser.open(path)
 
 
@@ -45,7 +45,7 @@ def simple(item: str, maxlength: int = 25) -> str:
     >>> simple('No spaces _+; 133')
     'Nospaces133'
     """
-    item = utila.fix_encoding(item)
+    item = utilo.fix_encoding(item)
     item = item.translate(SIMPLIFY)
     item = item[-maxlength:]
     return item
@@ -76,7 +76,7 @@ def assert_bin(data: bytes, expected: int):
 def testid() -> str:
     """\
     >>> testid()
-    'utilatest.utils.testid'
+    'utilotest.utils.testid'
     """
     # TODO: DIRTY
     test = os.environ['PYTEST_CURRENT_TEST']
@@ -90,7 +90,7 @@ def testid() -> str:
 def test_resources(resources, marker: callable = None):
     """Remove `pages` from resource definition.
 
-    >>> import power;import resinf;import utilatest;resinf.setup(utilatest.ROOT);
+    >>> import power;import resinf;import utilotest;resinf.setup(utilotest.ROOT);
     >>> test_resources([power.BACHELOR090_PDF, (power.MASTER116_PDF, ':')])
     [ParameterSet(values=(...bachelor090.pdf',),...missing:...master116.pdf'...id='master116')]
     >>> test_resources(['first', 'second', 'first'])
@@ -99,13 +99,13 @@ def test_resources(resources, marker: callable = None):
     ValueError: duplicate value: ['first']
     """
     unique = [item if isinstance(item, str) else item[0] for item in resources]
-    utila.assert_unique(unique)
+    utilo.assert_unique(unique)
     result = []
     for item in unique:
         generated = resinf.link(item)
-        skip = not utila.exists(generated)
+        skip = not utilo.exists(generated)
         marks = [pytest.mark.skipif(skip, reason=f'missing: {generated}')]
-        testname = utila.file_name(item)
+        testname = utilo.file_name(item)
         if marker:
             if markme := marker(item):
                 marks.append(markme)

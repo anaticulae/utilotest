@@ -12,7 +12,7 @@ import sys
 import configo
 import pytest
 import selenium.webdriver
-import utila
+import utilo
 
 import viewvisitor
 
@@ -24,8 +24,8 @@ def selenium_driver():
     if linux:
         pytest.skip('install selenium on linux.')
     if viewvisitor.FIREFOX_BINARY is None:
-        utila.error('DEFINE `FIREFOX_BINARY`')
-        sys.exit(utila.FAILURE)
+        utilo.error('DEFINE `FIREFOX_BINARY`')
+        sys.exit(utilo.FAILURE)
     add_firefox_path()
     driver = selenium.webdriver.Firefox(
         firefox_binary=viewvisitor.FIREFOX_BINARY,
@@ -38,6 +38,6 @@ def selenium_driver():
 
 def add_firefox_path():
     for item in [viewvisitor.FIREFOX_BINARY, viewvisitor.FIREFOX_DRIVER]:
-        utila.exists_assert(item)
-        base = utila.path_parent(item)
+        utilo.exists_assert(item)
+        base = utilo.path_parent(item)
         configo.env_path_append(base)

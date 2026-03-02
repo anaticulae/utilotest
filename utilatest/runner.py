@@ -16,9 +16,9 @@ import subprocess  # nosec
 import sys
 
 import pytest
-import utila
+import utilo
 
-import utilatest
+import utilotest
 
 
 def run(
@@ -48,8 +48,8 @@ def run(
     assert os.path.isdir(cwd), msg
     env = os.environ if env is None else env
     if verbose:
-        utila.log(f'cd {cwd}')
-        utila.log(cmd)
+        utilo.log(f'cd {cwd}')
+        utilo.log(cmd)
     # run process
     completed = subprocess.run(  # nosec, pylint:disable=subprocess-run-check
         cmd,
@@ -62,13 +62,13 @@ def run(
         universal_newlines=True,
     )
     if expect is True:
-        utilatest.assert_success(completed)
+        utilotest.assert_success(completed)
     if expect is False:  # pylint:disable=C2001
-        utilatest.assert_failure(completed)
+        utilotest.assert_failure(completed)
     return completed
 
 
-@utila.rename(monkeypatch='mp', success='expect')
+@utilo.rename(monkeypatch='mp', success='expect')
 def run_cov(
     cmd: str,
     process: str,
@@ -96,21 +96,21 @@ def run_cov(
         context.setattr(sys, 'argv', [process] + cmd)
         with pytest.raises(SystemExit) as result:
             main()
-    code = utila.returncode(result)
-    assert (code == utila.SUCCESS) == expect or expect is None, str(result)
+    code = utilo.returncode(result)
+    assert (code == utilo.SUCCESS) == expect or expect is None, str(result)
     return code
 
 
 @contextlib.contextmanager
 def assert_run(command: str, cwd: str = None):
-    done = utila.run(command, cwd)
-    assert done.returncode == utila.SUCCESS, f'{done.stderr}\n{done.stdout}'
+    done = utilo.run(command, cwd)
+    assert done.returncode == utilo.SUCCESS, f'{done.stderr}\n{done.stdout}'
     yield done
 
 
 @contextlib.contextmanager
 def assert_run_fail(command: str, cwd: str = None):
-    done = utila.run(command, cwd, expect=False)
+    done = utilo.run(command, cwd, expect=False)
     assert done.returncode, f'{done.stderr}\n{done.stdout}'
     yield done
 
@@ -135,7 +135,7 @@ def assert_success(process: subprocess.CompletedProcess):
     If not a formatted information is logged
     """
     assert process, str(process)
-    assert process.returncode == utila.SUCCESS, utila.format_completed(process)
+    assert process.returncode == utilo.SUCCESS, utilo.format_completed(process)
 
 
 def assert_failure(process: subprocess.CompletedProcess):
@@ -144,7 +144,7 @@ def assert_failure(process: subprocess.CompletedProcess):
     If process completed correctly, a formatted information is logged.
     """
     assert process, str(process)
-    assert process.returncode != utila.SUCCESS, utila.format_completed(process)
+    assert process.returncode != utilo.SUCCESS, utilo.format_completed(process)
 
 
 def create_cli_runner(package) -> '[typing.Callable, typing.Callable]':

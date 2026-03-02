@@ -12,7 +12,7 @@ import http
 import json
 import os
 
-import utila
+import utilo
 
 API_PREFIX = 'UTILATEST_API_PREFIX'
 
@@ -120,7 +120,7 @@ def apiupload(
         import werkzeug  # pylint:disable=import-outside-toplevel
         fields = werkzeug.datastructures.MultiDict([(field, open(path, 'rb'))])  # pylint:disable=R1732
     except ImportError as error:
-        utila.error('install werkzeug')
+        utilo.error('install werkzeug')
         raise error
     response = client.post(request, data=fields, follow_redirects=True)
     assert response.status_code == expected, f'{page}:{response.status_code}\n{response}'

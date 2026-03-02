@@ -12,7 +12,7 @@ import sys
 
 import pytest
 import resinf
-import utila
+import utilo
 
 VIRTUAL_ENVKEY = 'VIRTUAL'
 VIRTUAL = VIRTUAL_ENVKEY in os.environ
@@ -42,7 +42,7 @@ def hasprog(prog, msg=''):
     if not msg:
         msg = f'install {prog}'
     has = pytest.mark.skipif(
-        not utila.hasprog(prog),
+        not utilo.hasprog(prog),
         reason=msg,
     )
     return has
@@ -79,10 +79,10 @@ displayed = register_marker('displayed')
 
 def requires(resource, folder=None):
     exists = _exists(resource, folder)
-    if utila.iterable(resource):  # pylint:disable=W0160
-        resource = [utila.forward_slash(item) for item in resource]
+    if utilo.iterable(resource):  # pylint:disable=W0160
+        resource = [utilo.forward_slash(item) for item in resource]
     else:
-        resource = utila.forward_slash(resource)
+        resource = utilo.forward_slash(resource)
     marker = pytest.mark.skipif(
         not exists,
         reason=f'require/generated: {resource}; folder: {folder}',
@@ -93,15 +93,15 @@ def requires(resource, folder=None):
 def fixture_requires(resource, folder=None):
     if _exists(resource, folder):
         return
-    if utila.iterable(resource):  # pylint:disable=W0160
-        resource = [utila.forward_slash(item) for item in resource]
+    if utilo.iterable(resource):  # pylint:disable=W0160
+        resource = [utilo.forward_slash(item) for item in resource]
     else:
-        resource = utila.forward_slash(resource)
+        resource = utilo.forward_slash(resource)
     pytest.skip(f'require/generated: {resource}; folder: {folder}')
 
 
 def _exists(resource, folder=None):
-    if utila.iterable(resource):
+    if utilo.iterable(resource):
         return all(_exists(item, folder=folder) for item in resource)
     exists = os.path.exists(resinf.link(resource, folder=folder))
     # non generated resources
@@ -112,7 +112,7 @@ def _exists(resource, folder=None):
 
 def step(source, pages: tuple = None, reason=None, marks=None, ids=None):
     if ids is None:
-        ids = utila.file_name(source)
+        ids = utilo.file_name(source)
     if reason:
         if marks:
             # fail = pytest.mark.xfail(reason=reason)

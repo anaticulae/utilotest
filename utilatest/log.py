@@ -10,16 +10,16 @@
 import subprocess  # nosec
 import warnings
 
-import utila
+import utilo
 
 
 def write_capsys(capsys, path: str = None):
     """Save logged capsys to filespace."""
     stdout_, stderr_ = stdout(capsys), stderr(capsys)
-    change = utila.chdir if path else utila.nothing
+    change = utilo.chdir if path else utilo.nothing
     with change(path):
-        utila.file_create('logging.txt', stdout_)
-        utila.file_create('error.txt', stderr_)
+        utilo.file_create('logging.txt', stdout_)
+        utilo.file_create('error.txt', stderr_)
 
 
 def log_raw(content: str):
@@ -30,10 +30,10 @@ def log_raw(content: str):
     in code base.
 
     Example:
-        asssert len(abc) > 100, utila.log_raw(abc)
+        asssert len(abc) > 100, utilo.log_raw(abc)
     """
-    warnings.warn('use utila.log_raw, will removed with utilatest 1.0.0')
-    utila.log_raw(content)
+    warnings.warn('use utilo.log_raw, will removed with utilotest 1.0.0')
+    utilo.log_raw(content)
 
 
 def stderr(capsys) -> str:
@@ -52,7 +52,7 @@ def print_return(user_function):
 
     def decorator(*args, **kwds):
         result = user_function(*args, **kwds)
-        utila.debug(result)
+        utilo.debug(result)
         return result
 
     return decorator

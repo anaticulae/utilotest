@@ -10,15 +10,15 @@
 import webbrowser
 
 import power
-import utila
+import utilo
 
-import utilatest
+import utilotest
 
 
 def test_open_webbrowser(td, mp):
     # NOTE: don't know if that is a good test
-    path = utila.join(td.tmpdir, 'index.html')
-    utila.file_create(path, 'Hello World')
+    path = utilo.join(td.tmpdir, 'index.html')
+    utilo.file_create(path, 'Hello World')
 
     called = False
 
@@ -27,9 +27,9 @@ def test_open_webbrowser(td, mp):
         called = True
 
     with mp.context() as context:
-        context.setattr(utilatest, 'single_execution', lambda: True)
+        context.setattr(utilotest, 'single_execution', lambda: True)
         context.setattr(webbrowser, 'open', open_url)
-        with utilatest.open_webbrowser(path):
+        with utilotest.open_webbrowser(path):
             pass
     assert called
 
@@ -38,10 +38,10 @@ def test_test_resources():
 
     def markme(item):
         if item == power.BACHELOR028_PDF:
-            return utilatest.longrun
+            return utilotest.longrun
         return None
 
-    resources = utilatest.test_resources(
+    resources = utilotest.test_resources(
         [
             power.BACHELOR028_PDF,
             power.MASTER116_PDF,

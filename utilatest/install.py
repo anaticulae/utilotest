@@ -7,25 +7,25 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import utila
+import utilo
 
-import utilatest
+import utilotest
 
 UNINSTALL = 'pip uninstall %s -y'
 INSTALL = 'python setup.py install'
 
 
 def install_package(root):
-    utila.exists_assert(root)
-    completed = utila.run(INSTALL, cwd=root)
-    error = utilatest.stdout(completed) + utilatest.stderr(completed)
-    assert completed.returncode == utila.SUCCESS, error
+    utilo.exists_assert(root)
+    completed = utilo.run(INSTALL, cwd=root)
+    error = utilotest.stdout(completed) + utilotest.stderr(completed)
+    assert completed.returncode == utilo.SUCCESS, error
 
 
 def clean(package):
-    completed = utila.run(UNINSTALL % package)
-    error = utilatest.stdout(completed) + utilatest.stderr(completed)
-    assert completed.returncode == utila.SUCCESS, error
+    completed = utilo.run(UNINSTALL % package)
+    error = utilotest.stdout(completed) + utilotest.stderr(completed)
+    assert completed.returncode == utilo.SUCCESS, error
 
 
 def clean_install(root, package):
@@ -44,6 +44,6 @@ def install_and_run(
     install = f'python setup.py install && {executable} --help'
     if cleanx:
         clean(package)
-    completed = utila.run(install, cwd=root)
-    error = utilatest.stdout(completed) + utilatest.stderr(completed)
-    assert completed.returncode == utila.SUCCESS, error
+    completed = utilo.run(install, cwd=root)
+    error = utilotest.stdout(completed) + utilotest.stderr(completed)
+    assert completed.returncode == utilo.SUCCESS, error

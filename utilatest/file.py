@@ -11,10 +11,10 @@ import contextlib
 import glob
 import os
 
-import utila
-import utila.file
-import utila.logger
-import utila.string
+import utilo
+import utilo.file
+import utilo.logger
+import utilo.string
 
 
 def simplify_testfile_names(files, ext='pdf', sort: bool = True) -> tuple:
@@ -32,8 +32,8 @@ def simplify_testfile_names(files, ext='pdf', sort: bool = True) -> tuple:
     # ensure to compute prefix correctly
     assert len(set(files)) > 1, 'require at least two unique items.'
     assert isinstance(files, (list, tuple)), f'unsupported type: {type(files)}'
-    files = [utila.forward_slash(item) for item in files]
-    prefix = utila.forward_slash(os.path.commonpath(files))
+    files = [utilo.forward_slash(item) for item in files]
+    prefix = utilo.forward_slash(os.path.commonpath(files))
     # remove prefix
     files = [item.replace(prefix, '') for item in files]
     # remove empty path
@@ -45,7 +45,7 @@ def simplify_testfile_names(files, ext='pdf', sort: bool = True) -> tuple:
     # simplify name
     files = [item.replace('/', '_') for item in files]
     if sort:
-        files = utila.files_sort(files)
+        files = utilo.files_sort(files)
     return tuple(files)
 
 
@@ -62,7 +62,7 @@ def increased_filecount(
         path(str): path to check for file creation, if path is None use cwd
         ext(str): look for a special file extention
         mindiff(int): minimal number of created files, if None: 1 is used
-        maxdiff(int): maximal number of created files, if None: utila.INF is used
+        maxdiff(int): maximal number of created files, if None: utilo.INF is used
     Raises:
         AssertionError: if to few or less files are created
     Yields:
@@ -70,17 +70,17 @@ def increased_filecount(
     """
     if path is None:
         path = os.getcwd()
-    utila.exists_assert(path)
+    utilo.exists_assert(path)
     assert mindiff is None or mindiff >= 0, str(mindiff)
     assert maxdiff is None or maxdiff >= 0, str(maxdiff)
     pattern = '**/*.*' if ext is None else f'**/*.{ext}'
-    path = utila.forward_slash(str(path), newline=False)
+    path = utilo.forward_slash(str(path), newline=False)
     pattern = f'{path}/{pattern}'
     before = list(glob.glob(pattern, recursive=True))
     yield
     after = list(glob.glob(pattern, recursive=True))
     mindiff = 1 if mindiff is None else mindiff
-    maxdiff = utila.INF if maxdiff is None else maxdiff
+    maxdiff = utilo.INF if maxdiff is None else maxdiff
     current = len(after) - len(before)
     assert mindiff <= current <= maxdiff, (
         f'mindiff: {mindiff} <= {current} <= maxdiff: {maxdiff}\n'

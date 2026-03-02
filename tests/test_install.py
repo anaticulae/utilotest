@@ -11,9 +11,9 @@
 # import threading
 
 # import pytest
-# import utila
+# import utilo
 
-# import utilatest
+# import utilotest
 
 # PACKAGE = """\
 # import setuptools
@@ -29,35 +29,35 @@
 
 #     LOCK = threading.Lock()
 
-#     @utilatest.nonvirtual
-#     @utilatest.longrun
+#     @utilotest.nonvirtual
+#     @utilotest.longrun
 #     def test_clean_install(_, td):
 #         if linux:
 #             pytest.skip('enable later')
 #         with TestClass.LOCK:
 #             package = 'dorimifasa'
 #             td.mkdir(package)
-#             utila.file_create(
+#             utilo.file_create(
 #                 td.tmpdir.join('setup.py'),
 #                 PACKAGE % (package, package),
 #             )
-#             utila.run('python setup.py build')
-#             utilatest.clean_install(
+#             utilo.run('python setup.py build')
+#             utilotest.clean_install(
 #                 td.tmpdir,
 #                 'dorimifasa',
 #             )
-#         # @utilatest.nonvirtual
-#         # @utilatest.longrun
+#         # @utilotest.nonvirtual
+#         # @utilotest.longrun
 #         # def test_install_and_run(self, td):  # pylint:disable=R0201
 #         with TestClass.LOCK:
 #             package = 'dorimifasamore'
 #             # td.mkdir(package)
-#             # utila.file_create(
+#             # utilo.file_create(
 #             #     td.tmpdir.join('setup.py'),
 #             #     PACKAGE % (package, package),
 #             # )
-#             utila.run('python setup.py build')
-#             utilatest.install_and_run(
+#             utilo.run('python setup.py build')
+#             utilotest.install_and_run(
 #                 root=td.tmpdir,
 #                 package=package,
 #                 executable='power',  # not the installed one

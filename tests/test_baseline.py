@@ -8,12 +8,12 @@
 # =============================================================================
 
 import pytest
-import utila
+import utilo
 
-import utilatest
+import utilotest
 
 
-class Simple(utilatest.BaseLiner):
+class Simple(utilotest.BaseLiner):
 
     def __init__(self):
         super().__init__(
@@ -23,19 +23,19 @@ class Simple(utilatest.BaseLiner):
             workdir='',
             source='',
             index='message',
-            loader=lambda x: utila.file_read('message').strip(),
+            loader=lambda x: utilo.file_read('message').strip(),
             archive='archive',
         )
 
 
 def test_baseline_mixin_valid(td):
     td.mkdir('archive')
-    utila.run('power -h >> archive/message')
+    utilo.run('power -h >> archive/message')
     Simple().evaluate()
 
 
 def test_baseline_mixin_invalid(td):
     td.mkdir('archive')
-    utila.run('echo "invalid comparison" >> archive/message')
+    utilo.run('echo "invalid comparison" >> archive/message')
     with pytest.raises(AssertionError):
         Simple().evaluate()
