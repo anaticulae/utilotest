@@ -9,6 +9,7 @@
 
 import pytest
 import utilo
+
 import utilotest.cli.tracer
 
 TRACEBACK = """
