@@ -7,12 +7,12 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import configo
+import configos
 
 import utilotest
 
 
 def test_setup(mp):
-    api = configo.HV_API('/api/v0')
+    api = configos.HV_API('/api/v0')
     with mp.context():
         utilotest.setup(api)

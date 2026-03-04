@@ -9,7 +9,7 @@
 
 import sys
 
-import configo
+import configos
 import pytest
 import selenium.webdriver
 import utilo
@@ -40,4 +40,4 @@ def add_firefox_path():
     for item in [viewvisitor.FIREFOX_BINARY, viewvisitor.FIREFOX_DRIVER]:
         utilo.exists_assert(item)
         base = utilo.path_parent(item)
-        configo.env_path_append(base)
+        configos.env_path_append(base)
