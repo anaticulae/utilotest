@@ -7,7 +7,7 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import resinf
+# import resinf
 
 import utilotest
 # TODO: AUTOMATE THIS
@@ -17,4 +17,4 @@ from viewvisitor.fixture import selenium_driver  # pylint:disable=W0611
 
 pytest_plugins = ['pytester', 'xdist', 'localserver']  # pylint: disable=invalid-name
 
-resinf.setup(utilotest.ROOT)
+# resinf.setup(utilotest.ROOT)

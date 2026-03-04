@@ -14,7 +14,7 @@ import re
 import webbrowser
 
 import pytest
-import resinf
+# import resinf
 import utilo
 
 import utilotest
