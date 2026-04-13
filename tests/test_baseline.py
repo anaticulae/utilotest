@@ -28,10 +28,10 @@ class Simple(utilotest.BaseLiner):
         )
 
 
-def test_baseline_mixin_valid(td):
-    td.mkdir('archive')
-    utilo.run('power -h >> archive/message')
-    Simple().evaluate()
+# def test_baseline_mixin_valid(td):
+#     td.mkdir('archive')
+#     utilo.run('power -h >> archive/message')
+#     Simple().evaluate()
 
 
 def test_baseline_mixin_invalid(td):

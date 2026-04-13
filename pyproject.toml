@@ -63,6 +63,7 @@ patch_tags = ["fix", "perf", "build", "chore", "ci", "docs", "style", "refactor"
 [tool.setuptools.packages.find]
 where = ["."]
 include = [
+    "power",
     "utilotest",
     "utilotest.cli",
     "viewvisitor",
