@@ -7,6 +7,7 @@
 # be prosecuted under federal law. Its content is company confidential.
 #==============================================================================
 
+import importlib.metadata
 import os
 
 # baseline
@@ -85,7 +86,7 @@ from utilotest.utils import test_resources
 from utilotest.utils import testid
 from utilotest.utils import worker_count
 
-__version__ = '0.29.0'
+__version__ = importlib.metadata.version('utilotest')
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 PACKAGE = 'utilotest'
