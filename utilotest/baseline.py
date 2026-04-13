@@ -11,7 +11,7 @@ import contextlib
 import functools
 import os
 
-# import resinf
+import resinf
 import utilo
 
 import utilotest.config

@@ -11,7 +11,7 @@ import os
 import sys
 
 import pytest
-# import resinf
+import resinf
 import utilo
 
 VIRTUAL_ENVKEY = 'VIRTUAL'
