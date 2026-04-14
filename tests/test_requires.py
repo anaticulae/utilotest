@@ -9,6 +9,7 @@
 
 import os
 
+# pylint: disable=wrong-import-order
 import power
 import resinf
 import utilo

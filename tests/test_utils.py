@@ -9,6 +9,7 @@
 
 import webbrowser
 
+# pylint: disable=wrong-import-order
 import power
 import utilo
 

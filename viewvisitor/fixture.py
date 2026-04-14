@@ -37,7 +37,7 @@ def selenium_driver():
 
 
 def add_firefox_path():
-    for item in [viewvisitor.FIREFOX_BINARY, viewvisitor.FIREFOX_DRIVER]:
+    for item in (viewvisitor.FIREFOX_BINARY, viewvisitor.FIREFOX_DRIVER):
         utilo.exists_assert(item)
         base = utilo.path_parent(item)
         configos.env_path_append(base)
