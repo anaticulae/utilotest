@@ -1,6 +1,19 @@
 # CHANGELOG
 
 
+## v1.0.1 (2026-04-14)
+
+### Chores
+
+- **make**: Fix make file
+  ([`396ee82`](https://github.com/anaticulae/utilotest/commit/396ee82a7dddebfdc0162b6ae71a1ae4a9ea27cd))
+
+### Code Style
+
+- **linter**: Solves linter warnings
+  ([`62c05a3`](https://github.com/anaticulae/utilotest/commit/62c05a31831c0fe383424e22925739a00b17559c))
+
+
 ## v1.0.0 (2026-04-14)
 
 ### Chores
