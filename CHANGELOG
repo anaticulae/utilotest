@@ -1,454 +1,1151 @@
-# Changelog
+# CHANGELOG
 
-Every noteable change is logged here.
+
+## v1.0.0 (2026-04-14)
+
+### Chores
+
+- **changelog**: Rename file
+  ([`7b3c0e9`](https://github.com/anaticulae/utilotest/commit/7b3c0e990013b382ce983a0f019c7df358a526ed))
+
+- **docker**: Add docker file
+  ([`1f5a689`](https://github.com/anaticulae/utilotest/commit/1f5a68962eb6e54e86241ef2a37a8a2342ac4f52))
+
+- **github**: Add .github
+  ([`dc15c9d`](https://github.com/anaticulae/utilotest/commit/dc15c9d9aaa937182e13ee43643666e974d29d76))
+
+- **jenkins**: Remove Jenkinsfile
+  ([`88a58e2`](https://github.com/anaticulae/utilotest/commit/88a58e2b3c74ca670eeebe0f5936a07b912e2abd))
+
+- **Jenkins**: Upgrade Jenkinsfile
+  ([`3201fd5`](https://github.com/anaticulae/utilotest/commit/3201fd5f0fc1db64bf2251c8042b5fe70182a63f))
+
+- **Jenkins**: Use new pre release step
+  ([`21d0ce9`](https://github.com/anaticulae/utilotest/commit/21d0ce95524b9da47a8f7e1d788aead4c473a6d5))
+
+- **pyproject**: Enable resinf
+  ([`066f81b`](https://github.com/anaticulae/utilotest/commit/066f81bb23316bb0032fdc3846b2dfa41484f91c))
+
+- **pyproject**: Use modern approach
+  ([`5f16e51`](https://github.com/anaticulae/utilotest/commit/5f16e511bbd67281a2ad425859b10b7c4b7f655f))
+
+- **requirements**: Adjust requirements
+  ([`93dfda2`](https://github.com/anaticulae/utilotest/commit/93dfda2b69c88f7904d936bfc9e81cd2ca7f342a))
+
+- **requirements**: Enable requirement
+  ([`263aba7`](https://github.com/anaticulae/utilotest/commit/263aba749be1073f6141bb6218f0e53ada8c0357))
+
+- **requirements**: Upgrade requirements.txt
+  ([`4d3c369`](https://github.com/anaticulae/utilotest/commit/4d3c36920e249ae5fead99fa29245477889e8b79))
+
+### Features
+
+- **config**: Rename baseline replace feature
+  ([`c22fe0a`](https://github.com/anaticulae/utilotest/commit/c22fe0a0bee3bf7987e3d16c53354bc533042df8))
+
+### Refactoring
+
+- **configo**: Rename package
+  ([`120b4a1`](https://github.com/anaticulae/utilotest/commit/120b4a1245e11d45d81b0f049325e240a6fd0471))
+
+- **imports**: Disable package
+  ([`089bd46`](https://github.com/anaticulae/utilotest/commit/089bd46fb0d996072d97234cc50bfe6c60dee7ae))
+
+- **package**: Rename package
+  ([`1587b09`](https://github.com/anaticulae/utilotest/commit/1587b09615a2a59feb6df209bd670bab59036bad))
+
+- **package**: Rename package
+  ([`ab94bac`](https://github.com/anaticulae/utilotest/commit/ab94bac86c4f70bcec74fc5d59d676486da5b282))
+
+- **resinf**: Enable package
+  ([`92f0596`](https://github.com/anaticulae/utilotest/commit/92f0596f29207e1cdccd81e0682719cbd5bac0b9))
+
+### Testing
+
+- **fix**: Add missing power package
+  ([`0909ba1`](https://github.com/anaticulae/utilotest/commit/0909ba1e191048a0a73a4d0f77efaf3c23676f2a))
+
 
 ## v0.29.0 (2023-02-03)
 
-### Feature
+### Chores
 
-* add debugging information (fce1e1329f73)
+- **Jenkins**: Upgrade Jenkinsfile
+  ([`0fcccb7`](https://github.com/anaticulae/utilotest/commit/0fcccb78059695ad29cabb0b9dba062fedc85843))
 
-### Chore
+- **requirements**: Upgrade requirements.txt
+  ([`82fa966`](https://github.com/anaticulae/utilotest/commit/82fa966a544284490fb289130a3a7ba84fc8423f))
 
-* upgrade requirements.txt (82fa966a5442)
-* upgrade Jenkinsfile (0fcccb780596)
+### Features
+
+- **baseline**: Add debugging information
+  ([`fce1e13`](https://github.com/anaticulae/utilotest/commit/fce1e1329f737725790ba2474cc4fc200b87163e))
+
 
 ## v0.28.2 (2023-01-31)
 
-### Chore
+### Chores
 
-* upgrade requirements.txt (d50544cb1503)
-* upgrade Jenkinsfile (ab2a4cecb2fd)
+- **Jenkins**: Upgrade Jenkinsfile
+  ([`ab2a4ce`](https://github.com/anaticulae/utilotest/commit/ab2a4cecb2fd64adbb507f5d259ed82cbac3b4dd))
+
+- **requirements**: Upgrade requirements.txt
+  ([`d50544c`](https://github.com/anaticulae/utilotest/commit/d50544cb1503933dabd5b3277eb2106efe9c6bb6))
+
 
 ## v0.28.1 (2023-01-15)
 
-### Chore
+### Chores
 
-* upgrade Jenkinsfile (44efcc519dfa)
+- **Jenkins**: Upgrade Jenkinsfile
+  ([`44efcc5`](https://github.com/anaticulae/utilotest/commit/44efcc519dfa5be4b9e5c4ae8414da52332fc0b1))
+
 
 ## v0.28.0 (2023-01-15)
 
-### Feature
+### Chores
 
-* add decorator to skip test on cov run (c1f97b26f6a2)
+- **dev**: Do not upgrade selenium
+  ([`fe19872`](https://github.com/anaticulae/utilotest/commit/fe1987208f5c288b5e0898cbed073ad403ef76a2))
 
-### Chore
+- **Jenkins**: Upgrade Jenkinsfile
+  ([`102fd30`](https://github.com/anaticulae/utilotest/commit/102fd30b97772aeec5ded09bde8d4df2ad83691f))
 
-* do not upgrade selenium (fe1987208f5c)
-* upgrade requirements.txt (8f65923f2153)
-* upgrade Jenkinsfile (102fd30b9777)
-* upgrade pipe library (cc2a0f983bdc)
+- **Jenkins**: Upgrade pipe library
+  ([`cc2a0f9`](https://github.com/anaticulae/utilotest/commit/cc2a0f983bdce2a29c78aa57061bb7d171bc0f2f))
+
+- **requirements**: Upgrade requirements.txt
+  ([`8f65923`](https://github.com/anaticulae/utilotest/commit/8f65923f215304b22090e8628f5a2b0b73c8db79))
+
+### Code Style
+
+- **runner**: Fix spelling error
+  ([`7b2efb1`](https://github.com/anaticulae/utilotest/commit/7b2efb12e3b4ee722b8115c01972d85149c926e2))
+
+### Features
+
+- **select**: Add decorator to skip test on cov run
+  ([`c1f97b2`](https://github.com/anaticulae/utilotest/commit/c1f97b26f6a2e2e6015272fd28cdf325a833d025))
+
 
 ## v0.27.0 (2023-01-12)
 
-### Feature
+### Chores
 
-* add more user friendly debugging information (dd1b882d8bf2)
+- **Jenkins**: Upgrade Jenkinsfile
+  ([`2adbaf6`](https://github.com/anaticulae/utilotest/commit/2adbaf6a72c219a918be2f61bf91d7023c4f2a64))
 
-### Chore
+- **requirements**: Upgrade requirements.txt
+  ([`41a3650`](https://github.com/anaticulae/utilotest/commit/41a3650a0113af40d1ac07d3ce22481a51ba970f))
 
-* upgrade requirements.txt (41a3650a0113)
-* upgrade Jenkinsfile (2adbaf6a72c2)
+### Features
+
+- **utils**: Add more user friendly debugging information
+  ([`dd1b882`](https://github.com/anaticulae/utilotest/commit/dd1b882d8bf27f7a11fadae9cd082f8b1ae5a20b))
+
 
 ## v0.26.1 (2023-01-04)
 
+### Chores
+
+- **Jenkins**: Upgrade Jenkinsfile
+  ([`d3c5034`](https://github.com/anaticulae/utilotest/commit/d3c5034b6e042097f09ce24f919a1fbb6758e6bd))
+
+- **Jenkins**: Upgrade pipe library
+  ([`62f49f8`](https://github.com/anaticulae/utilotest/commit/62f49f8755d5b82747d8a12c78a6e4f155d40ad0))
+
 ### Documentation
 
-* happy New Year! (587589f15c73)
+- **copyright**: Happy New Year!
+  ([`587589f`](https://github.com/anaticulae/utilotest/commit/587589f15c735c56e1d3891b59d2d72bb6cc08af))
 
-### Chore
-
-* upgrade Jenkinsfile (d3c5034b6e04)
-* upgrade pipe library (62f49f8755d5)
 
 ## v0.26.0 (2022-12-21)
 
-### Feature
+### Chores
 
-* add option to disable clean before install (32f014aad2b8)
-* add install method (fe59770f6ef6)
+- **Jenkins**: Upgrade pipe library
+  ([`c4b48e1`](https://github.com/anaticulae/utilotest/commit/c4b48e163c688bea69037a9f766dd52a522915a6))
 
-### Chore
+### Features
 
-* upgrade pipe library (c4b48e163c68)
+- **API**: Add install method
+  ([`fe59770`](https://github.com/anaticulae/utilotest/commit/fe59770f6ef67bb3564904b2e9ab0d193f1e7592))
+
+- **install**: Add option to disable clean before install
+  ([`32f014a`](https://github.com/anaticulae/utilotest/commit/32f014aad2b801d7f3c370cd3f2a7a1c02e2d043))
+
+### Refactoring
+
+- **install**: Split install process into separate steps
+  ([`70601b2`](https://github.com/anaticulae/utilotest/commit/70601b20ee50ee6958a4dc1595bd822f6e2e1ea9))
+
 
 ## v0.25.0 (2022-12-19)
 
-### Feature
+### Features
 
-* add method to skip test if prog is not installed (b709009e8800)
+- **select**: Add method to skip test if prog is not installed
+  ([`b709009`](https://github.com/anaticulae/utilotest/commit/b709009e88006a877aac8f7a7f7a43579c958173))
+
+### Refactoring
+
+- **select**: Simplify code
+  ([`8bce184`](https://github.com/anaticulae/utilotest/commit/8bce184b63210d172ef4e93bf70461c289ab78a6))
+
 
 ## v0.24.4 (2022-12-18)
 
-### Chore
+### Chores
 
-* add rebase step (99df541d0333)
-* upgrade requirements.txt (2e7b7c021c10)
-* upgrade pipe library (c6c4cf101052)
-* upgrade Jenkinsfile (dfe945a6a54d)
+- **Jenkins**: Add rebase step
+  ([`99df541`](https://github.com/anaticulae/utilotest/commit/99df541d0333acc4f5011cc70feb6a1b1ab833fa))
+
+- **Jenkins**: Upgrade Jenkinsfile
+  ([`dfe945a`](https://github.com/anaticulae/utilotest/commit/dfe945a6a54d0ca188ca9c74c0ad3edf12c8f6f9))
+
+- **Jenkins**: Upgrade pipe library
+  ([`c6c4cf1`](https://github.com/anaticulae/utilotest/commit/c6c4cf1010520500dabe46765af27f75b3bde3b9))
+
+- **requirements**: Upgrade requirements.txt
+  ([`2e7b7c0`](https://github.com/anaticulae/utilotest/commit/2e7b7c021c10d20456418711df98f4e2176c47a2))
+
 
 ## v0.24.3 (2022-12-14)
 
-### Fix
+### Bug Fixes
 
-* fix regression (2a41798a12c6)
+- **select**: Fix regression
+  ([`2a41798`](https://github.com/anaticulae/utilotest/commit/2a41798a12c667be0c26d359878fc3e2947e78d3))
+
 
 ## v0.24.2 (2022-12-14)
 
-### Chore
+### Chores
 
-* use quick installer (5381fc9c9b07)
-* add resinf (af73030e168b)
-* upgrade requirements.txt (108836bf164f)
-* upgrade Pipeline (274dd0e98a34)
-* use defaults (2c8a43fe144e)
+- **baw**: Use defaults
+  ([`2c8a43f`](https://github.com/anaticulae/utilotest/commit/2c8a43fe144ed8cdaeca67f4e9cd5ee83dedb43c))
+
+- **Jenkins**: Upgrade Pipeline
+  ([`274dd0e`](https://github.com/anaticulae/utilotest/commit/274dd0e98a342726a7c30776dbd612a16a0c0285))
+
+- **requirements**: Add resinf
+  ([`af73030`](https://github.com/anaticulae/utilotest/commit/af73030e168b89a6914d344f3306924b40dd5bd5))
+
+- **requirements**: Upgrade requirements.txt
+  ([`108836b`](https://github.com/anaticulae/utilotest/commit/108836bf164f38445c9b76c49210ea542dcc80a2))
+
+- **setup**: Use quick installer
+  ([`5381fc9`](https://github.com/anaticulae/utilotest/commit/5381fc9c9b0786b98776f0937ae12c6ba238fefc))
+
+### Refactoring
+
+- **baseline**: Simplify code
+  ([`7cc1509`](https://github.com/anaticulae/utilotest/commit/7cc15094f7d94ba4fc00214db698083e516153b9))
+
+- **config**: Move config into separate module
+  ([`0279cb2`](https://github.com/anaticulae/utilotest/commit/0279cb2ea2a2afe6fc21b3db8f9d6efc525f94b6))
+
+- **replace**: Automated replacement
+  ([`c5157a2`](https://github.com/anaticulae/utilotest/commit/c5157a2355667a1231ec0f528c3d44e99a7be54e))
+
+- **replace**: Replace power due resinf
+  ([`e138b0f`](https://github.com/anaticulae/utilotest/commit/e138b0f86fb25325b3feb7f7b6e35ade6695640e))
+
 
 ## v0.24.1 (2022-10-28)
 
-### Fix
+### Bug Fixes
 
-* ensure to setup API as str (0dc3a33bebc3)
+- **call**: Ensure to setup API as str
+  ([`0dc3a33`](https://github.com/anaticulae/utilotest/commit/0dc3a33bebc3682884e6e8dcbbfb12f114bd93e8))
 
-### Chore
+### Chores
 
-* upgrade environment (e75b34bbaf11)
-* upgrade requirements.txt (f830a4910db8)
+- **Jenkins**: Upgrade environment
+  ([`e75b34b`](https://github.com/anaticulae/utilotest/commit/e75b34bbaf11d015824991ca793e5591e5f67c8c))
+
+- **requirements**: Upgrade requirements.txt
+  ([`f830a49`](https://github.com/anaticulae/utilotest/commit/f830a4910db8086a72212cb35291fec660a70cb2))
+
 
 ## v0.24.0 (2022-10-15)
 
-### Feature
+### Chores
 
-* enable more than one expected bin (4bbb68c9ab1c)
+- **Jenkins**: Upgrade baw
+  ([`4399fe7`](https://github.com/anaticulae/utilotest/commit/4399fe7a46ab1f986c167f185481319000de5386))
 
-### Chore
+### Features
 
-* upgrade baw (4399fe7a46ab)
+- **utils**: Enable more than one expected bin
+  ([`4bbb68c`](https://github.com/anaticulae/utilotest/commit/4bbb68c9ab1c44c389b197eed8bda389c175ab0e))
+
+### Refactoring
+
+- **solve**: Solve linter warning
+  ([`046416f`](https://github.com/anaticulae/utilotest/commit/046416fc04ed71b5b4b119b41dca0b2124336c11))
+
+### Testing
+
+- **disable**: Disable outdated test
+  ([`7a48990`](https://github.com/anaticulae/utilotest/commit/7a4899092eeefedea7c5e35e5144b98ded53dff5))
+
+- **enable**: Enable after improving
+  ([`43008fc`](https://github.com/anaticulae/utilotest/commit/43008fcf7985d8306506a7bce76c9f5731b1ac18))
+
 
 ## v0.23.0 (2022-10-09)
 
-### Feature
+### Chores
 
-* add separate marker selector (277f11e3af0d)
+- **Jenkinsfile**: Convert longrun to all
+  ([`460014c`](https://github.com/anaticulae/utilotest/commit/460014c27c8fd699443fc6338c76defd5ea3a69c))
 
-### Chore
+- **Jenkinsfile**: Publish test report
+  ([`99f5f1e`](https://github.com/anaticulae/utilotest/commit/99f5f1ef349e692ab02829e4a1f543fa6043e361))
 
-* publish test report (99f5f1ef349e)
-* convert longrun to all (460014c27c8f)
-* upgrade requirements.txt (9dad0ffae883)
+- **requirements**: Upgrade requirements.txt
+  ([`9dad0ff`](https://github.com/anaticulae/utilotest/commit/9dad0ffae8834c209577fe7d57308cf7cce83fa2))
+
+### Features
+
+- **utils**: Add separate marker selector
+  ([`277f11e`](https://github.com/anaticulae/utilotest/commit/277f11e3af0d0eaff8205a1932882b570d3963e1))
+
 
 ## v0.22.0 (2022-10-05)
 
-### Feature
+### Chores
 
-* use marker to select unit tests (0aed2f85fdfa)
+- **Jenkinsfile**: Root user is not required
+  ([`4b62ec4`](https://github.com/anaticulae/utilotest/commit/4b62ec495f3ea1653c0fb2eccd456bbf4256b175))
 
-### Chore
+- **Jenkinsfile**: Upgrade baw
+  ([`fbcdd01`](https://github.com/anaticulae/utilotest/commit/fbcdd01e42e6644fa31cbeb37866c879d7519f66))
 
-* upgrade baw (fbcdd01e42e6)
-* root user is not required (4b62ec495f3e)
-* upgrade requirements.txt (134ccb372809)
+- **requirements**: Upgrade requirements.txt
+  ([`134ccb3`](https://github.com/anaticulae/utilotest/commit/134ccb37280926e229db061a2d63a5cff5a7784b))
+
+### Code Style
+
+- **select**: Improve message
+  ([`e62d17b`](https://github.com/anaticulae/utilotest/commit/e62d17ba14fc06720515417563d0f503687c1736))
+
+### Features
+
+- **select**: Use marker to select unit tests
+  ([`0aed2f8`](https://github.com/anaticulae/utilotest/commit/0aed2f85fdfa7d2c74d485ea74f0a29522727e10))
+
 
 ## v0.21.0 (2022-10-03)
 
-### Feature
+### Features
 
-* add monday selector to run very very large tests (f588365a8b1a)
+- **select**: Add monday selector to run very very large tests
+  ([`f588365`](https://github.com/anaticulae/utilotest/commit/f588365a8b1a0b17e4c86fa18a9b47e8c0d35116))
+
 
 ## v0.20.1 (2022-09-28)
 
-### Feature
+### Features
 
-* add worker max count to limit CI worker (d6ea48b9987e)
+- **utils**: Add worker max count to limit CI worker
+  ([`d6ea48b`](https://github.com/anaticulae/utilotest/commit/d6ea48b9987ec775ebd7715909be2ff87d0142c8))
+
 
 ## v0.20.0 (2022-09-28)
 
-### Feature
+### Bug Fixes
 
-* add method to verify that test is running on CI (5cdd399f73a1)
+- **utils**: Detect CI on jenkins
+  ([`f100cf4`](https://github.com/anaticulae/utilotest/commit/f100cf4aadf043cba4bee0bb46a973b3bfe66186))
 
-### Fix
+### Features
 
-* detect CI on jenkins (f100cf4aadf0)
+- **utils**: Add method to verify that test is running on CI
+  ([`5cdd399`](https://github.com/anaticulae/utilotest/commit/5cdd399f73a113872856c6db974ae89a2ba5653d))
+
 
 ## v0.19.0 (2022-09-28)
 
-### Feature
+### Chores
 
-* add method to determine worker count depending on platform (360ecc52520d)
+- **requirements**: Upgrade requirements.txt
+  ([`e689d49`](https://github.com/anaticulae/utilotest/commit/e689d490826fd33c0a2ab66e437afafd00dfbf89))
 
-### Chore
+### Code Style
 
-* upgrade requirements.txt (e689d490826f)
+- **changelog**: Adjust to automated release tool
+  ([`aa6c000`](https://github.com/anaticulae/utilotest/commit/aa6c000421355c9afd3290e8021c649106ce8e96))
 
-## 0.18.0 auto generated release
+### Features
 
-### Feature
+- **utils**: Add method to determine worker count depending on platform
+  ([`360ecc5`](https://github.com/anaticulae/utilotest/commit/360ecc52520df24c6b6ebc9b662c0b262eddb2b7))
 
-* ensure that geckodriver is in path (cfa4b2ef010a)
-* add selector to select different platforms (f314fa24c05c)
 
-## v0.17.0
+## v0.18.0 (2022-09-22)
 
-### Fix
+### Chores
 
-* skip view test on linux (14b3bd1971c1)
+- **ci**: Upgrade Jenkinsfile
+  ([`34c5ab9`](https://github.com/anaticulae/utilotest/commit/34c5ab9ee9a9b90d13d3141fe08ad378f6d32b17))
 
-## v0.16.0
+- **requirements**: Upgrade requirements.txt
+  ([`4bf3bd7`](https://github.com/anaticulae/utilotest/commit/4bf3bd76e67731a82a67971db437211749638d9c))
 
-### Feature
+### Features
 
-* add marker to skip test if baw is not installed (ea6fe0e42040)
-* add selector to skip tests if git is not installed (9953f708390a)
+- **fixture**: Ensure that geckodriver is in path
+  ([`cfa4b2e`](https://github.com/anaticulae/utilotest/commit/cfa4b2ef010a161adaf14fea021b51644485d7c9))
 
-## v0.15.4
+- **select**: Add selector to select different platforms
+  ([`f314fa2`](https://github.com/anaticulae/utilotest/commit/f314fa24c05c6fe2f0b95044dc8f3aabb626d2cb))
 
-## v0.15.3
+### Testing
 
-### Feature
+- **selenium**: Skip on linux
+  ([`0e15357`](https://github.com/anaticulae/utilotest/commit/0e15357c21edf976383bc3bb360c23db924ac889))
 
-* add None option to skip check (b06fa1842980)
 
-## v0.15.2
+## v0.17.0 (2022-09-15)
 
-## v0.15.1
+### Bug Fixes
 
-## v0.15.0
+- **view**: Skip view test on linux
+  ([`14b3bd1`](https://github.com/anaticulae/utilotest/commit/14b3bd1971c131d97d59ad550f11c443a3a48687))
 
-### Feature
+### Chores
 
-* add monkeypatch and testdir shortcuts (b8ad37a3ef78)
+- **ci**: Add Jenkinsfile
+  ([`103316d`](https://github.com/anaticulae/utilotest/commit/103316d68ac8c2f40dd2893e29c0eed252a07b10))
 
-## v0.14.0
+- **requirements**: Upgrade requirements.txt
+  ([`209366e`](https://github.com/anaticulae/utilotest/commit/209366e14e695eae91e253cb92f1aa40fcf08b14))
 
-### Feature
+### Testing
 
-* skip resource if not generated (39bd01ce7f63)
-* add method to select test resources (ce86e76df165)
-* detect invalid cli invocation (1a88f6276309)
+- **baseline**: Skip test cause pdfcat does not work
+  ([`c63e45e`](https://github.com/anaticulae/utilotest/commit/c63e45e031ae573d6cc0130a8113cfe1bf946bbe))
 
-## v0.13.0
+- **fix**: Enable linux
+  ([`50b72e2`](https://github.com/anaticulae/utilotest/commit/50b72e2bf52c69576f1ff578fe86302a6a029040))
 
-### Feature
+- **skip**: Skip installing test
+  ([`143f3e9`](https://github.com/anaticulae/utilotest/commit/143f3e99032f8636495581ae18bb24b8dd268724))
 
-* add method to determine current test id (778584c285db)
 
-## v0.12.4
+## v0.16.0 (2022-08-28)
 
-### Feature
+### Chores
 
-* add callable to run on failure (ef34f4ad2396)
-* store source for later processing (c38a7840f60c)
+- **requirements**: Upgrade requirements.txt
+  ([`7074494`](https://github.com/anaticulae/utilotest/commit/707449473ac215eb806bb84be18d3de55f36391d))
 
-## v0.12.3
+### Features
 
-### Feature
+- **select**: Add marker to skip test if baw is not installed
+  ([`ea6fe0e`](https://github.com/anaticulae/utilotest/commit/ea6fe0e42040ed8ff36ab0adcd351eb043d5d8e1))
 
-* add template to create basic test runner (6c3e4bb85a84)
+- **select**: Add selector to skip tests if git is not installed
+  ([`9953f70`](https://github.com/anaticulae/utilotest/commit/9953f708390a321fa51df5d26e224297cd66a5d5))
 
-## v0.12.2
 
-### Feature
+## v0.15.4 (2022-08-05)
 
-* improve decorator naming (a10c7a69f4e6)
+### Chores
 
-## v0.12.1
+- **requirements**: Upgrade requirements.txt
+  ([`6a994c5`](https://github.com/anaticulae/utilotest/commit/6a994c5a90e9314017a6f3f26b3ca1dcf992b39e))
 
-### Fix
+### Refactoring
 
-* rstrip to support spaces at start of expected document (27acc8ba1013)
-* fix state converter (02019db06338)
+- **runner**: Adjust naming
+  ([`9b0f3d5`](https://github.com/anaticulae/utilotest/commit/9b0f3d516e6fea438491f5e41cad9ed853584d74))
 
-## v0.12.0
 
-### Feature
+## v0.15.3 (2022-07-27)
 
-* add option to overwrite source to ease debugging (26b3442dbc5b)
-* verify that power is installed (795e4f3c9d80)
-* add selenium driver shortcut (c0654b7f8be6)
+### Chores
+
+- **requirements**: Upgrade requirements.txt
+  ([`bde18d5`](https://github.com/anaticulae/utilotest/commit/bde18d5722ade7914889e3f829931a5090d7845b))
+
+### Features
+
+- **runner**: Add None option to skip check
+  ([`b06fa18`](https://github.com/anaticulae/utilotest/commit/b06fa1842980ebc122b8f89cebcacc5ee4b556b3))
+
+### Refactoring
+
+- **runner**: Align parameter
+  ([`a5a549c`](https://github.com/anaticulae/utilotest/commit/a5a549c2d44997e6768912795ba4010d30e4fc69))
+
+
+## v0.15.2 (2022-07-25)
+
+### Chores
+
+- **requirements**: Upgrade requirements.txt
+  ([`da44875`](https://github.com/anaticulae/utilotest/commit/da44875253a43c99ce9ebdbb1812cbc88cb96424))
+
+### Code Style
+
+- **runner**: Format code
+  ([`baed1ca`](https://github.com/anaticulae/utilotest/commit/baed1ca87e2f1df66045db3f0da9ef40774183da))
+
+### Refactoring
+
+- **fixture**: Improve firefox locator
+  ([`a7c335e`](https://github.com/anaticulae/utilotest/commit/a7c335ec357a18c684a1d47b736a387f94585d93))
+
+
+## v0.15.1 (2022-07-09)
+
+### Refactoring
+
+- **runner**: Shorten naming
+  ([`566f327`](https://github.com/anaticulae/utilotest/commit/566f3272df79a816fbcfc930d5808974b2bf794a))
+
+- **runner**: Shorten naming
+  ([`d20a333`](https://github.com/anaticulae/utilotest/commit/d20a33384bc086e34c1d8bad85500210c3412d8a))
+
+
+## v0.15.0 (2022-07-08)
+
+### Chores
+
+- **requirements**: Adjust local server
+  ([`b437cdb`](https://github.com/anaticulae/utilotest/commit/b437cdb2fdb9f1b218cdba55a4b5ded8788f57a7))
+
+- **requirements**: Upgrade requirements.txt
+  ([`b490000`](https://github.com/anaticulae/utilotest/commit/b4900008ec6794e90426de82cf511047ae55e1f6))
+
+### Features
+
+- **shortcuts**: Add monkeypatch and testdir shortcuts
+  ([`b8ad37a`](https://github.com/anaticulae/utilotest/commit/b8ad37a3ef78887c3305b54b4414ef3eba0e6f34))
+
+### Testing
+
+- **refactor**: Do not access venv in parallel
+  ([`6f5f441`](https://github.com/anaticulae/utilotest/commit/6f5f4417f6c9af2ef0ae556bf80cd413759b2883))
+
+- **refactor**: Shorten fixture names
+  ([`cc08023`](https://github.com/anaticulae/utilotest/commit/cc080235727e5fc906d3ff8faa0d503a89373558))
+
+- **refactor**: Shorten test names
+  ([`0bf4c38`](https://github.com/anaticulae/utilotest/commit/0bf4c38449970afb6ad56b44b8b671f1c855c22b))
+
+
+## v0.14.0 (2022-07-04)
+
+### Chores
+
+- **requirements**: Upgrade requirements.txt
+  ([`e810c40`](https://github.com/anaticulae/utilotest/commit/e810c40b2ba10919d6dd1db635d76c222a76763c))
+
+### Features
+
+- **tracer**: Detect invalid cli invocation
+  ([`1a88f62`](https://github.com/anaticulae/utilotest/commit/1a88f627630977425126fe3487ef86e554fdb542))
+
+- **utils**: Add method to select test resources
+  ([`ce86e76`](https://github.com/anaticulae/utilotest/commit/ce86e76df165c844143d58a281d50a98fd6d11f1))
+
+- **utils**: Skip resource if not generated
+  ([`39bd01c`](https://github.com/anaticulae/utilotest/commit/39bd01ce7f63a48e5bb74bf103b3075196b688d8))
+
+### Refactoring
+
+- **log**: Replace with utila code
+  ([`9a7ac72`](https://github.com/anaticulae/utilotest/commit/9a7ac72a9aac8a69ed62b12da2eaf6090b923492))
+
+- **tracer**: Replace with utila code
+  ([`019fc7c`](https://github.com/anaticulae/utilotest/commit/019fc7c4a63b6912aea23787391664d5ef7229dc))
+
+### Testing
+
+- **refactor**: Make test extendable
+  ([`e750538`](https://github.com/anaticulae/utilotest/commit/e7505381679c0a5e0779a1dcbb0e2906784157ff))
+
+- **tracer**: Verify invalid cli invocation
+  ([`9337460`](https://github.com/anaticulae/utilotest/commit/9337460b85dd14911fc9b0463af2c30f4bb23975))
+
+
+## v0.13.0 (2022-06-08)
+
+### Features
+
+- **utils**: Add method to determine current test id
+  ([`778584c`](https://github.com/anaticulae/utilotest/commit/778584c285dbd1f2d718fc645c0c4f9d64bbd9a8))
+
+
+## v0.12.4 (2022-04-24)
+
+### Chores
+
+- **requirements**: Upgrade requirements.txt
+  ([`16b7c68`](https://github.com/anaticulae/utilotest/commit/16b7c6877be0ae97246d50a5b153b81fed8befa4))
+
+### Features
+
+- **baseline**: Add callable to run on failure
+  ([`ef34f4a`](https://github.com/anaticulae/utilotest/commit/ef34f4ad2396942a7473906773e6199a4eab4281))
+
+- **baseline**: Store source for later processing
+  ([`c38a784`](https://github.com/anaticulae/utilotest/commit/c38a7840f60c0881b9036f3dcdbb4ff051e72709))
+
+### Testing
+
+- **fix**: Adjust test
+  ([`ef50d22`](https://github.com/anaticulae/utilotest/commit/ef50d228b5dd40a0368a1966e001b5593f2bdfee))
+
+
+## v0.12.3 (2022-03-08)
+
+### Code Style
+
+- **docs**: Format docs
+  ([`ce3fb1b`](https://github.com/anaticulae/utilotest/commit/ce3fb1b7358b1169630fa2de6b8fc586ff7983d2))
+
+### Features
+
+- **runner**: Add template to create basic test runner
+  ([`6c3e4bb`](https://github.com/anaticulae/utilotest/commit/6c3e4bb85a84555711b3a3c99b77b06c02dd5e26))
+
+
+## v0.12.2 (2022-03-08)
+
+### Chores
+
+- **requirements**: Upgrade requirements.txt
+  ([`c3c93e2`](https://github.com/anaticulae/utilotest/commit/c3c93e236d330abbb0e839c3d6055aaa3cd18ead))
+
+### Code Style
+
+- **docs**: Adjust headline
+  ([`2f74d36`](https://github.com/anaticulae/utilotest/commit/2f74d3628d60887eca81acf9700ca0cc5bbb6bd2))
+
+### Features
+
+- **rename**: Improve decorator naming
+  ([`a10c7a6`](https://github.com/anaticulae/utilotest/commit/a10c7a69f4e6f99835bc68ad44e73b2d01d2d483))
+
+### Testing
+
+- **adjust**: Adjust naming
+  ([`543d24f`](https://github.com/anaticulae/utilotest/commit/543d24ffe208bf163707f6cc4fa4101bb7f73611))
+
+
+## v0.12.1 (2022-01-28)
+
+### Bug Fixes
+
+- **baseline**: Fix state converter
+  ([`02019db`](https://github.com/anaticulae/utilotest/commit/02019db06338b4eecf73e89bdde9e75600db719d))
+
+- **baseline**: Rstrip to support spaces at start of expected document
+  ([`27acc8b`](https://github.com/anaticulae/utilotest/commit/27acc8ba10137a532e1aa6d9650062ff2b76d165))
+
+### Chores
+
+- **requirements**: Upgrade requirements.txt
+  ([`1c1c89f`](https://github.com/anaticulae/utilotest/commit/1c1c89fd52e3e409654f3885ff2ece3863d8129a))
+
+
+## v0.12.0 (2022-01-27)
+
+### Chores
+
+- **requirements**: Upgrade requirements.txt
+  ([`76da5ff`](https://github.com/anaticulae/utilotest/commit/76da5ff64897beed42196e9e586fb4ebfc75e962))
+
+- **requirements**: Upgrade requirements.txt
+  ([`7017967`](https://github.com/anaticulae/utilotest/commit/7017967e9d1e9e798a15bedf028063d263a25235))
+
+### Code Style
+
+- **log**: Format code
+  ([`a667480`](https://github.com/anaticulae/utilotest/commit/a6674802b5e51f41364e444f538295fa5dc8d447))
+
+- **select**: Shorten reason
+  ([`8315d71`](https://github.com/anaticulae/utilotest/commit/8315d7122388ba91eb904a4e09cb568df9989124))
 
 ### Documentation
 
-* Happy New Year! (d888cc76974f)
-* fix modules path (6d9cd1df1329)
+- **copyright**: Happy New Year!
+  ([`d888cc7`](https://github.com/anaticulae/utilotest/commit/d888cc76974f323e0a657089e7ff95627294cec1))
 
-## v0.11.0
+- **fix**: Fix modules path
+  ([`6d9cd1d`](https://github.com/anaticulae/utilotest/commit/6d9cd1df1329fe69116f0439557dfb1e6b38e994))
 
-### Feature
+### Features
 
-* add parameter to compress lines of code (ab213a773192)
-* check resource existence (4e1889ea72e3)
-* add print_return decorator to print result (c53c0cefbff4)
+- **baseline**: Add option to overwrite source to ease debugging
+  ([`26b3442`](https://github.com/anaticulae/utilotest/commit/26b3442dbc5b0f401979e3f8f067ee399a37f939))
 
-## v0.10.1
+- **baseliner**: Verify that power is installed
+  ([`795e4f3`](https://github.com/anaticulae/utilotest/commit/795e4f3c9d80f46f4147ce24447a4eefbe00a696))
 
-### Feature
+- **view**: Add selenium driver shortcut
+  ([`c0654b7`](https://github.com/anaticulae/utilotest/commit/c0654b7f8be6a60713ebc210580450041edc6994))
 
-* add option to use pdf path as source (127e642b749a)
 
-## v0.10.0
+## v0.11.0 (2021-11-26)
 
-### Feature
+### Chores
 
-* add baseline runner to ease verification step (a2043ce08eb8)
+- **requirements**: Upgrade requirements.txt
+  ([`d1c51a3`](https://github.com/anaticulae/utilotest/commit/d1c51a36873cb3a06076f9bf7eef796af9ab5df7))
 
-### Fix
+### Features
 
-* ensure that extension use correctly (62e7293af94e)
+- **baseline**: Check resource existence
+  ([`4e1889e`](https://github.com/anaticulae/utilotest/commit/4e1889ea72e36e89ec22d9973c3f72f61a5fb9b6))
 
-## v0.9.0
+- **log**: Add print_return decorator to print result
+  ([`c53c0ce`](https://github.com/anaticulae/utilotest/commit/c53c0cefbff41d1155ffd2e0c2a5c315da895048))
 
-### Feature
+- **select**: Add parameter to compress lines of code
+  ([`ab213a7`](https://github.com/anaticulae/utilotest/commit/ab213a773192b626dfb6fe06b14720840d4bd355))
 
-* move tracer from train project (9344fc095a1c)
 
-## v0.8.4
+## v0.10.1 (2021-11-12)
 
-### Fix
+### Code Style
 
-* increase ast depth to use in more inherited environments (60f19e3bbf75)
-* improve developer feedback (0da7d6d2641e)
+- **setup**: Format code
+  ([`d5524ea`](https://github.com/anaticulae/utilotest/commit/d5524ea032cb34865dbaa2d3e7b008a5f6c9bef0))
 
-## v0.8.3
+### Features
 
-### Feature
+- **baseline**: Add option to use pdf path as source
+  ([`127e642`](https://github.com/anaticulae/utilotest/commit/127e642b749a71d4e4f60d201511d6dbce0a6086))
 
-* add method to verify binary data (72cb9c2bbdd6)
 
-## v0.8.2
+## v0.10.0 (2021-11-10)
 
-### Fix
+### Bug Fixes
 
-* enable recursive mode (dca30f899696)
+- **tracer**: Ensure that extension use correctly
+  ([`62e7293`](https://github.com/anaticulae/utilotest/commit/62e7293af94e00a0e2615d2fc1422dfed01424c0))
 
-## v0.8.1
+### Chores
 
-### Fix
+- **project**: Add localserver package
+  ([`ab9611e`](https://github.com/anaticulae/utilotest/commit/ab9611e2f675f3658be16f5cdf8fa727adcd9f72))
 
-* support testdir.tmpath as input (04d2bf8b7297)
+- **project**: Move to new default path
+  ([`2d09d74`](https://github.com/anaticulae/utilotest/commit/2d09d7475a715cfed5725d32fc01db50c43d2988))
 
-## v0.8.0
+- **requirements**: Upgrade requirements.txt
+  ([`ed1496a`](https://github.com/anaticulae/utilotest/commit/ed1496a396d999cf1e0ea78d4d436ff59653bf5b))
 
-### Feature
+### Features
 
-* support multiple resources (6baebe7b42c8)
+- **baseline**: Add baseline runner to ease verification step
+  ([`a2043ce`](https://github.com/anaticulae/utilotest/commit/a2043ce08eb87b5c3efe72681b8fbe0f125d606d))
 
-### Fix
+### Testing
 
-* make filecount cwd independent (0322b57e5ac7)
+- **install**: Fix flaky test
+  ([`7815725`](https://github.com/anaticulae/utilotest/commit/7815725ea000f3df7c73c5bbb00052ad74e036c0))
 
-## v0.7.1
+- **trace**: Run tracer example
+  ([`5bac2ae`](https://github.com/anaticulae/utilotest/commit/5bac2ae3a356861aed7fc8c9a731a1f1da310a8c))
 
-### Feature
 
-* add method to skip not as a decorator (fd5d11271462)
+## v0.9.0 (2021-09-23)
 
-## v0.7.0
+### Chores
 
-### Feature
+- **requirements**: Upgrade requirements.txt
+  ([`64cb562`](https://github.com/anaticulae/utilotest/commit/64cb562d4c0cccf3b9557dcbccd757c6949479b4))
 
-* add option to verify non power-generated path (777ac70da499)
-* add method to skip test if resource does not exists (96390e939f72)
-* support CompletedProcess to stdout/stderr (295eb2b6b0d2)
+### Code Style
 
-## v0.6.0
+- **fix**: Fix spelling error
+  ([`55dbf33`](https://github.com/anaticulae/utilotest/commit/55dbf33d1260c8ab6bfc01ccc657a09959d3c6e4))
 
-### Feature
+### Features
 
-* add delete method (8916f2d85182)
+- **cli**: Move tracer from train project
+  ([`9344fc0`](https://github.com/anaticulae/utilotest/commit/9344fc095a1c3aab85a87b2def0c7974ed4ec176))
 
-## v0.5.3
 
-## v0.5.2
+## v0.8.4 (2021-08-11)
 
-## v0.5.1
+### Bug Fixes
 
-### Fix
+- **runner**: Increase ast depth to use in more inherited environments
+  ([`60f19e3`](https://github.com/anaticulae/utilotest/commit/60f19e3bbf750a28eb454c95b64a6ecd74345cd4))
 
-* add missing data delivery flag (5d68cf50a430)
+- **utils**: Improve developer feedback
+  ([`0da7d6d`](https://github.com/anaticulae/utilotest/commit/0da7d6d2641e03ab0cac4107bf26d4b9df3a503f))
 
-## v0.5.0
+### Chores
 
-### Feature
+- **requirements**: Upgrade requirements.txt
+  ([`feeeca7`](https://github.com/anaticulae/utilotest/commit/feeeca7247397b31ee5a42c68b2516eed4d328d0))
 
-* add decorator to mark selenium tests (ce93a09d0c4c)
-* add driver to fixture to run selenium (e36ee84513b0)
-* add firefox driver (07e01820d747)
 
-## v0.4.1
+## v0.8.3 (2021-07-31)
 
-### Fix
+### Features
 
-* improve call assertion (84744d389905)
+- **utils**: Add method to verify binary data
+  ([`72cb9c2`](https://github.com/anaticulae/utilotest/commit/72cb9c2bbdd670e9ea26aac587ece8af19674b45))
 
-## v0.4.0
 
-### Feature
+## v0.8.2 (2021-07-29)
 
-* use parameter to shrink simplified name (a22c9835f179)
-* add method to ease and secure generated test names (8b48e3a8d085)
+### Bug Fixes
 
-## v0.3.2
+- **file**: Enable recursive mode
+  ([`dca30f8`](https://github.com/anaticulae/utilotest/commit/dca30f8996960deff5d0b37c2cb39c470a1c98bd))
 
-### Fix
 
-* return correct registered marker (d087a43442f5)
+## v0.8.1 (2021-07-29)
 
-## v0.3.1
+### Bug Fixes
 
-### Feature
+- **file**: Support testdir.tmpath as input
+  ([`04d2bf8`](https://github.com/anaticulae/utilotest/commit/04d2bf8b72979b2f10b46058732deafc36147eaf))
 
-* add method to register marker (edcae5f5a496)
+### Refactoring
+
+- **file**: Improve code style
+  ([`6feb3ff`](https://github.com/anaticulae/utilotest/commit/6feb3ffdcd0bfb91dc1b5634e0d515b1245fe2f4))
+
+
+## v0.8.0 (2021-07-29)
+
+### Bug Fixes
+
+- **file**: Make filecount cwd independent
+  ([`0322b57`](https://github.com/anaticulae/utilotest/commit/0322b57e5ac72d176bdf5af4b8d2a38c757e6c42))
+
+### Chores
+
+- **requirements**: Upgrade requirements.txt
+  ([`e141e4b`](https://github.com/anaticulae/utilotest/commit/e141e4be0c6875bf99546bc44b3b8cbe3026c27c))
+
+### Features
+
+- **select**: Support multiple resources
+  ([`6baebe7`](https://github.com/anaticulae/utilotest/commit/6baebe7b42c8241d39e7c40098dec371a81f6df7))
+
+
+## v0.7.1 (2021-06-24)
+
+### Chores
+
+- **requirements**: Make requirement more strict
+  ([`99cde7f`](https://github.com/anaticulae/utilotest/commit/99cde7f98bca73e448bc940ed58d2297be23c643))
+
+### Features
+
+- **select**: Add method to skip not as a decorator
+  ([`fd5d112`](https://github.com/anaticulae/utilotest/commit/fd5d1127146292702eea8ad6a18650763198b9e6))
+
+
+## v0.7.0 (2021-06-24)
+
+### Chores
+
+- **requirements**: Add power package
+  ([`cbf0e85`](https://github.com/anaticulae/utilotest/commit/cbf0e856cf01d8c0d10b0ff5478f4a573ffb6383))
+
+### Features
+
+- **log**: Support CompletedProcess to stdout/stderr
+  ([`295eb2b`](https://github.com/anaticulae/utilotest/commit/295eb2b6b0d2d36cdb95b52c03032ebc1b935092))
+
+- **select**: Add method to skip test if resource does not exists
+  ([`96390e9`](https://github.com/anaticulae/utilotest/commit/96390e939f72513bf82ccfae0e1ac8de8db384a5))
+
+- **select**: Add option to verify non power-generated path
+  ([`777ac70`](https://github.com/anaticulae/utilotest/commit/777ac70da4990d99e18c3ac5883b010758aff0bc))
+
+### Refactoring
+
+- **install**: Clarify code
+  ([`1ad6cd1`](https://github.com/anaticulae/utilotest/commit/1ad6cd13a88aca36d73f85a5d35529fff87500da))
+
+### Testing
+
+- **requires**: Require more than on resource
+  ([`52db4d7`](https://github.com/anaticulae/utilotest/commit/52db4d71e394dd3f014893f43198f0fcb831da88))
+
+
+## v0.6.0 (2021-06-08)
+
+### Chores
+
+- **requirements**: Upgrade requirements.txt
+  ([`242d95d`](https://github.com/anaticulae/utilotest/commit/242d95daf85317d998f7d1f7fa4f0d2895c2741c))
+
+### Features
+
+- **call**: Add delete method
+  ([`8916f2d`](https://github.com/anaticulae/utilotest/commit/8916f2d85182809eb9b0efb908157f9cce0ca5df))
+
+
+## v0.5.3 (2021-05-18)
+
+### Chores
+
+- **requirements**: Make pytest requirement less strict
+  ([`4bb4eca`](https://github.com/anaticulae/utilotest/commit/4bb4eca7f26d0c191380e176b7c674eb6c11a9f1))
+
+- **requirements**: Upgrade requirements.txt
+  ([`7a8f4dd`](https://github.com/anaticulae/utilotest/commit/7a8f4ddb2821f1f151f96e91db8d2a64e3859597))
+
+- **requirements**: Upgrade used python version
+  ([`4f0b9d1`](https://github.com/anaticulae/utilotest/commit/4f0b9d195f4699705d34d2e74d209e800dc909e4))
+
+- **setup**: Clean setup file
+  ([`2c3f496`](https://github.com/anaticulae/utilotest/commit/2c3f496458c63d244c68471bcc550091bfde1867))
+
+### Testing
+
+- **runner**: Increase test coverage
+  ([`e093fd7`](https://github.com/anaticulae/utilotest/commit/e093fd7526f2c5d5eefa3ae35f7bbeae0a946916))
+
+
+## v0.5.2 (2021-03-23)
+
+### Chores
+
+- **requirements**: Do not release so often
+  ([`cc11f29`](https://github.com/anaticulae/utilotest/commit/cc11f29d8caceac7bb0faf1d056f15c659560d52))
+
+
+## v0.5.1 (2021-03-18)
+
+### Bug Fixes
+
+- **setup**: Add missing data delivery flag
+  ([`5d68cf5`](https://github.com/anaticulae/utilotest/commit/5d68cf50a430f489e6117c1c0b47416606ef40f4))
+
+### Chores
+
+- **dev**: Add local server package
+  ([`9821107`](https://github.com/anaticulae/utilotest/commit/9821107d849f741b646318334db067d0d58e711d))
+
+- **requirements**: Upgrade requirements.txt
+  ([`dade2ab`](https://github.com/anaticulae/utilotest/commit/dade2abb38a5c7f737d23895ab055e2e1931ce57))
+
+
+## v0.5.0 (2021-03-15)
+
+### Chores
+
+- **requirements**: Add configo package
+  ([`00416cc`](https://github.com/anaticulae/utilotest/commit/00416cc87fd1b5ad86948e04cc752a45bd46687a))
+
+- **requirements**: Add selenium package
+  ([`d0b6585`](https://github.com/anaticulae/utilotest/commit/d0b6585d2bec88f193383de0f9b2a09c6e478422))
+
+- **requirements**: Upgrade requirements.txt
+  ([`bb235c1`](https://github.com/anaticulae/utilotest/commit/bb235c1933fb2b66776eac8a29214e6dfbe3ea6a))
+
+### Features
+
+- **decorator**: Add decorator to mark selenium tests
+  ([`ce93a09`](https://github.com/anaticulae/utilotest/commit/ce93a09d0c4c95f6261f202988b1fe9371b87ad6))
+
+- **visitor**: Add driver to fixture to run selenium
+  ([`e36ee84`](https://github.com/anaticulae/utilotest/commit/e36ee84513b020f59a7db4a526ec3c3f77c54f04))
+
+- **visitor**: Add firefox driver
+  ([`07e0182`](https://github.com/anaticulae/utilotest/commit/07e01820d74721e96ee72991a67df7ecdce51c05))
+
+### Testing
+
+- **view**: Add test to verify provided fixture
+  ([`c78878d`](https://github.com/anaticulae/utilotest/commit/c78878d01c96f14b426e7b1284d41060e8cc1faf))
+
+
+## v0.4.1 (2021-03-05)
+
+### Bug Fixes
+
+- **call**: Improve call assertion
+  ([`84744d3`](https://github.com/anaticulae/utilotest/commit/84744d389905532614b1dff578517ded4224dae4))
+
+### Chores
+
+- **requirements**: Upgrade requirements.txt
+  ([`6277074`](https://github.com/anaticulae/utilotest/commit/62770747ae3130c87d240b5e846905df42f9ce18))
+
+### Refactoring
+
+- **call**: Improve assertion
+  ([`f4c1b0c`](https://github.com/anaticulae/utilotest/commit/f4c1b0c8855de1b5b646eb98b34b7eaca2354858))
+
+
+## v0.4.0 (2021-02-20)
+
+### Chores
+
+- **requirements**: Upgrade requirements.txt
+  ([`7ccc49f`](https://github.com/anaticulae/utilotest/commit/7ccc49fccb2165ae0e9fa217581cea5628c83131))
+
+### Features
+
+- **utils**: Add method to ease and secure generated test names
+  ([`8b48e3a`](https://github.com/anaticulae/utilotest/commit/8b48e3a8d085818129765feb8eed30a06d751d38))
+
+- **utils**: Use parameter to shrink simplified name
+  ([`a22c983`](https://github.com/anaticulae/utilotest/commit/a22c9835f1797635d558a6a253fe5219edf83654))
+
+
+## v0.3.2 (2021-01-22)
+
+### Bug Fixes
+
+- **select**: Return correct registered marker
+  ([`d087a43`](https://github.com/anaticulae/utilotest/commit/d087a43442f540124c2a3892a23714dd53c4300a))
+
+
+## v0.3.1 (2021-01-22)
 
 ### Documentation
 
-* Happy New Year! (48de95e15ba4)
+- **copyright**: Happy New Year!
+  ([`48de95e`](https://github.com/anaticulae/utilotest/commit/48de95e15ba4359403752dd733e865218487e363))
 
-## v0.3.0
+### Features
 
-### Fix
+- **select**: Add method to register marker
+  ([`edcae5f`](https://github.com/anaticulae/utilotest/commit/edcae5f5a49683edf715b3d150aa017f384dffee))
 
-* bypass marker check of new pytest version (cc7ced949ee4)
 
-## v0.2.2
+## v0.3.0 (2021-01-21)
 
-## v0.2.1
+### Bug Fixes
 
-### Feature
+- **select**: Bypass marker check of new pytest version
+  ([`cc7ced9`](https://github.com/anaticulae/utilotest/commit/cc7ced949ee4d30877085a23e88879f7b0096ea5))
 
-* add method to setup prefix (1c1c708400e3)
+### Chores
 
-## v0.2.0
+- **requirements**: Upgrade requirements.txt
+  ([`837fe5c`](https://github.com/anaticulae/utilotest/commit/837fe5c271c41907337c310af0131905e5833f7d))
 
-### Feature
 
-* add calls to test CRUD APIs (8299dd52ad08)
-* add methods to analyze pytest stdout/stderr (76f72b2547cf)
-* add holyvalue test selector (26a6b471caff)
+## v0.2.2 (2020-11-19)
 
-## v0.1.6
+### Chores
 
-### Feature
+- **requirements**: Upgrade requirements.txt
+  ([`98a5ae7`](https://github.com/anaticulae/utilotest/commit/98a5ae7de0bc1a7c8b5cced967eba136421462a8))
 
-* introduce more intuitive selection decorator (490d4e732a44)
 
-## v0.1.5
+## v0.2.1 (2020-11-16)
 
-## v0.1.4
+### Features
 
-### Fix
+- **prefix**: Add method to setup prefix
+  ([`1c1c708`](https://github.com/anaticulae/utilotest/commit/1c1c708400e3af708efbca0d75b8e92e1bfd2995))
 
-* clarify error message (81de8fdaa795)
 
-## v0.1.3
+## v0.2.0 (2020-11-16)
 
-## v0.1.2
+### Code Style
 
-## v0.1.1
+- **imports**: Organize imports
+  ([`e0e4254`](https://github.com/anaticulae/utilotest/commit/e0e4254c2e0ebdb264d84b5d12593b725ce5f96f))
 
-## v0.1.0
+### Features
 
-### Feature
+- **call**: Add calls to test CRUD APIs
+  ([`8299dd5`](https://github.com/anaticulae/utilotest/commit/8299dd52ad08530f8967d7458104c5ec7c9a0b57))
 
-* move test features from utilo package (f94c51defd72)
+- **log**: Add methods to analyze pytest stdout/stderr
+  ([`76f72b2`](https://github.com/anaticulae/utilotest/commit/76f72b2547cf1bf8ec4232a86bf87e0cd22abb52))
 
-## v0.0.0 Initial release
+- **select**: Add holyvalue test selector
+  ([`26a6b47`](https://github.com/anaticulae/utilotest/commit/26a6b471caffa9f26859a6a27d0efd6c4df91ca5))
+
+
+## v0.1.6 (2020-10-16)
+
+### Features
+
+- **decorator**: Introduce more intuitive selection decorator
+  ([`490d4e7`](https://github.com/anaticulae/utilotest/commit/490d4e732a44da7bd28cbdf8e28f045f48e89204))
+
+
+## v0.1.5 (2020-10-07)
+
+### Chores
+
+- **requirements**: Upgrade requirements.txt
+  ([`9c315ba`](https://github.com/anaticulae/utilotest/commit/9c315bafb2f0505109d927b831ff1c5e0737fce6))
+
+
+## v0.1.4 (2020-09-16)
+
+### Bug Fixes
+
+- **file**: Clarify error message
+  ([`81de8fd`](https://github.com/anaticulae/utilotest/commit/81de8fdaa7953eaa98c21862da05694e5c9ca69f))
+
+### Chores
+
+- **requirements**: Upgrade requirements.txt
+  ([`02c651e`](https://github.com/anaticulae/utilotest/commit/02c651e0eadd3bb1e099417ca54d4acbd7e39317))
+
+
+## v0.1.3 (2020-07-29)
+
+### Chores
+
+- **requirements**: Upgrade requirements.txt
+  ([`170f546`](https://github.com/anaticulae/utilotest/commit/170f546a15cfba3b277148ceae2090b7813a8c05))
+
+
+## v0.1.2 (2020-06-21)
+
+### Chores
+
+- **requirements**: Upgrade requirements.txt
+  ([`f92bd33`](https://github.com/anaticulae/utilotest/commit/f92bd3368eb7b3ff177fda85cabb6ede9ba4b6f8))
+
+
+## v0.1.1 (2020-06-20)
+
+### Chores
+
+- **project**: Do not release with findings
+  ([`13cf356`](https://github.com/anaticulae/utilotest/commit/13cf3560b7fa0115dd02b24a7717b2d10031d3cc))
+
+### Refactoring
+
+- **replace**: Replace with utila code
+  ([`45f4651`](https://github.com/anaticulae/utilotest/commit/45f4651349d7d7aecbec05556657a917465d5587))
+
+
+## v0.1.0 (2020-06-20)
+
+### Chores
+
+- **requirements**: Add pytest dependency
+  ([`04b2c87`](https://github.com/anaticulae/utilotest/commit/04b2c8738516000bfaaedf3f16e27d22cb769787))
+
+- **requirements**: Add utila requirement
+  ([`a4787ca`](https://github.com/anaticulae/utilotest/commit/a4787cabae47d8c91edf1c6037d7e1748c03e4f3))
+
+### Features
+
+- **move**: Move test features from utila package
+  ([`f94c51d`](https://github.com/anaticulae/utilotest/commit/f94c51defd7222b3f8816524fe66970fbdd15e8c))
+
+
+## v0.0.0 (2020-06-20)
+
+- Initial Release
