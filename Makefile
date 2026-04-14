@@ -11,12 +11,8 @@ IMAGE_TEST_NAME := ghcr.io/anaticulae/$(IMAGE)-test
 docker-build:
 	docker build -t $(IMAGE) .
 
-# --progress=plain
-docker-build-test:
-	docker build -f env/test/Dockerfile -t $(IMAGE_TEST_NAME) .
-
 docker-build-base:
-	docker build -f env/base/Dockerfile -t $(IMAGE_BASE_NAME) .
+	docker build -t $(IMAGE_BASE_NAME) .
 
 docker-upload-test:
 	docker push $(IMAGE_TEST_NAME)
