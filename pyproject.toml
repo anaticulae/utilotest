@@ -9,11 +9,11 @@ authors = [
 ]
 
 dependencies = [
-    "utilo>=2.107.0,<3.0.0",
-    "configos>=1.0.2,<2.0.0",
+    "utilo>=2.107.4,<3.0.0",
+    "configos>=1.0.4,<2.0.0",
     "resinf>=1.0.2,<2.0.0",
 
-    "pytest>=9.0.2,<10.0.0",
+    "pytest>=9.0.3,<10.0.0",
 ]
 
 # Optional but recommended metadata
@@ -31,9 +31,9 @@ collect_trace="utilotest.cli.tracer:main"
 
 [project.optional-dependencies]
 dev = [
-    "selenium==4.41.0",
+    "selenium==4.43.0",
 
-    "pytest_localserver==0.7.0",
+    "pytest_localserver==0.10.0",
     # power==2.24.0
 ]
 
