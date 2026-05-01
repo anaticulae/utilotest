@@ -1,6 +1,22 @@
 # CHANGELOG
 
 
+## v1.0.2 (2026-05-01)
+
+### Chores
+
+- **test**: Run tests on every branch
+  ([`5711cc3`](https://github.com/anaticulae/utilotest/commit/5711cc35c9a762365427574a61aebcdae8d1c532))
+
+### Refactoring
+
+- **power**: Rename to hoverpower
+  ([`0266fb3`](https://github.com/anaticulae/utilotest/commit/0266fb3a9d8af78f4ea75e266b008af217659a30))
+
+- **project**: Replace power
+  ([`2799590`](https://github.com/anaticulae/utilotest/commit/2799590ca41edda26f62c4e8baca39b495b1a82f))
+
+
 ## v1.0.1 (2026-04-14)
 
 ### Chores
