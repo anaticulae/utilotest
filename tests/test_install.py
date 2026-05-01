@@ -60,5 +60,5 @@
 #             utilotest.install_and_run(
 #                 root=td.tmpdir,
 #                 package=package,
-#                 executable='power',  # not the installed one
+#                 executable='hoverpower',  # not the installed one
 #             )

@@ -105,8 +105,8 @@ def _exists(resource, folder=None):
         return all(_exists(item, folder=folder) for item in resource)
     exists = os.path.exists(resinf.link(resource, folder=folder))
     # non generated resources
-    import power  # pylint:disable=import-outside-toplevel
-    exists |= os.path.exists(resource) and resource not in power.RESOURCES
+    import hoverpower  # pylint:disable=import-outside-toplevel
+    exists |= os.path.exists(resource) and resource not in hoverpower.RESOURCES
     return exists
 
 

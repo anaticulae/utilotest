@@ -10,7 +10,7 @@
 import webbrowser
 
 # pylint: disable=wrong-import-order
-import power
+import hoverpower
 import utilo
 
 import utilotest
@@ -38,14 +38,14 @@ def test_open_webbrowser(td, mp):
 def test_test_resources():
 
     def markme(item):
-        if item == power.BACHELOR028_PDF:
+        if item == hoverpower.BACHELOR028_PDF:
             return utilotest.longrun
         return None
 
     resources = utilotest.test_resources(
         [
-            power.BACHELOR028_PDF,
-            power.MASTER116_PDF,
+            hoverpower.BACHELOR028_PDF,
+            hoverpower.MASTER116_PDF,
         ],
         marker=markme,
     )
