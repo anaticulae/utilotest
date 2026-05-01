@@ -34,7 +34,7 @@ dev = [
     "selenium==4.41.0",
 
     "pytest_localserver==0.7.0",
-    # power==2.24.0
+    "hoverpower>=1.1.0,<2.0.0",
 ]
 
 [project.urls]
@@ -63,7 +63,6 @@ patch_tags = ["fix", "perf", "build", "chore", "ci", "docs", "style", "refactor"
 [tool.setuptools.packages.find]
 where = ["."]
 include = [
-    "power",
     "utilotest",
     "utilotest.cli",
     "viewvisitor",

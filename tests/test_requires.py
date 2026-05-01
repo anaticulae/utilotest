@@ -10,19 +10,19 @@
 import os
 
 # pylint: disable=wrong-import-order
-import power
+import hoverpower
 import resinf
 import utilo
 
 TESTCODE = """\
-import power
+import hoverpower
 import resinf
 
 import utilotest
 
 resinf.setup(root='%s', validate=False)
 
-@utilotest.requires(power.DOCU007_PDF)
+@utilotest.requires(hoverpower.DOCU007_PDF)
 def test_master():
     pass
 """
@@ -40,15 +40,15 @@ def test_requires_noskip(td):
     root = utilo.forward_slash(str(td.tmpdir.join(utilo.tmpname())))
     td.mkdir(root)
     testcode = TESTCODE % root
-    os.makedirs(resinf.link(power.DOCU007_PDF, project=root))
+    os.makedirs(resinf.link(hoverpower.DOCU007_PDF, project=root))
     utilo.file_create(os.path.join(root, 'test_master.py'), testcode)
     completed = utilo.run(f'pytest {root}')
     assert '1 skipped in' not in completed.stdout
 
 
 STACK = """\
-@utilotest.requires(power.DOCU007_PDF)
-@utilotest.requires(power.DOCU009_PDF)
+@utilotest.requires(hoverpower.DOCU007_PDF)
+@utilotest.requires(hoverpower.DOCU009_PDF)
 def test_stacked():
     pass
 """
@@ -60,6 +60,6 @@ def test_requires_stacked_resource(td):
     td.mkdir(root)
     testcode = TESTCODE % root + STACK
     utilo.file_create(os.path.join(root, 'test_master.py'), testcode)
-    os.makedirs(resinf.link(power.DOCU007_PDF, project=root))
+    os.makedirs(resinf.link(hoverpower.DOCU007_PDF, project=root))
     completed = utilo.run(f'pytest {root}')
     assert '1 passed, 1 skipped' in completed.stdout

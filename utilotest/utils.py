@@ -90,8 +90,8 @@ def testid() -> str:
 def test_resources(resources, marker: callable = None):
     """Remove `pages` from resource definition.
 
-    >>> import power;import resinf;import utilotest;resinf.setup(utilotest.ROOT);
-    >>> test_resources([power.BACHELOR090_PDF, (power.MASTER116_PDF, ':')])
+    >>> import hoverpower;import resinf;import utilotest;resinf.setup(utilotest.ROOT);
+    >>> test_resources([hoverpower.BACHELOR090_PDF, (hoverpower.MASTER116_PDF, ':')])
     [ParameterSet(values=(...bachelor090.pdf',),...missing:...master116.pdf'...id='master116')]
     >>> test_resources(['first', 'second', 'first'])
     Traceback (most recent call last):

@@ -17,7 +17,7 @@ class Simple(utilotest.BaseLiner):
 
     def __init__(self):
         super().__init__(
-            program='power',
+            program='hoverpower',
             step='help >> message',
             pages='',
             workdir='',
@@ -30,7 +30,7 @@ class Simple(utilotest.BaseLiner):
 
 # def test_baseline_mixin_valid(td):
 #     td.mkdir('archive')
-#     utilo.run('power -h >> archive/message')
+#     utilo.run('hoverpower -h >> archive/message')
 #     Simple().evaluate()
 
 
