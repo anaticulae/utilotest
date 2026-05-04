@@ -12,7 +12,7 @@ import utilo
 import utilotest
 
 UNINSTALL = 'pip uninstall %s -y'
-INSTALL = 'python setup.py install'
+INSTALL = 'pip install .'
 
 
 def install_package(root):
