@@ -1,6 +1,14 @@
 # CHANGELOG
 
 
+## v1.0.3 (2026-05-04)
+
+### Bug Fixes
+
+- **install**: Make install command setup.py independent
+  ([`eaa2e67`](https://github.com/anaticulae/utilotest/commit/eaa2e67a6c6562c453fd81e1766b767d30c2b56e))
+
+
 ## v1.0.2 (2026-05-01)
 
 ### Chores
