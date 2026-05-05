@@ -78,6 +78,16 @@ displayed = register_marker('displayed')
 
 
 def requires(resource, folder=None):
+    """\
+    >>> requires(None)
+    MarkDecorator(mark=Mark(name='skipif', args=(True,), kwargs={'reason': 'resource is None'}))
+    """
+    if not resource:
+        marker = pytest.mark.skipif(
+            True,
+            reason='resource is None',
+        )
+        return marker
     exists = _exists(resource, folder)
     if utilo.iterable(resource):  # pylint:disable=W0160
         resource = [utilo.forward_slash(item) for item in resource]
