@@ -1,6 +1,19 @@
 # CHANGELOG
 
 
+## v1.0.4 (2026-05-05)
+
+### Bug Fixes
+
+- **select**: Do not fail on invalid resource
+  ([`dfba774`](https://github.com/anaticulae/utilotest/commit/dfba77449053a8721b1da3d26b669aec5c184ad9))
+
+### Chores
+
+- **license**: Add missing LICENSE
+  ([`001ec02`](https://github.com/anaticulae/utilotest/commit/001ec02be2de1ce6160133e892491b1b2ca17395))
+
+
 ## v1.0.3 (2026-05-04)
 
 ### Bug Fixes
