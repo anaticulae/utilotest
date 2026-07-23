@@ -7,10 +7,10 @@ authors = [
     { name = "Helmut Konrad Schewe", email = "helmutus@outlook.com" },
 ]
 dependencies = [
-    "utilo>=2.109.1,<3.0.0",
     "configos>=1.0.4,<2.0.0",
-    "resinf>=1.0.4,<2.0.0",
     "pytest>=9.1.1,<10.0.0",
+    "resinf>=1.0.4,<2.0.0",
+    "utilo>=2.109.1,<3.0.0",
 ]
 keywords = []
 classifiers = [
@@ -32,9 +32,9 @@ collect_trace = "utilotest.cli.tracer:main"
 
 [project.optional-dependencies]
 dev = [
-    "selenium==4.46.0",
-    "pytest_localserver==0.10.0",
     "hoverpower>=1.5.2,<2.0.0",
+    "pytest_localserver==0.10.0",
+    "selenium==4.46.0",
 ]
 
 [project.urls]
