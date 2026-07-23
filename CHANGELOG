@@ -1,6 +1,26 @@
 # CHANGELOG
 
 
+## v1.0.5 (2026-07-23)
+
+### Chores
+
+- **docker**: Upgrade
+  ([`caa0ca9`](https://github.com/anaticulae/utilotest/commit/caa0ca92780d727f879be19455109818d8de548d))
+
+- **pyproject**: Release on every commit
+  ([`e1ca58f`](https://github.com/anaticulae/utilotest/commit/e1ca58f29cc505521d2f49a5cdfb778bfbfa3d88))
+
+- **pyproject**: Sort requirements
+  ([`e3fbe2d`](https://github.com/anaticulae/utilotest/commit/e3fbe2ddbafc9d1653983d37b518000a94c01f89))
+
+- **pyproject**: Upgrade setuptools
+  ([`a1ab198`](https://github.com/anaticulae/utilotest/commit/a1ab1985c562da7504c02029e3e0104352a9b881))
+
+- **requirements**: Upgrade pyproject.toml
+  ([`68d8327`](https://github.com/anaticulae/utilotest/commit/68d8327c6cea17b5940afea3ac033b2c63e38baf))
+
+
 ## v1.0.4 (2026-05-05)
 
 ### Bug Fixes
