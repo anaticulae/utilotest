@@ -1,6 +1,24 @@
 # CHANGELOG
 
 
+## v1.1.1 (2026-08-22)
+
+### Bug Fixes
+
+- **baseline**: Use better concept
+  ([`507a22f`](https://github.com/anaticulae/utilotest/commit/507a22f6bcf54703d3103093f857fb3e08b01d78))
+
+### Refactoring
+
+- **replace**: Replace with utilo code
+  ([`55782bb`](https://github.com/anaticulae/utilotest/commit/55782bbf1959ba7d403961a84230ea261b163b41))
+
+### Testing
+
+- **baseline**: Make test more stable
+  ([`5b2c259`](https://github.com/anaticulae/utilotest/commit/5b2c2598a00a3817ad519490652bd79f751bbc8d))
+
+
 ## v1.1.0 (2026-08-22)
 
 ### Chores
