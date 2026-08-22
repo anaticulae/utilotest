@@ -31,7 +31,7 @@ def open_webbrowser(path: str):
         None: to run operation to create website
     """
     yield
-    assert os.path.exists(path), str(str)
+    assert utilo.exists(path), str(str)
     if utilotest.single_execution():
         webbrowser.open(path)
 

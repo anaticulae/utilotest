@@ -10,6 +10,8 @@
 import importlib.metadata
 import os
 
+import utilo
+
 # baseline
 from utilotest.baseline import BaseLineMixin
 from utilotest.baseline import BaseLiner
@@ -89,7 +91,7 @@ from utilotest.utils import worker_count
 
 __version__ = importlib.metadata.version('utilotest')
 
-ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+ROOT = os.path.abspath(utilo.join(os.path.dirname(__file__), '..'))
 PACKAGE = 'utilotest'
 
 skip_longrun = longrun

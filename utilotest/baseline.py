@@ -10,7 +10,6 @@
 import contextlib
 import difflib
 import functools
-import os
 
 import resinf
 import utilo
@@ -40,7 +39,7 @@ class BaseLineMixin:
         rawvalue = self.raw(loaded)
         expected, path = self.expected
         if rawvalue != expected:
-            outpath = os.path.join(self.workdir, 'baseline')
+            outpath = utilo.join(self.workdir, 'baseline')
             utilo.error('write baseline')
             utilo.file_create(outpath, rawvalue)
             if utilotest.config.GIT_REPLACE:
@@ -89,8 +88,8 @@ class BaseLineMixin:
 
     @functools.cached_property
     def expected(self) -> str:
-        inpath = os.path.join(self.archive, str(self.index))
-        if not os.path.exists(inpath):
+        inpath = utilo.join(self.archive, str(self.index))
+        if not utilo.exists(inpath):
             utilo.error(f'empty archive data: {inpath}')
             return None, inpath
         loaded = utilo.file_read(inpath)

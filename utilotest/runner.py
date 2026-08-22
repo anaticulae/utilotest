@@ -43,7 +43,7 @@ def run(
         Completed process.
     """
     cwd = cwd if cwd else os.getcwd()
-    assert os.path.exists(cwd)
+    assert utilo.exists(cwd)
     msg = f'cwd {cwd} is not a valid directory'
     assert os.path.isdir(cwd), msg
     env = os.environ if env is None else env
