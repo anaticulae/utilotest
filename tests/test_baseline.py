@@ -17,7 +17,7 @@ class Simple(utilotest.BaseLiner):
 
     def __init__(self):
         super().__init__(
-            program='hoverpower',
+            program='power',
             step='help >> message',
             pages='',
             workdir='',
@@ -28,10 +28,10 @@ class Simple(utilotest.BaseLiner):
         )
 
 
-# def test_baseline_mixin_valid(td):
-#     td.mkdir('archive')
-#     utilo.run('hoverpower -h >> archive/message')
-#     Simple().evaluate()
+def test_baseline_mixin_valid(td):
+    td.mkdir('archive')
+    utilo.run('power -h >> archive/message')
+    Simple().evaluate()
 
 
 def test_baseline_mixin_invalid(td):
@@ -39,3 +39,16 @@ def test_baseline_mixin_invalid(td):
     utilo.run('echo "invalid comparison" >> archive/message')
     with pytest.raises(AssertionError):
         Simple().evaluate()
+
+
+def test_baseline_mixin_gitdiff(td, capsys):
+    td.mkdir('archive')
+    utilo.run('echo "invalid comparison" >> archive/message')
+    with pytest.raises(AssertionError):
+        Simple().evaluate()
+    stdout, error = utilotest.std_out_err(capsys)
+    # TODO: REMOVE 24 later, after fixing hoverpower
+    assert '@@ -1 +1,14 @@' in stdout\
+        or '@@ -1 +1,24 @@' in stdout
+    assert '-invalid comparison' in stdout
+    assert '[ERROR] write baseline' in error
