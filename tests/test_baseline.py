@@ -39,3 +39,16 @@ def test_baseline_mixin_invalid(td):
     utilo.run('echo "invalid comparison" >> archive/message')
     with pytest.raises(AssertionError):
         Simple().evaluate()
+
+
+def test_baseline_mixin_gitdiff(td, capsys):
+    td.mkdir('archive')
+    utilo.run('echo "invalid comparison" >> archive/message')
+    with pytest.raises(AssertionError):
+        Simple().evaluate()
+    stdout, error = utilotest.std_out_err(capsys)
+    # TODO: REMOVE 24 later, after fixing hoverpower
+    assert '@@ -1 +1,14 @@' in stdout\
+        or '@@ -1 +1,24 @@' in stdout
+    assert '-invalid comparison' in stdout
+    assert '[ERROR] write baseline' in error

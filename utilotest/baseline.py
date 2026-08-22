@@ -8,6 +8,7 @@
 # =============================================================================
 
 import contextlib
+import difflib
 import functools
 import os
 
@@ -57,6 +58,12 @@ class BaseLineMixin:
         assert rawvalue == expected
 
     def show_diff(self, expected, current):  # pylint: disable=no-self-use
+        diff = difflib.unified_diff(
+            expected.splitlines(keepends=True),
+            current.splitlines(keepends=True),
+        )
+        utilo.log("".join(diff))
+        utilo.log(utilo.NEWLINE * 2)
         utilo.log('EXPECTED:')
         utilo.log(expected)
         utilo.log('GIVEN:')
@@ -70,7 +77,12 @@ class BaseLineMixin:
         self.cmd()
 
     def raw(self, value) -> str:  # pylint:disable=R0201
-        return str(value)
+        result = str(value)
+        # rstrip to enable spaces as empty content of a expected tabel for
+        # example.
+        result = result.rstrip()
+        result += utilo.NEWLINE
+        return result
 
     def load(self):  # pylint:disable=R0201
         return ''
@@ -82,9 +94,7 @@ class BaseLineMixin:
             utilo.error(f'empty archive data: {inpath}')
             return None, inpath
         loaded = utilo.file_read(inpath)
-        # rstrip to enable spaces as empty content of a expected tabel for
-        # example.
-        result = loaded.rstrip()
+        result = self.raw(loaded)
         return result, inpath
 
 
