@@ -1,6 +1,49 @@
 # CHANGELOG
 
 
+## v1.1.0 (2026-08-22)
+
+### Chores
+
+- **github**: Do not run test twice
+  ([`6c6d4e3`](https://github.com/anaticulae/utilotest/commit/6c6d4e3c5e676d27c7508c9d075a1a3114476d0a))
+
+- **github**: Hide token in git log
+  ([`29e005e`](https://github.com/anaticulae/utilotest/commit/29e005e0286827488a4342dda50d95dfe0dd7cd8))
+
+- **github**: Upgrade workflows
+  ([`437fb4f`](https://github.com/anaticulae/utilotest/commit/437fb4f9382d622c351e95c0006b92804333b58b))
+
+- **make**: Do not run release twice
+  ([`6f43a80`](https://github.com/anaticulae/utilotest/commit/6f43a80d7c7a39ed32d47c62f8407391d210f294))
+
+- **requirements**: Upgrade pyproject.toml
+  ([`502ea6c`](https://github.com/anaticulae/utilotest/commit/502ea6cc656172ffcf7bd19ba7a14f6857141995))
+
+### Code Style
+
+- **github**: Format code
+  ([`7f52630`](https://github.com/anaticulae/utilotest/commit/7f52630cc908917042ac147b16b23ba104b9231d))
+
+### Features
+
+- **baseline**: Add git-diff-like comparison
+  ([`ae6a6c8`](https://github.com/anaticulae/utilotest/commit/ae6a6c8d73606d246cbf6c42865907b026b0c790))
+
+- **log**: Add method to capture std out and error
+  ([`13aeb00`](https://github.com/anaticulae/utilotest/commit/13aeb00ccdd620502a49890fd875c5283fcc29b3))
+
+### Refactoring
+
+- **baseline**: Move diff to separate method
+  ([`003da09`](https://github.com/anaticulae/utilotest/commit/003da0956e41d03766f8a8d31639044f64976510))
+
+### Testing
+
+- **baseline**: Enable test after failing refactoring
+  ([`19296cf`](https://github.com/anaticulae/utilotest/commit/19296cfba803db49c775b6b6475d3255ac41e67b))
+
+
 ## v1.0.5 (2026-07-23)
 
 ### Chores
