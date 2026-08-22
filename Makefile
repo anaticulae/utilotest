@@ -37,5 +37,5 @@ docker-lint: docker-build
 
 docker-release: docker-build
 	docker run -v $(CURDIR):/var/workdir\
-			-e GH_TOKEN=$(GH_TOKEN) $(IMAGE)\
+			-e GH_TOKEN $(IMAGE)\
 			"baw release --no_test --no_linter"
