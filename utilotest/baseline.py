@@ -53,11 +53,14 @@ class BaseLineMixin:
                 self.backup(loaded)
                 return
         elif rawvalue != expected:
-            utilo.log('EXPECTED:')
-            utilo.log(expected)
-            utilo.log('GIVEN:')
-            utilo.log(rawvalue)
+            self.show_diff(expected, current=rawvalue)
         assert rawvalue == expected
+
+    def show_diff(self, expected, current):  # pylint: disable=no-self-use
+        utilo.log('EXPECTED:')
+        utilo.log(expected)
+        utilo.log('GIVEN:')
+        utilo.log(current)
 
     def generate(self):
         if isinstance(self.cmd, str):
