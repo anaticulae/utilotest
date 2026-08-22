@@ -29,13 +29,13 @@ def main():
         absolute=True,
     )
     files = [item for item in files if with_error(item)]
-    outdir = os.path.join(cwd, OUTPUTDIR)
+    outdir = utilo.join(cwd, OUTPUTDIR)
     utilo.log(f'write to: {outdir}')
     os.makedirs(outdir, exist_ok=True)
     for index, item in enumerate(files):
         utilo.log(item)
         index = str(index).zfill(2)
-        outpath = os.path.join(outdir, index)
+        outpath = utilo.join(outdir, index)
         utilo.file_copy(item, outpath, timestamp=True)
     return utilo.SUCCESS
 

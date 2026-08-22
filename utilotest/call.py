@@ -114,7 +114,7 @@ def apiupload(
     """Upload file via http post command"""
     prefix = prefix if prefix else default()
     assert field, path
-    assert os.path.exists(path), path
+    assert utilo.exists(path), path
     request = prefix + page
     try:
         import werkzeug  # pylint:disable=import-outside-toplevel

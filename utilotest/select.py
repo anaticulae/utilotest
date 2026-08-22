@@ -113,10 +113,10 @@ def fixture_requires(resource, folder=None):
 def _exists(resource, folder=None):
     if utilo.iterable(resource):
         return all(_exists(item, folder=folder) for item in resource)
-    exists = os.path.exists(resinf.link(resource, folder=folder))
+    exists = utilo.exists(resinf.link(resource, folder=folder))
     # non generated resources
     import hoverpower  # pylint:disable=import-outside-toplevel
-    exists |= os.path.exists(resource) and resource not in hoverpower.RESOURCES
+    exists |= utilo.exists(resource) and resource not in hoverpower.RESOURCES
     return exists
 
 

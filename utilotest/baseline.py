@@ -10,7 +10,6 @@
 import contextlib
 import difflib
 import functools
-import os
 
 import resinf
 import utilo
@@ -36,26 +35,22 @@ class BaseLineMixin:
 
     def evaluate(self):
         self.generate()
-        loaded = self.load()
-        rawvalue = self.raw(loaded)
         expected, path = self.expected
-        if rawvalue != expected:
-            outpath = os.path.join(self.workdir, 'baseline')
+        if self.current != expected:
+            outpath = utilo.join(self.workdir, 'baseline')
             utilo.error('write baseline')
-            utilo.file_create(outpath, rawvalue)
+            utilo.file_create(outpath, self.current)
             if utilotest.config.GIT_REPLACE:
-                # ease debugging due git --diff
-                withnewline = rawvalue.rstrip() + utilo.NEWLINE
-                utilo.file_replace(path, withnewline)
+                utilo.file_replace(path, self.current)
             if self.onfailure:
-                self.onfailure(loaded)
+                self.onfailure(self.load())
         if self.expected is None:
             with contextlib.suppress(AttributeError):
-                self.backup(loaded)
+                self.backup(self.load())
                 return
-        elif rawvalue != expected:
-            self.show_diff(expected, current=rawvalue)
-        assert rawvalue == expected
+        elif self.current != expected:
+            self.show_diff(expected, current=self.current)
+        assert self.current == expected
 
     def show_diff(self, expected, current):  # pylint: disable=no-self-use
         diff = difflib.unified_diff(
@@ -78,10 +73,6 @@ class BaseLineMixin:
 
     def raw(self, value) -> str:  # pylint:disable=R0201
         result = str(value)
-        # rstrip to enable spaces as empty content of a expected tabel for
-        # example.
-        result = result.rstrip()
-        result += utilo.NEWLINE
         return result
 
     def load(self):  # pylint:disable=R0201
@@ -89,13 +80,22 @@ class BaseLineMixin:
 
     @functools.cached_property
     def expected(self) -> str:
-        inpath = os.path.join(self.archive, str(self.index))
-        if not os.path.exists(inpath):
+        inpath = utilo.join(self.archive, str(self.index))
+        if not utilo.exists(inpath):
             utilo.error(f'empty archive data: {inpath}')
             return None, inpath
         loaded = utilo.file_read(inpath)
-        result = self.raw(loaded)
+        # rstrip to enable spaces as empty content of a expected tabel for
+        # example.
+        result = utilo.final_newline(loaded)
         return result, inpath
+
+    @functools.cached_property
+    def current(self) -> str:
+        loaded = self.load()
+        rawvalue = self.raw(loaded)
+        result = utilo.final_newline(rawvalue)
+        return result
 
 
 class BaseLiner(BaseLineMixin):
