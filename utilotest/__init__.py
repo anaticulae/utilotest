@@ -36,6 +36,7 @@ from utilotest.install import install_package
 # log
 from utilotest.log import log_raw
 from utilotest.log import print_return
+from utilotest.log import std_out_err
 from utilotest.log import stderr
 from utilotest.log import stdout
 from utilotest.log import write_capsys

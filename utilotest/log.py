@@ -48,6 +48,11 @@ def stdout(capsys) -> str:
     return capsys.readouterr().out
 
 
+def std_out_err(capsys):
+    captured = capsys.readouterr()
+    return captured.out, captured.err
+
+
 def print_return(user_function):
 
     def decorator(*args, **kwds):
