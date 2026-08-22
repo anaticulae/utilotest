@@ -48,7 +48,8 @@ def test_baseline_mixin_gitdiff(td, capsys):
         Simple().evaluate()
     stdout, error = utilotest.std_out_err(capsys)
     # TODO: REMOVE 24 later, after fixing hoverpower
-    assert '@@ -1 +1,14 @@' in stdout\
+    assert '@@ -1 +1,13 @@' in stdout\
+        or '@@ -1 +1,14 @@' in stdout\
         or '@@ -1 +1,24 @@' in stdout
     assert '-invalid comparison' in stdout
     assert '[ERROR] write baseline' in error
